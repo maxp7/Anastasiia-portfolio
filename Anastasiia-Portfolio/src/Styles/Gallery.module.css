@@ -1,0 +1,27 @@
+.container {
+    width: 100%;
+    height: 95vh;
+  }
+  
+  .h1 {
+    margin: 5% 2%;
+    font-size: 3rem;
+  }
+  
+  .slider {
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden; 
+    overflow-x: auto; 
+    white-space: nowrap; 
+
+  }
+  
+  .slider img {
+    margin:2%;
+    height: 500px; 
+  }
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+  
