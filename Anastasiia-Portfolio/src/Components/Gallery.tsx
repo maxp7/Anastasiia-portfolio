@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styles from '../Styles/Gallery.module.css';
 import Slider from './Slider';
 
@@ -12,7 +12,7 @@ const Gallery: React.FC<GalleryProps> = ({ title, images }) => {
   const navigate = useNavigate();
 
   const handleImageClick = (index: number) => {
-    navigate(`/${encodeURIComponent(title)}/${index}`);
+    navigate(`/${title}/${index}`);
   };
 
   return (
