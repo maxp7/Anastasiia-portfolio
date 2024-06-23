@@ -1,4 +1,3 @@
-// src/Components/CatalogueDescription.tsx
 import React from 'react';
 
 interface CatalogueDescriptionProps {
@@ -21,6 +20,9 @@ const CatalogueDescription: React.FC<CatalogueDescriptionProps> = ({ title, id }
       "Biene",
       "Title for Photos 3",
     ],
+    Installation: [
+        "Tactile Music Interface"
+      ]
   };
 
   const descriptions: { [key: string]: string[] } = {
@@ -36,6 +38,9 @@ const CatalogueDescription: React.FC<CatalogueDescriptionProps> = ({ title, id }
       "Description for Photos 2",
       "Description for Photos 3",
     ],
+    Installation: [
+        "Descriptions for insta"
+      ]
   };
 
   // Преобразование id в число и проверка наличия заголовка и описания

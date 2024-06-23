@@ -55,6 +55,15 @@ import dejavu4 from '../assets/img/dejavu4.jpg'
 import dejavu5 from '../assets/img/dejavu5.jpg'
 import dejavu6 from '../assets/img/dejavu6.jpg'
 
+
+import installation1 from '../assets/img/installation1.jpg'
+import installation2 from '../assets/img/installation2.jpg'
+import installation3 from '../assets/img/installation3.jpg'
+import installation4 from '../assets/img/installation4.jpg'
+import installation5 from '../assets/img/installation5.jpg'
+import installation6 from '../assets/img/installation6.jpg'
+
+
 const imagesData: { [key: string]: string[][] } = {
   Films: [
     [film1, film2, film3, film4], 
@@ -68,6 +77,9 @@ const imagesData: { [key: string]: string[][] } = {
     [biene1, biene2,biene3,biene4,biene5,biene6],
     [portraits1,portraits2,portraits4,portraits5,portraits6,portraits7, portraits8],
     [dejavu1, dejavu2,dejavu3,dejavu4,dejavu5,dejavu6]
+  ],
+  Installation: [
+    [installation1, installation2, installation3, installation4,installation5,installation6]
   ],
 };
 
