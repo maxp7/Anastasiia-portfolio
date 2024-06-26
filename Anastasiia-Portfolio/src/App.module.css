@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh; /* 100% высоты viewport */
-    background-color: #0d0d0d; /* Фоновый цвет */
+    background-color: #242323; /* Фоновый цвет */
   }
   img{
     position: relative;

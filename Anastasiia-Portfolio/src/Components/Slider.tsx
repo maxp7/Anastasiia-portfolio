@@ -36,7 +36,7 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick }) => {
     <div ref={sliderRef} className={styles.slider}>
       {images.map((image, index) => (
         <div key={index} className={styles.imageContainer}>
-          <img
+          <img 
             src={image.url}
             alt={`Image ${index + 1}`}
             onClick={() => handleClick(index)}

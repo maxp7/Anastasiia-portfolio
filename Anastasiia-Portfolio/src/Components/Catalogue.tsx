@@ -62,10 +62,10 @@ import installation4 from '../assets/img/installation4.jpg';
 import installation5 from '../assets/img/installation5.jpg';
 import installation6 from '../assets/img/installation6.jpg';
 
-const imagesData: { [key: string]: { url: string; }[][] } = {
+const imagesData: { [key: string]: { url: string, title?: string }[][] } = {
   films: [
     [
-      { url: film1 },
+      { url: film1, },
       { url: film2,  },
       { url: film3, },
       { url: film4,  }
@@ -174,6 +174,7 @@ const Catalogue: React.FC = () => {
   return (
     <div className={styles.container}>
       <Slider images={images} />
+      <div>PIZDEC</div>
     </div>
   );
 };

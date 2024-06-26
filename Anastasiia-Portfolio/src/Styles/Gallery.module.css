@@ -10,12 +10,13 @@
     overflow-y: hidden; 
     overflow-x: auto; 
     white-space: nowrap; 
+    gap: 1%;
+    margin: 0 1%;
 
   }
   
   .slider img {
-    margin:0.5%;
-    height: 800px; 
+    height: 72vh; 
   }
   ::-webkit-scrollbar {
     width: 0px;

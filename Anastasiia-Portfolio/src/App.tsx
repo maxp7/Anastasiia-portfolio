@@ -5,6 +5,7 @@ import Gallery from './Components/Gallery';
 import Catalogue from './Components/Catalogue';
 import Footer from './Components/Footer'; 
 import Slider from './Components/Slider';
+import Navigation from './Components/Navigation';
 
 import film1 from './assets/img/film1.jpg';
 import film2 from './assets/img/film2.jpg';
@@ -21,7 +22,6 @@ import installation from './assets/img/installation.png';
 
 import FirstPage from './Components/FirstPage';
 import About from './Components/About';
-import Navigation from './Components/Navigation';
 import P5Canvas from './Components/P5Canvas';
 
 const App: React.FC = () => {
@@ -31,7 +31,7 @@ const App: React.FC = () => {
     { url: film3, title: 'Film 3' },
     { url: film4, title: 'Film 4' }
   ];
-  
+
   const sliderImagesPhoto = [
     { url: queen1, title: 'Queen 1' },
     { url: photo2, title: 'Photo 2' },
@@ -39,14 +39,14 @@ const App: React.FC = () => {
     { url: photo4, title: 'Photo 4' },
     { url: photo5, title: 'Photo 5' }
   ];
-  
+
   const sliderImagesInstallation = [
     { url: installation, title: 'Installation' }
   ];
+
   return (
     <Router>
       <Navigation />
-      <P5Canvas />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/films" element={<Gallery title="films" images={sliderImagesFilm} />} />
@@ -62,6 +62,7 @@ const App: React.FC = () => {
 const Home: React.FC = () => {
   return (
     <div className={styles.App}>
+      <P5Canvas />
       <FirstPage />
       <Footer />
     </div>

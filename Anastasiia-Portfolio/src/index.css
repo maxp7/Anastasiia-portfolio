@@ -4,7 +4,7 @@
   font-weight: 400;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #0d0d0d;
+  background-color: #1c1c1c;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -17,6 +17,9 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+  background-color: #1c1c1c;
 }
 
 body, html {
@@ -35,5 +38,5 @@ body, html {
 img {
 z-index: 3;
 cursor: pointer;
-border-radius: 10px;
+border-radius: 15px;
 }
