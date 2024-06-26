@@ -1,25 +1,23 @@
-// src/App.tsx
-import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import styles from './App.module.css';
 import Gallery from './Components/Gallery';
 import Catalogue from './Components/Catalogue';
-import ScrollToTop from './Components/ScrollToTop';
 import Footer from './Components/Footer'; 
-
-
-import queen1 from './assets/img/queen9.jpg'
-import photo2 from './assets/img/photo2.jpg'
-import photo3 from './assets/img/photo3.jpg'
-import photo4 from './assets/img/photo4.jpg'
-import photo5 from './assets/img/photo5.jpg'
+import Slider from './Components/Slider';
 
 import film1 from './assets/img/film1.jpg';
 import film2 from './assets/img/film2.jpg';
 import film3 from './assets/img/film3.jpg';
 import film4 from './assets/img/film4.jpg';
 
-import installation from './assets/img/installation.png'
+import queen1 from './assets/img/queen9.jpg';
+import photo2 from './assets/img/photo2.jpg';
+import photo3 from './assets/img/photo3.jpg';
+import photo4 from './assets/img/photo4.jpg';
+import photo5 from './assets/img/photo5.jpg';
+
+import installation from './assets/img/installation.png';
 
 import FirstPage from './Components/FirstPage';
 import About from './Components/About';
@@ -27,14 +25,34 @@ import Navigation from './Components/Navigation';
 import P5Canvas from './Components/P5Canvas';
 
 const App: React.FC = () => {
+  const sliderImagesFilm = [
+    { url: film1, title: 'Film 1' },
+    { url: film2, title: 'Film 2' },
+    { url: film3, title: 'Film 3' },
+    { url: film4, title: 'Film 4' }
+  ];
+  
+  const sliderImagesPhoto = [
+    { url: queen1, title: 'Queen 1' },
+    { url: photo2, title: 'Photo 2' },
+    { url: photo3, title: 'Photo 3' },
+    { url: photo4, title: 'Photo 4' },
+    { url: photo5, title: 'Photo 5' }
+  ];
+  
+  const sliderImagesInstallation = [
+    { url: installation, title: 'Installation' }
+  ];
   return (
     <Router>
-      <section id='top'></section>
-      <ScrollToTop />
       <Navigation />
       <P5Canvas />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/films" element={<Gallery title="films" images={sliderImagesFilm} />} />
+        <Route path="/photos" element={<Gallery title="photos" images={sliderImagesPhoto} />} />
+        <Route path="/installation" element={<Gallery title="installation" images={sliderImagesInstallation} />} />
+        <Route path="/about" element={<About />} />
         <Route path="/:title/:id" element={<Catalogue />} />
       </Routes>
     </Router>
@@ -42,41 +60,10 @@ const App: React.FC = () => {
 };
 
 const Home: React.FC = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    const hash = location.hash;
-    if (hash) {
-      const element = document.getElementById(hash.substring(1));
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  }, [location]);
-
-  const sliderImagesFilm = [film1, film2, film3, film4];
-  const sliderImagesPhoto = [queen1, photo2, photo3, photo4, photo5];
-  const sliderImagesInstallation = [installation];
-
   return (
-    <div>
-      <section id='home'>
-        <FirstPage />
-      </section>
-      <section id='films'>
-        <Gallery title="Films" images={sliderImagesFilm} />
-      </section>
-      <section id='photos'>
-        <Gallery title="Photos" images={sliderImagesPhoto} />
-      </section>
-      <section id='installation'>
-        <Gallery title="Installation" images={sliderImagesInstallation} />
-      </section>
-      <section id='about'>
-        <About/>
-      </section>
-      <Footer/>
-      
+    <div className={styles.App}>
+      <FirstPage />
+      <Footer />
     </div>
   );
 };

@@ -1,0 +1,12 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 100% высоты viewport */
+    background-color: #0d0d0d; /* Фоновый цвет */
+  }
+  img{
+    position: relative;
+    z-index: 3;
+  }

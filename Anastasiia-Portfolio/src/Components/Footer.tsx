@@ -23,9 +23,6 @@ const Footer: React.FC = () => {
           <FaLinkedin />
         </a>
       </div >
-      <p className={styles.credentials}>Website made by <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={styles.icon}>Maksym Pidluzhnyi
-        </a></p>
-        <p>2024</p>
     </footer>
   );
 };

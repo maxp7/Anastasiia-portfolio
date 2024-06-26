@@ -24,7 +24,7 @@ const P5Canvas: React.FC = () => {
         p.noFill();
         canvas = p.createCanvas(p.windowWidth, document.body.clientHeight-120);
         canvas.position(0, 0);
-        (canvas.elt as HTMLElement).style.zIndex = '2';
+        (canvas.elt as HTMLElement).style.zIndex = '1';
         p.strokeWeight(2);
       };
 

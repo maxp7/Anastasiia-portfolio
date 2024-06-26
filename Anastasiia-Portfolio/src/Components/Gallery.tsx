@@ -5,7 +5,7 @@ import Slider from './Slider';
 
 interface GalleryProps {
   title: string;
-  images: string[];
+  images: { url: string; title: string }[];
 }
 
 const Gallery: React.FC<GalleryProps> = ({ title, images }) => {

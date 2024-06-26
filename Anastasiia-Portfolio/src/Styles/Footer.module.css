@@ -2,8 +2,8 @@
 .footer {
     background-color: #0d0d0d;
     text-align: center;
-    position: relative;
     z-index: 3;
+    width: 100%;
   }
   
   .iconContainer {
