@@ -13,9 +13,16 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
+
+}
+*{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+img {
+  z-index: 3;
+  cursor: pointer;
+}
 

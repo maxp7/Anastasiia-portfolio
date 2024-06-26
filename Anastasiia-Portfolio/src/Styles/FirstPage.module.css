@@ -2,10 +2,40 @@
     height: 70dvh;
 }
 h1{
+    position: relative;
     font-size: 5rem;
     margin: 20% 2% 10%;
+    z-index: 3;
+    cursor:default;
 }
 h2{
     font-size: 3rem;
     margin: 0 2%;
+    position: relative;
+    z-index: 3;
+    cursor:default;
+}
+@media (max-width: 1096px) {
+    h1{
+        font-size: 3rem;
+    }
+    h2{
+        font-size: 1.5rem;
+    }
+    .container {
+        width: 100%;
+        height: 50vh;
+      }
+}
+@media (max-width: 768px) {
+    h1{
+        font-size: 2rem;
+    }
+    h2{
+        font-size: 1rem;
+    }
+    .container {
+        width: 100%;
+        height: 40vh;
+      }
 }

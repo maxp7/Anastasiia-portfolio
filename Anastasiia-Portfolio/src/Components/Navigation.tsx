@@ -47,11 +47,11 @@ const Navigation: React.FC = () => {
     <nav className={styles.nav}>
       <h1 className={styles.logo}>
         {isHomePage ? (
-          <ScrollLink to="top" smooth={true} duration={500} className={styles.navLink}>
+          <ScrollLink to="top" smooth={true} duration={500} className={styles.logo}>
             Vishnevska.com
           </ScrollLink>
         ) : (
-          <Link to="/" className={styles.navLink}>Vishnevska.com</Link>
+          <Link to="/" className={styles.logo}>Vishnevska.com</Link>
         )}
       </h1>
       <div className={styles.navLinks}>

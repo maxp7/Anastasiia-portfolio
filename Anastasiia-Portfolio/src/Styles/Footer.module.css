@@ -1,0 +1,38 @@
+/* src/Styles/Footer.module.css */
+.footer {
+    background-color: #0d0d0d;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+  }
+  
+  .iconContainer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .icon {
+    color: white;
+    font-size: 24px;
+    transition: color 0.3s ease;
+  }
+  
+  .icon:hover {
+    color: #5e6075; /* Change color on hover */
+  }
+  .credentials a{
+    font-size: 12px;
+  }
+  .credentials {
+    font-size: 12px;
+  }
+  @media (max-width: 1096px) {
+   
+}
+  @media (max-width: 768px) {
+    .footer{
+      position: relative;
+      bottom:0;
+    }
+}

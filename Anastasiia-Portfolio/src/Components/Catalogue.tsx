@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import Slider from './Slider';
 import CatalogueDescription from './CatalogueDescription';
+import styles from '../Styles/Catalogue.module.css'
 
 import film1 from '../assets/img/film1.jpg';
 import film2 from '../assets/img/film2.jpg';
@@ -100,9 +101,8 @@ const Catalogue: React.FC = () => {
   const images = imagesData[title][imageIndex];
 
   return (
-    <div>
+    <div className={styles.container} >
       <Slider images={images} />
-      <CatalogueDescription title={title} id={id} />
     </div>
   );
 };
