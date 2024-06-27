@@ -1,7 +1,8 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import Slider from './Slider';
 import styles from '../Styles/Catalogue.module.css';
+import '../Styles/fadeTransition.css';
 
 import film1 from '../assets/img/film1.jpg';
 import film2 from '../assets/img/film2.jpg';
@@ -65,98 +66,99 @@ import installation6 from '../assets/img/installation6.jpg';
 const imagesData: { [key: string]: { url: string, title?: string }[][] } = {
   films: [
     [
-      { url: film1, },
-      { url: film2,  },
-      { url: film3, },
-      { url: film4,  }
+      { url: film1, title: 'Film 1' },
+      { url: film2 },
+      { url: film3 },
+      { url: film4 }
     ],
     [
-      { url: film1,  },
-      { url: film2,  },
-      { url: film3, },
-      { url: film4,}
+      { url: film1, title: 'Film2' },
+      { url: film2 },
+      { url: film3 },
+      { url: film4 }
     ],
     [
-      { url: film1,  },
-      { url: film2, },
-      { url: film3,  },
-      { url: film4, }
+      { url: film1, title: 'Film3' },
+      { url: film2 },
+      { url: film3 },
+      { url: film4 }
     ],
     [
-      { url: film1, },
-      { url: film2,  },
-      { url: film3, },
-      { url: film4,  }
+      { url: film1, title: 'Film4' },
+      { url: film2 },
+      { url: film3 },
+      { url: film4 }
     ]
   ],
   photos: [
     [
-      { url: queen1, },
-      { url: queen2, },
-      { url: queen3,},
-      { url: queen4,  },
-      { url: queen5,  },
-      { url: queen6,  },
-      { url: queen7, },
-      { url: queen8, },
-      { url: queen9, }
+      { url: queen1, title: 'Queen' },
+      { url: queen2 },
+      { url: queen3 },
+      { url: queen4 },
+      { url: queen5 },
+      { url: queen6 },
+      { url: queen7 },
+      { url: queen8 },
+      { url: queen9 }
     ],
     [
-      { url: street1,  },
-      { url: street2,  },
-      { url: street4,   },
-      { url: street5, },
-      { url: street6, },
-      { url: street7, },
-      { url: street8,},
-      { url: street9,},
-      { url: street10,},
-      { url: street11,  },
-      { url: street12,  },
-      { url: street13,  },
-      { url: street14, }
+      { url: street1, title: 'Street' },
+      { url: street2 },
+      { url: street4 },
+      { url: street5 },
+      { url: street6 },
+      { url: street7 },
+      { url: street8 },
+      { url: street9 },
+      { url: street10 },
+      { url: street11 },
+      { url: street12 },
+      { url: street13 },
+      { url: street14 }
     ],
     [
-      { url: biene1, },
-      { url: biene2, },
-      { url: biene3,  },
-      { url: biene4,  },
-      { url: biene5, },
-      { url: biene6, }
+      { url: biene1, title: 'Biene' },
+      { url: biene2 },
+      { url: biene3 },
+      { url: biene4 },
+      { url: biene5 },
+      { url: biene6 }
     ],
     [
-      { url: portraits1,  },
-      { url: portraits2, },
-      { url: portraits3, },
-      { url: portraits4,  },
-      { url: portraits5,  },
-      { url: portraits6, },
-      { url: portraits7,  },
-      { url: portraits8,  }
+      { url: portraits1, title: 'Portraits' },
+      { url: portraits2 },
+      { url: portraits3 },
+      { url: portraits4 },
+      { url: portraits5 },
+      { url: portraits6 },
+      { url: portraits7 },
+      { url: portraits8 }
     ],
     [
-      { url: dejavu1,  },
-      { url: dejavu2,  },
-      { url: dejavu3, },
-      { url: dejavu4,  },
-      { url: dejavu5,  },
-      { url: dejavu6, }
+      { url: dejavu1, title: 'Dejavu' },
+      { url: dejavu2 },
+      { url: dejavu3 },
+      { url: dejavu4 },
+      { url: dejavu5 },
+      { url: dejavu6 }
     ]
   ],
   installation: [
     [
-      { url: installation1, },
-      { url: installation2,  },
-      { url: installation3,  },
-      { url: installation4,  },
-      { url: installation5,  },
-      { url: installation6,  }
+      { url: installation1, title: 'Tactile Music Interface' },
+      { url: installation2 },
+      { url: installation3 },
+      { url: installation4 },
+      { url: installation5 },
+      { url: installation6 }
     ]
   ]
 };
 
 const Catalogue: React.FC = () => {
   const { title, id } = useParams<{ title: string; id: string }>();
+  const [fade, setFade] = useState(false);
 
   if (!title || !id) {
     return <div>Invalid parameters</div>;
@@ -170,11 +172,20 @@ const Catalogue: React.FC = () => {
   }
 
   const images = imagesData[normalizedTitle][imageIndex];
+  const navigate = useNavigate();
+  const handleImageClick = () => {
+    setFade(true);
+    setTimeout(() => {
+      setFade(false);
+      navigate(`/${title}`); // reset fade state after navigation
+    }, 501); 
+    // duration of the fade-out animation
+  };
 
   return (
-    <div className={styles.container}>
-      <Slider images={images} />
-      <div>PIZDEC</div>
+    <div className={styles.catalogueContainer}>
+      <div className={` ${fade ? 'imageOverlayEnable' : 'imageOverlayDisable'}`} ></div>
+      <Slider images={images} onImageClick={handleImageClick} />
     </div>
   );
 };

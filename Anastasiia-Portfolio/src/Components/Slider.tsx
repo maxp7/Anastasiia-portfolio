@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import styles from '../Styles/Gallery.module.css';
+import styles from '../Styles/Slider.module.css';
 
 interface SliderProps {
   images: { url: string; title?: string }[];
@@ -11,12 +11,30 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick }) => {
 
   useEffect(() => {
     const slider = sliderRef.current;
-
     if (!slider) return;
+
+    let isScrolling = false;
+    let scrollAmount = 0;
 
     const handleWheel = (e: WheelEvent) => {
       e.preventDefault();
-      slider.scrollLeft += e.deltaY;
+      scrollAmount += e.deltaY ;
+
+      if (!isScrolling) {
+        isScrolling = true;
+        requestAnimationFrame(scroll);
+      }
+    };
+
+    const scroll = () => {
+      if (Math.abs(scrollAmount) > 1) {
+        slider.scrollLeft += scrollAmount * 0.1;
+        scrollAmount *= 0.9;
+        requestAnimationFrame(scroll);
+      } else {
+        isScrolling = false;
+        scrollAmount = 0;
+      }
     };
 
     slider.addEventListener('wheel', handleWheel);
@@ -33,7 +51,7 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick }) => {
   };
 
   return (
-    <div ref={sliderRef} className={styles.slider}>
+    <div  ref={sliderRef} className={styles.slider}>
       {images.map((image, index) => (
         <div key={index} className={styles.imageContainer}>
           <img 

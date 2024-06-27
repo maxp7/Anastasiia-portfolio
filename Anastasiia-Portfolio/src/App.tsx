@@ -4,7 +4,6 @@ import styles from './App.module.css';
 import Gallery from './Components/Gallery';
 import Catalogue from './Components/Catalogue';
 import Footer from './Components/Footer'; 
-import Slider from './Components/Slider';
 import Navigation from './Components/Navigation';
 
 import film1 from './assets/img/film1.jpg';
@@ -22,7 +21,6 @@ import installation from './assets/img/installation.png';
 
 import FirstPage from './Components/FirstPage';
 import About from './Components/About';
-import P5Canvas from './Components/P5Canvas';
 
 const App: React.FC = () => {
   const sliderImagesFilm = [
@@ -46,7 +44,6 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/films" element={<Gallery title="films" images={sliderImagesFilm} />} />
@@ -62,7 +59,7 @@ const App: React.FC = () => {
 const Home: React.FC = () => {
   return (
     <div className={styles.App}>
-      <P5Canvas />
+      <Navigation />
       <FirstPage />
       <Footer />
     </div>

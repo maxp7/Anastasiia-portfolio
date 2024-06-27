@@ -1,0 +1,26 @@
+
+ 
+
+  .imageOverlayEnable {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:#1c1c1c; /* semi-transparent overlay */
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 5;
+  }
+  .imageOverlayDisable {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:#1c1c1c; /* semi-transparent overlay */
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    z-index: 3;
+  }
+  

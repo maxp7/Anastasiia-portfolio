@@ -1,0 +1,45 @@
+
+  
+  .slider {
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden; 
+    overflow-x: auto; 
+    white-space: nowrap; 
+  }
+  
+  .slider img {
+    height: 73vh; 
+  }
+  .title{
+    margin: 1% 2%;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .catalogueContainer > .title  {
+    display: flex;
+    position: absolute;
+    left: 0px;
+  }
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+  section:nth-child(4){
+    padding-top: 50px;
+  }
+ section:nth-child(4) img{
+    margin: 0 auto;
+    height: 70dvh;
+  }
+
+  
+  @media (max-width: 1096px) {
+    
+    section:nth-child(4) img{
+      margin: 0 auto;
+      height: 50dvh;
+    }
+}
+  @media (max-width: 768px) {
+  
+}

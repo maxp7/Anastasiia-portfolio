@@ -3,10 +3,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* 100% высоты viewport */
-    background-color: #242323; /* Фоновый цвет */
+    height: 100vh;
+    background-color: #242323; 
   }
   img{
     position: relative;
     z-index: 3;
+    max-height: 100%;
   }

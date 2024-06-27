@@ -1,5 +1,6 @@
 .container{
 height: 100%;
+width: 100%;
     
 }
 h1{
@@ -17,26 +18,8 @@ h2{
     cursor:default;
 }
 @media (max-width: 1096px) {
-    h1{
-        font-size: 3rem;
-    }
-    h2{
-        font-size: 1.5rem;
-    }
-    .container {
-        width: 100%;
-        height: 50vh;
-      }
+
 }
 @media (max-width: 768px) {
-    h1{
-        font-size: 2rem;
-    }
-    h2{
-        font-size: 1rem;
-    }
-    .container {
-        width: 100%;
-        height: 40vh;
-      }
+  
 }

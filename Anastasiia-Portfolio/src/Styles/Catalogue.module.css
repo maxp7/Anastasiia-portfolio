@@ -1,21 +1,18 @@
-.container{
-  display: flex;
-  flex-direction: column;
+.catalogueContainer > div >div >div{
+  position: absolute;
+  margin: 1vh 1.5vh 0;
 }
-.container h1{
-  margin: 2%;
+.catalogueContainer > div > div > img {
+  height: 90vh;
 }
-.container p{
-  margin: 2%;
+.catalogueContainer > div > div  {
+  margin: 2vh 0 0 2vh;
 }
-.container img{
-    cursor: default;
-}
+
+
+
 @media (max-width: 1096px) {
    
 }
 @media (max-width: 768px) {
-  .container{
-    height: 80vh;
-  }  
 }
