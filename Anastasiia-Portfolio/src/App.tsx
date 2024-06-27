@@ -6,16 +6,14 @@ import Catalogue from './Components/Catalogue';
 import Footer from './Components/Footer'; 
 import Navigation from './Components/Navigation';
 
-import film1 from './assets/img/film1.jpg';
-import film2 from './assets/img/film2.jpg';
-import film3 from './assets/img/film3.jpg';
-import film4 from './assets/img/film4.jpg';
-
-import queen1 from './assets/img/queen9.jpg';
-import photo2 from './assets/img/photo2.jpg';
-import photo3 from './assets/img/photo3.jpg';
-import photo4 from './assets/img/photo4.jpg';
-import photo5 from './assets/img/photo5.jpg';
+import recording from './assets/img/0.jpg';
+import ohrwurm from './assets/img/1.jpg';
+import erwachen from './assets/img/2.jpg';
+import rueckenwind from './assets/img/3.jpg';
+import kroshka from './assets/img/4.jpg'
+import derossi from './assets/img/5.jpg'
+import ichSehe from './assets/img/6.jpg'
+import nature from './assets/img/7.jpg'
 
 import installation from './assets/img/installation.png';
 
@@ -24,22 +22,21 @@ import About from './Components/About';
 
 const App: React.FC = () => {
   const sliderImagesFilm = [
-    { url: film1, title: 'Film 1' },
-    { url: film2, title: 'Film 2' },
-    { url: film3, title: 'Film 3' },
-    { url: film4, title: 'Film 4' }
+    { url: recording, title: 'Recording377' },
+    { url: ohrwurm, title: 'Ohrwurm' },
+    { url: erwachen, title: 'Erwachen' },
+    { url: rueckenwind, title: 'Rückenwind' },
+    { url: kroshka, title: 'Kroshka' },
+    { url: derossi, title: 'A.Derossi' }
   ];
 
   const sliderImagesPhoto = [
-    { url: queen1, title: 'Queen 1' },
-    { url: photo2, title: 'Photo 2' },
-    { url: photo3, title: 'Photo 3' },
-    { url: photo4, title: 'Photo 4' },
-    { url: photo5, title: 'Photo 5' }
+    { url: ichSehe, title: 'Ich sehe' },
+    { url: nature, title: 'Nature' }
   ];
 
   const sliderImagesInstallation = [
-    { url: installation, title: 'Installation' }
+    { url: installation, title: 'Tactile Music Interfaces' }
   ];
 
   return (

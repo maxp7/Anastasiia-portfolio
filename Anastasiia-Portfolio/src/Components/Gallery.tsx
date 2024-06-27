@@ -19,7 +19,7 @@ const Gallery: React.FC<GalleryProps> = ({ title, images }) => {
     setTimeout(() => {     
       setFade(false);
       navigate(`/${title}/${index}`); // reset fade state after navigation
-    }, 501); // duration of the fade-out animation
+    }, 1000); // duration of the fade-out animation
   };
 
   return (

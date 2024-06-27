@@ -4,57 +4,69 @@ import Slider from './Slider';
 import styles from '../Styles/Catalogue.module.css';
 import '../Styles/fadeTransition.css';
 
-import film1 from '../assets/img/film1.jpg';
-import film2 from '../assets/img/film2.jpg';
-import film3 from '../assets/img/film3.jpg';
-import film4 from '../assets/img/film4.jpg';
+import recording1 from '../assets/img/0.1.jpg';
+import recording2 from '../assets/img/0.2.jpg';
+import recording3 from '../assets/img/0.3.jpg';
+import recording4 from '../assets/img/0.4.jpg';
+import recording5 from '../assets/img/0.5.jpg';
+import recording6 from '../assets/img/0.6.jpg';
+import recording7 from '../assets/img/0.7.jpg';
+import recording8 from '../assets/img/0.8.jpg';
 
-import queen1 from '../assets/img/queen1.jpg';
-import queen2 from '../assets/img/queen2.jpg';
-import queen3 from '../assets/img/queen3.jpg';
-import queen4 from '../assets/img/queen4.jpg';
-import queen5 from '../assets/img/queen5.jpg';
-import queen6 from '../assets/img/queen6.jpg';
-import queen7 from '../assets/img/queen7.jpg';
-import queen8 from '../assets/img/queen8.jpg';
-import queen9 from '../assets/img/queen9.jpg';
+import ohrwurm1 from '../assets/img/1.1.jpg'
+import ohrwurm2 from '../assets/img/1.2.jpg'
+import ohrwurm3 from '../assets/img/1.3.jpg'
+import ohrwurm4 from '../assets/img/1.4.jpg'
+import ohrwurm5 from '../assets/img/1.5.jpg'
+import ohrwurm6 from '../assets/img/1.6.jpg'
+import ohrwurm7 from '../assets/img/1.7.jpg'
 
-import street1 from '../assets/img/street1.jpg';
-import street2 from '../assets/img/street2.jpg';
-import street4 from '../assets/img/street4.jpg';
-import street5 from '../assets/img/street5.jpg';
-import street6 from '../assets/img/street6.jpg';
-import street7 from '../assets/img/street7.jpg';
-import street8 from '../assets/img/street8.jpg';
-import street9 from '../assets/img/street9.jpg';
-import street10 from '../assets/img/street10.jpg';
-import street11 from '../assets/img/street11.jpg';
-import street12 from '../assets/img/street12.jpg';
-import street13 from '../assets/img/street13.jpg';
-import street14 from '../assets/img/street14.jpg';
+import erwachen1 from '../assets/img/2.1.jpg'
+import erwachen2 from '../assets/img/2.2.jpg'
+import erwachen3 from '../assets/img/2.3.jpg'
+import erwachen4 from '../assets/img/2.4.png'
+import erwachen5 from '../assets/img/2.5.jpg'
+import erwachen6 from '../assets/img/2.6.jpg'
 
-import biene1 from '../assets/img/biene1.jpg';
-import biene2 from '../assets/img/biene2.jpg';
-import biene3 from '../assets/img/biene3.jpg';
-import biene4 from '../assets/img/biene4.jpg';
-import biene5 from '../assets/img/biene5.jpg';
-import biene6 from '../assets/img/biene6.jpg';
+import rueckenwind1 from '../assets/img/3.1.jpg'
+import rueckenwind2 from '../assets/img/3.2.jpg'
+import rueckenwind3 from '../assets/img/3.3.jpg'
+import rueckenwind4 from '../assets/img/3.4.jpg'
+import rueckenwind5 from '../assets/img/3.5.jpg'
 
-import portraits1 from '../assets/img/portraits1.jpg';
-import portraits2 from '../assets/img/portraits2.jpg';
-import portraits3 from '../assets/img/portraits3.jpg';
-import portraits4 from '../assets/img/portraits4.jpg';
-import portraits5 from '../assets/img/portraits5.jpg';
-import portraits6 from '../assets/img/portraits6.jpg';
-import portraits7 from '../assets/img/portraits7.jpg';
-import portraits8 from '../assets/img/portraits8.jpg';
+import kroshka1 from '../assets/img/4.1.jpg'
+import kroshka2 from '../assets/img/4.2.jpg'
+import kroshka3 from '../assets/img/4.3.jpg'
+import kroshka4 from '../assets/img/4.4.jpg'
+import kroshka5 from '../assets/img/4.5.jpg'
+import kroshka6 from '../assets/img/4.6.jpg'
+import kroshka7 from '../assets/img/4.7.jpg'
 
-import dejavu1 from '../assets/img/dejavu1.jpg';
-import dejavu2 from '../assets/img/dejavu2.jpg';
-import dejavu3 from '../assets/img/dejavu3.jpg';
-import dejavu4 from '../assets/img/dejavu4.jpg';
-import dejavu5 from '../assets/img/dejavu5.jpg';
-import dejavu6 from '../assets/img/dejavu6.jpg';
+import derossi1 from '../assets/img/5.1.jpg'
+import derossi2 from '../assets/img/5.2.jpg'
+import derossi3 from '../assets/img/5.3.jpg'
+import derossi4 from '../assets/img/5.4.jpg'
+
+import ichSehe1 from '../assets/img/6.jpg'
+import ichSehe2 from '../assets/img/6.1.jpg'
+import ichSehe3 from '../assets/img/6.2.jpg'
+import ichSehe4 from '../assets/img/6.3.jpg'
+import ichSehe5 from '../assets/img/6.4.jpg'
+import ichSehe6 from '../assets/img/6.5.jpg'
+import ichSehe7 from '../assets/img/6.6.jpg'
+
+import nature1 from '../assets/img/7.jpg'
+import nature2 from '../assets/img/7.1.jpg'
+import nature3 from '../assets/img/7.2.jpg'
+import nature4 from '../assets/img/7.3.jpg'
+import nature5 from '../assets/img/7.4.jpg'
+import nature6 from '../assets/img/7.5.jpg'
+import nature7 from '../assets/img/7.6.jpg'
+import nature8 from '../assets/img/7.7.jpg'
+import nature9 from '../assets/img/7.8.jpg'
+import nature10 from '../assets/img/7.9.jpg'
+import nature11 from '../assets/img/7.10.jpg'
+import nature12 from '../assets/img/7.11.jpg'
 
 import installation1 from '../assets/img/installation1.jpg';
 import installation2 from '../assets/img/installation2.jpg';
@@ -63,86 +75,87 @@ import installation4 from '../assets/img/installation4.jpg';
 import installation5 from '../assets/img/installation5.jpg';
 import installation6 from '../assets/img/installation6.jpg';
 
+
+
+
 const imagesData: { [key: string]: { url: string, title?: string }[][] } = {
   films: [
     [
-      { url: film1, title: 'Film 1' },
-      { url: film2 },
-      { url: film3 },
-      { url: film4 }
+      { url: recording1, title: 'Recording 377' },
+      { url: recording2 },
+      { url: recording3 },
+      { url: recording4 },
+      { url: recording5 },
+      { url: recording6 },
+      { url: recording7 },
+      { url: recording8 }
     ],
     [
-      { url: film1, title: 'Film2' },
-      { url: film2 },
-      { url: film3 },
-      { url: film4 }
+      { url: ohrwurm1, title: 'Ohrwurm' },
+      { url: ohrwurm2 },
+      { url: ohrwurm3 },
+      { url: ohrwurm4 },
+      { url: ohrwurm5 },
+      { url: ohrwurm6 },
+      { url: ohrwurm7 }
     ],
     [
-      { url: film1, title: 'Film3' },
-      { url: film2 },
-      { url: film3 },
-      { url: film4 }
+      { url: erwachen1, title: 'Erwachen' },
+      { url: erwachen2 },
+      { url: erwachen3 },
+      { url: erwachen4 },
+      { url: erwachen5 },
+      { url: erwachen6 },
     ],
     [
-      { url: film1, title: 'Film4' },
-      { url: film2 },
-      { url: film3 },
-      { url: film4 }
+      { url: rueckenwind1, title: 'Rückenwind' },
+      { url: rueckenwind2 },
+      { url: rueckenwind3 },
+      { url: rueckenwind4 },
+      { url: rueckenwind5 }
+    ],
+    [
+      { url: kroshka1, title: 'Kroshka' },
+      { url: kroshka2 },
+      { url: kroshka3 },
+      { url: kroshka4 },
+      { url: kroshka5 },
+      { url: kroshka6 },
+      { url: kroshka7 }
+    ],
+    [
+      { url: derossi1, title: 'A.Derossi' },
+      { url: derossi2 },
+      { url: derossi3 },
+      { url: derossi4 }
     ]
   ],
   photos: [
     [
-      { url: queen1, title: 'Queen' },
-      { url: queen2 },
-      { url: queen3 },
-      { url: queen4 },
-      { url: queen5 },
-      { url: queen6 },
-      { url: queen7 },
-      { url: queen8 },
-      { url: queen9 }
+      { url: ichSehe1, title: 'Ich Sehe' },
+      { url: ichSehe2 },
+      { url: ichSehe3 },
+      { url: ichSehe4 },
+      { url: ichSehe5 },
+      { url: ichSehe6 },
+      { url: ichSehe7 }
     ],
     [
-      { url: street1, title: 'Street' },
-      { url: street2 },
-      { url: street4 },
-      { url: street5 },
-      { url: street6 },
-      { url: street7 },
-      { url: street8 },
-      { url: street9 },
-      { url: street10 },
-      { url: street11 },
-      { url: street12 },
-      { url: street13 },
-      { url: street14 }
-    ],
-    [
-      { url: biene1, title: 'Biene' },
-      { url: biene2 },
-      { url: biene3 },
-      { url: biene4 },
-      { url: biene5 },
-      { url: biene6 }
-    ],
-    [
-      { url: portraits1, title: 'Portraits' },
-      { url: portraits2 },
-      { url: portraits3 },
-      { url: portraits4 },
-      { url: portraits5 },
-      { url: portraits6 },
-      { url: portraits7 },
-      { url: portraits8 }
-    ],
-    [
-      { url: dejavu1, title: 'Dejavu' },
-      { url: dejavu2 },
-      { url: dejavu3 },
-      { url: dejavu4 },
-      { url: dejavu5 },
-      { url: dejavu6 }
+      { url: nature1, title: 'Nature' },
+      { url: nature2 },
+      { url: nature3 },
+      { url: nature4 },
+      { url: nature5 },
+      { url: nature6 },
+      { url: nature7 },
+      { url: nature8 },
+      { url: nature9 },
+      { url: nature10 },
+      { url: nature11 },
+      { url: nature12 }
+
     ]
+  
   ],
   installation: [
     [
@@ -178,7 +191,7 @@ const Catalogue: React.FC = () => {
     setTimeout(() => {
       setFade(false);
       navigate(`/${title}`); // reset fade state after navigation
-    }, 501); 
+    }, 1000); 
     // duration of the fade-out animation
   };
 

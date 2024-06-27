@@ -10,9 +10,9 @@ const Navigation: React.FC = () => {
   const handleClick = (path: string) => {
     setFade(true);
     setTimeout(() => {
-      navigate(path);
       setFade(false);
-    }, 300); 
+      navigate(path);
+    }, 1000); 
   };
 
   return (
