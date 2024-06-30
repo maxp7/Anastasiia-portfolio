@@ -1,6 +1,6 @@
 // src/Components/Footer.tsx
 import React from 'react';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaGoogleDrive, FaMailBulk, FaMailchimp, FaTelegram, FaPhone } from 'react-icons/fa';
+import {  FaInstagram, FaLinkedin,FaMailBulk, FaTelegram, FaPhone } from 'react-icons/fa';
 import styles from '../Styles/Footer.module.css';
 
 const Footer: React.FC = () => {

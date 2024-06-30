@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Slider from './Slider';
 import styles from '../Styles/Catalogue.module.css';
-import '../Styles/fadeTransition.css';
-
 import recording1 from '../assets/img/0.1.jpg';
 import recording2 from '../assets/img/0.2.jpg';
 import recording3 from '../assets/img/0.3.jpg';
@@ -171,8 +169,7 @@ const imagesData: { [key: string]: { url: string, title?: string }[][] } = {
 
 const Catalogue: React.FC = () => {
   const { title, id } = useParams<{ title: string; id: string }>();
-  const [fade, setFade] = useState(false);
-
+  
   if (!title || !id) {
     return <div>Invalid parameters</div>;
   }
@@ -187,17 +184,12 @@ const Catalogue: React.FC = () => {
   const images = imagesData[normalizedTitle][imageIndex];
   const navigate = useNavigate();
   const handleImageClick = () => {
-    setFade(true);
-    setTimeout(() => {
-      setFade(false);
-      navigate(`/${title}`); // reset fade state after navigation
-    }, 1000); 
-    // duration of the fade-out animation
+      navigate(`/${title}`); 
   };
 
   return (
     <div className={styles.catalogueContainer}>
-      <div className={` ${fade ? 'imageOverlayEnable' : 'imageOverlayDisable'}`} ></div>
+         
       <Slider images={images} onImageClick={handleImageClick} />
     </div>
   );

@@ -5,16 +5,14 @@
     flex-direction: row;
     overflow-y: hidden; 
     overflow-x: auto; 
-    white-space: nowrap; 
     margin: 0 1vh;
   }
-  
+ 
   .slider img {
     height: 73vh; 
   }
   .title{
     margin: 1% 2%;
-    font-size: 20px;
     font-weight: 600;
   }
   .catalogueContainer > .title  {
@@ -32,14 +30,61 @@
     margin: 0 auto;
     height: 70dvh;
   }
+  .infoPanelEnable{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    margin: 0 !important;
+    right: 0;
+    height: 92vh;
+    width: 30vw;
+    background-color: #1c1c1c;
+    z-index: 5;
+}
 
-  
-  @media (max-width: 1096px) {
-    
+.infoPanelEnable p{
+  margin: 2%;
+  font-size: 22px;
+}
+.infoPanelDisable{
+    display: none !important;
+}
+  @media (max-width: 900px) {
+    .slider{
+      flex-direction: column;
+    }
+    .slider img {
+      height: 72vw; 
+    }
     section:nth-child(4) img{
       margin: 0 auto;
       height: 50dvh;
     }
+    .infoPanelEnable{
+      display: flex;
+      flex-direction: column !important;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: flex-start;
+      position: sticky;
+      margin: 6vh 0 0 0 !important;
+      top: 0;
+      right: 0;
+      height: 92vh;
+      width: 100vw;
+      background-color: #1c1c1c;
+      z-index: 5;
+      word-wrap: break-word;
+  }
+   .slider > div{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  
 }
   @media (max-width: 768px) {
   

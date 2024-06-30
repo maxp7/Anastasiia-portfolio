@@ -1,23 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import styles from '../Styles/Navigation.module.css';
-
 const Navigation: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const [fade, setFade] = useState(false);
 
   const handleClick = (path: string) => {
-    setFade(true);
-    setTimeout(() => {
-      setFade(false);
       navigate(path);
-    }, 1000); 
   };
 
+  
   return (
     <nav className={styles.nav}>
-      <div className={` ${fade ? 'imageOverlayEnable' : 'imageOverlayDisable'}`} ></div>
       <div className={styles.navLinks}>
         <div
           className={`${styles.navLink} ${location.pathname === '/' ? styles.active : ''}`}

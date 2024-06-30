@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route,  useLocation} from 'react-router-dom';
 import styles from './App.module.css';
 import Gallery from './Components/Gallery';
 import Catalogue from './Components/Catalogue';
@@ -21,8 +22,9 @@ import FirstPage from './Components/FirstPage';
 import About from './Components/About';
 
 const App: React.FC = () => {
+  
   const sliderImagesFilm = [
-    { url: recording, title: 'Recording377' },
+    { url: recording, title: 'Recording 377' },
     { url: ohrwurm, title: 'Ohrwurm' },
     { url: erwachen, title: 'Erwachen' },
     { url: rueckenwind, title: 'Rückenwind' },
@@ -55,7 +57,8 @@ const App: React.FC = () => {
 
 const Home: React.FC = () => {
   return (
-    <div className={styles.App}>
+    
+    <div className={styles.App}>   
       <Navigation />
       <FirstPage />
       <Footer />
