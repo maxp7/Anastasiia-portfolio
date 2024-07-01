@@ -5,7 +5,7 @@
 }
 .gallerySlider img {
   height: 75vh; 
-  margin: 0 2vh;
+  margin: 0 1vh 0 2vh;
 }
 .galleryTitle{
   margin: 1vh 2vh;
@@ -24,9 +24,16 @@
     .gallerySlider img {
       max-width: 100%;
       max-height: 72vw;
+      margin: 0 1vh;
     }
     .gallerySlider > div{
       display: flex;
       flex-direction: column;
     }
+}
+@media (max-width: 450px) {
+  .gallerySlider img{
+    width: 95vw;
+    height: auto;
+  }
 }

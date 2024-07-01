@@ -22,9 +22,11 @@
 @keyframes slide-left {
   from {
     right: -45vh;
+    opacity: 0;
   }
   to {
     right: 0;
+    opacity: 1;
   }
 }
 
@@ -86,17 +88,23 @@
       overflow-x: hidden;
       overflow-y: hidden;
       animation: slide-top 1s;
+      opacity: 1;
   }
   @keyframes slide-top{
     from {
       top: 100vh;
+      opacity: 0;
     }
     to {
       top: 0;
+      opacity: 1;
     }
   }
-  
-  
-  
 }
 
+@media (max-width: 450px) {
+  .slider img{
+    width: 95vw;
+    height: auto;
+  }
+  }

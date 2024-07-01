@@ -5,7 +5,7 @@ const Navigation: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [buttonPressed, setButtonPressed] = useState(false);
-  const [buttonReleased, setbuttonReleased] = useState(false);
+
 
   const handleClick = (path: string) => {
       navigate(path);
@@ -16,10 +16,10 @@ const Navigation: React.FC = () => {
       setButtonPressed(true);
     }
   }
-  console.log(buttonReleased);
   return (
     <nav className={styles.nav}>
       <div className={styles.navLinks}>
+        
       <div
           className={`${buttonPressed ? styles.linkActive : styles.linkInactive} ${buttonPressed ? styles.buttonPressed : styles.buttonReleased}`}
           onClick={() => buttonPressedHandler(true)}
@@ -56,7 +56,9 @@ const Navigation: React.FC = () => {
         >
           About
         </div>
+        <div className= {`${buttonPressed ? styles.planeActive: styles.planeInactive}`}></div>
       </div>
+      
     </nav>
   );
 };

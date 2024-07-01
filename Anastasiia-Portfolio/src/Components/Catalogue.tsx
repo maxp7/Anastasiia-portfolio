@@ -190,7 +190,6 @@ const Catalogue: React.FC = () => {
 
   return (
     <div className={styles.catalogueContainer}>
-         
       <Slider images={images} onImageClick={handleImageClick} sliderClassName={styles.catalogueSlider} titleClassName={styles.catalogueTitle} />
     </div>
   );
