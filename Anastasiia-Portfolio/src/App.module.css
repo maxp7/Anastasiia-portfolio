@@ -5,9 +5,12 @@
     align-items: center;
     height: 100vh;
     background-color: #242323; 
+
   }
   img{
     position: relative;
     z-index: 3;
     max-height: 100%;
   }
+
+

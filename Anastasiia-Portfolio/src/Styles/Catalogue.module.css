@@ -1,11 +1,11 @@
 
 .catalogueSlider{
   display: flex;
-    flex-direction: row; 
-    overflow-x: auto; 
+  flex-direction: row; 
+  overflow-x: hidden;
 }
 .catalogueSlider img {
-  height: 90vh; 
+  height: 89vh; 
   margin: 2vh 2vh 0 2vh;
 }
 .catalogueTitle{
@@ -66,5 +66,9 @@
     border: solid rgb(153, 150, 150) 1px;
     border-radius: 30px;
     z-index: 5;
+  }
+  .catalogueSlider > div{
+    display: flex;
+    flex-direction: column-reverse;
   }
 }

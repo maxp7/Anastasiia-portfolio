@@ -14,22 +14,14 @@
     right: 0;
     top: 0;
     height: 92vh;
-    width: 38vh;
+    width: 45vh;
     background-color: #1c1c1c;
     z-index: 5;
     animation:slide-left 1s ;
 }
 @keyframes slide-left {
   from {
-    right: -38vh;
-  }
-  to {
-    right: 0;
-  }
-}
-@keyframes slide-right {
-  from {
-    right: -38vh;
+    right: -45vh;
   }
   to {
     right: 0;
@@ -39,7 +31,11 @@
 
 .infoPanelEnable p{
   margin: 2%;
-  font-size: 22px;
+  font-size: 18px;
+}
+.infoPanelEnable h1{
+  margin: 5% 2%;
+  font-size: 24px;
 }
 .infoPanelDisable{
     display: flex;
@@ -55,7 +51,6 @@
     width: 38vh;
     background-color: #1c1c1c;
     z-index: 5;
-    animation:slide-right 1s;
 }
 
   @media (max-width: 900px) {
@@ -90,12 +85,18 @@
       background-color: #1c1c1c;
       overflow-x: hidden;
       overflow-y: hidden;
+      animation: slide-top 1s;
   }
-   .slider > div{
-    display: flex;
-    flex-direction: column-reverse;
+  @keyframes slide-top{
+    from {
+      top: 100vh;
+    }
+    to {
+      top: 0;
+    }
   }
-
+  
+  
   
 }
 
