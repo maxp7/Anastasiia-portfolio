@@ -6,7 +6,7 @@
 }
 .catalogueSlider img {
   height: 89vh; 
-  margin: 2vh 2vh 0 2vh;
+  margin: 2vh 1vh 0 2vh;
 }
 .catalogueTitle{
   position: absolute;
@@ -41,7 +41,7 @@
   }
   .catalogueSlider img{
     max-width: 100%;
-    max-height: 70vw;
+    max-height: auto;
   }
   .catalogueTitle{
     display: flex;
@@ -74,6 +74,7 @@
 }
 @media (max-width: 450px) {
   .catalogueSlider img{
+    margin: 2vh 2vh 0 1vh;
     width: 95vw;
     height: auto;
   }
