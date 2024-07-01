@@ -39,7 +39,7 @@
   
 }
 
-.navLink {
+.linkDeactive{
   font-size: 16px;
   color: white;
   text-decoration: none;
@@ -50,8 +50,8 @@
   border-radius: 30px;
 }
 
-.navLink:hover,
-.navLink.active {
+.linkDeactive:hover,
+.linkDeactive.active {
   cursor: pointer;
   background-color: white;
   color: black;
@@ -61,9 +61,43 @@
   text-decoration: none;
   color: white; 
 }
-
-@media (max-width: 1096px) {
+.linkInactive{
+  display: none;
+}
+@media (max-width: 900px) {
+  .navLinks{
+    display: flex;
+    flex-direction: column;
+  }
+  .navLink{
+    margin: 0.5vh;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    opacity: 1;
+    padding: 1% 0 1% 5%;
+    border: solid rgb(153, 150, 150) 1px;
+    border-radius: 30px;
+  }
+  .linkInactive{
+    display: flex;
+  }
+  .linkDeactive{
+    display: none;
+  }
   
+  .buttonPressed{
+    display: none;
+    }
+    .buttonReleased{
+      font-size: 16px;
+      color: white;
+      text-decoration: none;
+      opacity: 1;
+      padding: 1% 0 1% 5%;
+      border: solid rgb(153, 150, 150) 1px;
+      border-radius: 30px;
+      }
 }
 
 @media (max-width: 768px) {

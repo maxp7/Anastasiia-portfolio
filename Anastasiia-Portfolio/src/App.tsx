@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route,  useLocation} from 'react-router-dom';
 import styles from './App.module.css';
 import Gallery from './Components/Gallery';

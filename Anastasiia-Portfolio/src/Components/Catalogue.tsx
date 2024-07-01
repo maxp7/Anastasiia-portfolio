@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Slider from './Slider';
 import styles from '../Styles/Catalogue.module.css';
+
 import recording1 from '../assets/img/0.1.jpg';
 import recording2 from '../assets/img/0.2.jpg';
 import recording3 from '../assets/img/0.3.jpg';
@@ -190,7 +191,7 @@ const Catalogue: React.FC = () => {
   return (
     <div className={styles.catalogueContainer}>
          
-      <Slider images={images} onImageClick={handleImageClick} />
+      <Slider images={images} onImageClick={handleImageClick} sliderClassName={styles.catalogueSlider} titleClassName={styles.catalogueTitle} />
     </div>
   );
 };

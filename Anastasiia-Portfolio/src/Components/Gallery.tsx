@@ -17,7 +17,7 @@ const Gallery: React.FC<GalleryProps> = ({ title, images }) => {
   return (
     <div className={styles.galleryContainer}>
       <Navigation />
-      <Slider images={images} onImageClick={handleImageClick} />
+      <Slider images={images} onImageClick={handleImageClick} sliderClassName={styles.gallerySlider} titleClassName={styles.galleryTitle} />
     </div>
   );
 };
