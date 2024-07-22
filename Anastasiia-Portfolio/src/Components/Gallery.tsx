@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import styles from '../Styles/Gallery.module.css';
 import Slider from './Slider';
 import Navigation from './Navigation';
+
 interface GalleryProps {
   title: string;
   images: { url: string; title: string }[];

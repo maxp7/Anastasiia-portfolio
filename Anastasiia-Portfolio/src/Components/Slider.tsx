@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from '../Styles/Slider.module.css';
 
+
 interface SliderProps {
   images: { url: string; title?: string }[];
   onImageClick?: (index: number) => void;
@@ -21,32 +22,36 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
     let scrollAmount = 0;
 
     const handleWheel = (e: WheelEvent) => {
-      e.preventDefault();
-      scrollAmount += e.deltaY;
+        if (Math.abs(e.deltaX) > 0 || Math.abs(e.deltaY) < Math.abs(e.deltaX)) {
+            return; 
+        }
 
-      if (!isScrolling) {
-        isScrolling = true;
-        requestAnimationFrame(scroll);
-      }
+        e.preventDefault();
+        scrollAmount += e.deltaY;
+
+        if (!isScrolling) {
+            isScrolling = true;
+            requestAnimationFrame(scroll);
+        }
     };
 
     const scroll = () => {
-      if (Math.abs(scrollAmount) > 1) {
-        slider.scrollLeft += scrollAmount * 0.1;
-        scrollAmount *= 0.9;
-        requestAnimationFrame(scroll);
-      } else {
-        isScrolling = false;
-        scrollAmount = 0;
-      }
+        if (Math.abs(scrollAmount) > 1) {
+            slider.scrollLeft += scrollAmount * 0.1;
+            scrollAmount *= 0.9;
+            requestAnimationFrame(scroll);
+        } else {
+            isScrolling = false;
+            scrollAmount = 0;
+        }
     };
 
     slider.addEventListener('wheel', handleWheel);
 
     return () => {
-      slider.removeEventListener('wheel', handleWheel);
+        slider.removeEventListener('wheel', handleWheel);
     };
-  }, []);
+}, []);
 
   const handleClick = (index: number) => {
     if (onImageClick) {
@@ -67,7 +72,7 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
   };
 
   return (
-    <div ref={sliderRef} className={`${styles.slider} ${sliderClassName} ${infoPanelVisible ? styles.scrollDisable : styles.scrollEnable} `}>
+    <div ref={sliderRef} className={`${styles.slider} ${sliderClassName} ${infoPanelVisible ? styles.scrollDisable : styles.scrollEnable}`}>
       {images.map((image, index) => (
         <div key={index} className={styles.imageContainer}>
           <img
@@ -81,7 +86,8 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
             <div className={`${styles.title} ${titleClassName}`}>
               <div>{image.title}</div>
               <div className={styles.infoButton}>
-                <button onClick={() => handleInfoButtonClick(image)}>Info</button>
+              <button>Watch the film</button>
+                <button onClick={() => handleInfoButtonClick(image)}>Info</button>         
               </div>
             </div>
           )}

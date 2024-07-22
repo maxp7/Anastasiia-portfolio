@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Slider from './Slider';
+import Navigation from './Navigation';
 import styles from '../Styles/Catalogue.module.css';
 
 import recording1 from '../assets/img/0.1.jpg';
@@ -80,7 +81,7 @@ import installation6 from '../assets/img/installation6.jpg';
 const imagesData: { [key: string]: { url: string, title?: string }[][] } = {
   films: [
     [
-      { url: recording1, title: 'Recording 377' },
+      { url: recording1, title: 'RECORDING 377' },
       { url: recording2 },
       { url: recording3 },
       { url: recording4 },
@@ -90,6 +91,14 @@ const imagesData: { [key: string]: { url: string, title?: string }[][] } = {
       { url: recording8 }
     ],
     [
+      { url: erwachen1, title: 'Erwachen' },
+      { url: erwachen2 },
+      { url: erwachen3 },
+      { url: erwachen4 },
+      { url: erwachen5 },
+      { url: erwachen6 },
+    ],
+    [
       { url: ohrwurm1, title: 'Ohrwurm' },
       { url: ohrwurm2 },
       { url: ohrwurm3 },
@@ -97,14 +106,6 @@ const imagesData: { [key: string]: { url: string, title?: string }[][] } = {
       { url: ohrwurm5 },
       { url: ohrwurm6 },
       { url: ohrwurm7 }
-    ],
-    [
-      { url: erwachen1, title: 'Erwachen' },
-      { url: erwachen2 },
-      { url: erwachen3 },
-      { url: erwachen4 },
-      { url: erwachen5 },
-      { url: erwachen6 },
     ],
     [
       { url: rueckenwind1, title: 'Rückenwind' },
@@ -190,6 +191,7 @@ const Catalogue: React.FC = () => {
 
   return (
     <div className={styles.catalogueContainer}>
+      <Navigation />
       <Slider images={images} onImageClick={handleImageClick} sliderClassName={styles.catalogueSlider} titleClassName={styles.catalogueTitle} />
     </div>
   );

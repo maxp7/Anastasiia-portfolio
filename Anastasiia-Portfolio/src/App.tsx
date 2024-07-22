@@ -24,8 +24,8 @@ const App: React.FC = () => {
   
   const sliderImagesFilm = [
     { url: recording, title: 'Recording 377' },
-    { url: ohrwurm, title: 'Ohrwurm' },
     { url: erwachen, title: 'Erwachen' },
+    { url: ohrwurm, title: 'Ohrwurm' },
     { url: rueckenwind, title: 'Rückenwind' },
     { url: kroshka, title: 'Kroshka' },
     { url: derossi, title: 'A.Derossi' }

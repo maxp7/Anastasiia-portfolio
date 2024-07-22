@@ -1,16 +1,33 @@
+
 .gallerySlider{
   display: flex;
     flex-direction: row;
-    overflow-x: auto; 
+    overflow-y:hidden; 
+    margin: 0 2vh;
+    
+}
+.gallerySlider > div{
+  margin: 1vh 1vh;
 }
 .gallerySlider img {
   height: 75vh; 
-  margin: 0 1vh 0 2vh;
+}
+.gallerySlider img::after {
+  display: flex;
+  content: "Name";
+  width: 100px;
+  height: 100px;
+  background-color: #ffba10;
+  border-color: black;
+  border-style: dotted;
 }
 .galleryTitle{
-  margin: 1vh 2vh;
-  font-weight: 600;
+  position: relative;
+  padding: 2vh 1.5vh 0 0;
+  font-weight: 500;
+  font-size: 24px;
 }
+
 .galleryTitle button{
   display: none;
 }
