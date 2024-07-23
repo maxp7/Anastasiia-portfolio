@@ -3,14 +3,19 @@
   display: flex;
     flex-direction: row;
     overflow-y:hidden; 
-   
-    
 }
 .gallerySlider > div{
   margin: 1vh 2vh;
 }
 .gallerySlider img {
   height: 75vh; 
+  z-index: 3;
+  cursor: pointer;
+  border-radius: 15px;
+  transition: transform 300ms;
+}
+.gallerySlider img:hover{
+  transform: scale(1.02);
 }
 .gallerySlider img::after {
   display: flex;
@@ -31,6 +36,8 @@
 .galleryTitle button{
   display: none;
 }
+
+ 
 
  
   @media (max-width: 900px) {

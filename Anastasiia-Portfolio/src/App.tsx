@@ -1,5 +1,6 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route,  useLocation} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Preloader from './Components/Preloader';
 import styles from './App.module.css';
 import Gallery from './Components/Gallery';
 import Catalogue from './Components/Catalogue';
@@ -20,7 +21,8 @@ import FirstPage from './Components/FirstPage';
 import About from './Components/About';
 
 const App: React.FC = () => {
-  
+  const [loading, setLoading] = useState<boolean>(true);
+
   const sliderImagesFilm = [
     { url: recording, title: 'Recording 377' },
     { url: erwachen, title: 'Erwachen' },
@@ -39,10 +41,40 @@ const App: React.FC = () => {
     { url: installation, title: 'Tactile Music Interfaces' }
   ];
 
+  const loadImages = (images: { url: string; title: string }[]): Promise<string[]> => {
+    return Promise.all(
+      images.map((image) => {
+        return new Promise<string>((resolve, reject) => {
+          const img = new Image();
+          img.src = image.url;
+          img.onload = () => resolve(image.url);
+          img.onerror = () => reject(new Error(`Failed to load image at ${image.url}`));
+        });
+      })
+    );
+  };
+  
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        await Promise.all([
+          loadImages(sliderImagesFilm),
+          loadImages(sliderImagesPhoto),
+          loadImages(sliderImagesInstallation),
+        ]);
+        setLoading(false);
+      } catch (error) {
+        console.error('Ошибка при загрузке ресурсов:', error);
+      }
+    };
+
+    loadData();
+  }, []);
+
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home loading={loading} />} />
         <Route path="/films" element={<Gallery title="films" images={sliderImagesFilm} />} />
         <Route path="/photos" element={<Gallery title="photos" images={sliderImagesPhoto} />} />
         <Route path="/installation" element={<Gallery title="installation" images={sliderImagesInstallation} />} />
@@ -53,13 +85,19 @@ const App: React.FC = () => {
   );
 };
 
-const Home: React.FC = () => {
+export default App;
+interface HomeProps {
+  loading: boolean;
+}
+
+const Home: React.FC<HomeProps> = ({ loading }) => {
   return (
-    <div className={styles.App}>   
-      <Navigation />
-      <FirstPage />
+    <div className={styles.App}>
+      {loading ? <Preloader /> : <>
+        <Navigation />
+        <FirstPage />
+      </>}
     </div>
   );
 };
 
-export default App;

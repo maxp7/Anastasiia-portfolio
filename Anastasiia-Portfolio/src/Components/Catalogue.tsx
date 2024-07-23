@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useLocation, useParams, useNavigate } from 'react-router-dom';
 import Slider from './Slider';
 import Navigation from './Navigation';
 import styles from '../Styles/Catalogue.module.css';
@@ -78,9 +78,6 @@ import installation4 from '../assets/img/installation4.jpg';
 import installation5 from '../assets/img/installation5.jpg';
 import installation6 from '../assets/img/installation6.jpg';
 
-
-
-
 const imagesData: { [key: string]: { url: string, title?: string }[][] } = {
   films: [
     [
@@ -158,9 +155,7 @@ const imagesData: { [key: string]: { url: string, title?: string }[][] } = {
       { url: nature13 },
       { url: nature14 },
       { url: nature15 }
-
     ]
-  
   ],
   installation: [
     [
@@ -190,14 +185,27 @@ const Catalogue: React.FC = () => {
 
   const images = imagesData[normalizedTitle][imageIndex];
   const navigate = useNavigate();
+  const location = useLocation(); // Получаем текущий путь
   const handleImageClick = () => {
       navigate(`/${title}`); 
   };
 
+  const path = location.pathname;
+  const regex = /^\/(\w+)\/\d+$/;
+  let resultPath = null;
+  const match = path.match(regex);
+  if (match) {
+    resultPath = match[1];
+  }
   return (
-    <div className={styles.catalogueContainer}>
+    <div className={`${styles.catalogueContainer} ${imagesData.key ? false : true}`}>
       <Navigation />
-      <Slider images={images} onImageClick={handleImageClick} sliderClassName={styles.catalogueSlider} titleClassName={styles.catalogueTitle} />
+      <Slider 
+        images={images} 
+        onImageClick={handleImageClick} 
+        sliderClassName={styles.catalogueSlider} 
+        titleClassName={`${styles.catalogueTitle} ${resultPath !== "films" ? styles.watchButtonDisable : ''}`} 
+      />
     </div>
   );
 };

@@ -1,18 +1,24 @@
 .container{
 height: 100%;
 width: 100%;
-    
+display: flex;
+flex-direction: column;
+justify-content: center;
 }
 h1{
     position: relative;
-    font-size: 3rem;
-    margin: 10% 2% 10%;
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14svh;
     z-index: 3;
     cursor:default;
+    line-height: 1.1;
+    text-align: center;
 }
 h2{
-    font-size: 2rem;
-    margin: 0 2%;
+    font-size: 2svh;
+    margin: 15svh 0 0 70svw ;
     position: relative;
     z-index: 3;
     cursor:default;

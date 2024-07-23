@@ -6,6 +6,9 @@
         .catalogueSlider img {
             height: 75vh; 
             margin: 1vh 0 0 4vh;
+            z-index: 3;
+
+            transition: transform 300ms;
 
         }
         
@@ -40,6 +43,11 @@
             background-color: white;
             color: black;
         }
+
+        .watchButtonDisable button:nth-child(1){
+             display: none;
+        }
+ 
         @media (max-width: 900px) {
             .catalogueSlider{
                 display: flex;

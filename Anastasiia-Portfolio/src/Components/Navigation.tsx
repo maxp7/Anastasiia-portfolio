@@ -1,11 +1,15 @@
 import React , {useEffect, useState} from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import styles from '../Styles/Navigation.module.css';
+import useSound from 'use-sound'
+  import sound from '../backgroundSound.wav'
+  
 const Navigation: React.FC = () => {
+  const [play, { stop }] = useSound(sound);
   const location = useLocation();
   const navigate = useNavigate();
   const [buttonPressed, setButtonPressed] = useState(false);
-
+  
 
   const handleClick = (path: string) => {
       navigate(path);
@@ -16,13 +20,14 @@ const Navigation: React.FC = () => {
       setButtonPressed(true);
     }
   }
+
   return (
-    <nav className={styles.nav}>
-      <div className={styles.navLinks}>
+    <nav  className={styles.nav}>
+      <div className={styles.navLinks} /*onMouseEnter={() => play()}*/>
         
-      <div
+      <div 
           className={`${buttonPressed ? styles.linkActive : styles.linkInactive} ${buttonPressed ? styles.buttonPressed : styles.buttonReleased}`}
-          onClick={() => buttonPressedHandler(true)}
+          onClick={() => buttonPressedHandler(true)} 
         >
           {`${location.pathname === '/' ? "Home" : location.pathname.replace(/^.(.)/, (_, secondChar) => secondChar.toUpperCase())}`}
         </div>

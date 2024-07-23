@@ -6,9 +6,8 @@ const FirstPage: React.FC = () => {
   
   return (
     <div className={styles.container}>
-      <h1>Hello! My name is Anastasia</h1>
-      <h2>I`m the passionate filmmaker and photographer</h2>
-      <h2>Welcome to my website, hope you enjoy it!</h2>
+      <h1>Turning fleeting <br /> moments into <br />timeless stories.</h1>
+      <h2> <b>Anatasia Vishnevska</b> - visual communication <br />through filmmaking, photography ans installation</h2>
     </div>
   );
 };

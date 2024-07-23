@@ -13,8 +13,9 @@ const Gallery: React.FC<GalleryProps> = ({ title, images }) => {
   const navigate = useNavigate();
   const handleImageClick = (index: number) => { 
       navigate(`/${title}/${index}`); 
+    
   };
-
+ 
   return (
     <div className={styles.galleryContainer}>
       <Navigation />
