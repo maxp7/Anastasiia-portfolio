@@ -5,7 +5,7 @@
   font-weight: 400;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #1c1c1c;
+  background: none;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -22,18 +22,30 @@
   font-optical-sizing: auto;
   font-weight: weight;
   font-style: normal;
-  background-color: #1c1c1c;
+  background: none;
 }
 
 body, html {
   height: 100%;
   margin: 0;
+  
 }
 
 #root {
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+#root::before{
+  content: "";
+  background-image: url('../src/assets/img/background.gif');
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.6;
 }
 
 
@@ -47,4 +59,8 @@ transition: transform 300ms;
 }
 img:hover{
   transform: scale(1.02);
+}
+.Erwachen img{
+  margin: 6vh 3vh;
+  height: 61vh; 
 }

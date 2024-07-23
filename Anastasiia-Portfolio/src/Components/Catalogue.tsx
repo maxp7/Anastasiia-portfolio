@@ -53,7 +53,6 @@ import ichSehe3 from '../assets/img/6.2.jpg'
 import ichSehe4 from '../assets/img/6.3.jpg'
 import ichSehe5 from '../assets/img/6.4.jpg'
 import ichSehe6 from '../assets/img/6.5.jpg'
-import ichSehe7 from '../assets/img/6.6.jpg'
 
 import nature1 from '../assets/img/7.jpg'
 import nature2 from '../assets/img/7.1.jpg'
@@ -67,6 +66,10 @@ import nature9 from '../assets/img/7.8.jpg'
 import nature10 from '../assets/img/7.9.jpg'
 import nature11 from '../assets/img/7.10.jpg'
 import nature12 from '../assets/img/7.11.jpg'
+import nature13 from '../assets/img/7.12.jpg'
+import nature14 from '../assets/img/7.13.jpg'
+import nature15 from '../assets/img/7.14.jpg'
+import nature16 from '../assets/img/7.15.jpg'
 
 import installation1 from '../assets/img/installation1.jpg';
 import installation2 from '../assets/img/installation2.jpg';
@@ -137,8 +140,7 @@ const imagesData: { [key: string]: { url: string, title?: string }[][] } = {
       { url: ichSehe3 },
       { url: ichSehe4 },
       { url: ichSehe5 },
-      { url: ichSehe6 },
-      { url: ichSehe7 }
+      { url: ichSehe6 }
     ],
     [
       { url: nature1, title: 'Nature' },
@@ -152,7 +154,10 @@ const imagesData: { [key: string]: { url: string, title?: string }[][] } = {
       { url: nature9 },
       { url: nature10 },
       { url: nature11 },
-      { url: nature12 }
+      { url: nature12 },
+      { url: nature13 },
+      { url: nature14 },
+      { url: nature15 }
 
     ]
   

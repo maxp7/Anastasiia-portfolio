@@ -4,11 +4,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px 1vh 10vh;
+  padding: 10px 4vh 10vh;
   width: 100%;
   z-index: 4;
   height: 50px;
-  background-color: #1c1c1c;
+
   ;
 }
 
@@ -38,14 +38,14 @@
 }
 
 .linkDeactive{
-  font-size: 17px;
-  font-weight: 100;
-  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
   text-decoration: none;
   opacity: 1;
   margin: 10px 10px 20px 10px;
   padding: 1% 0 1% 5%;
-  border: solid rgb(153, 150, 150) 1px;
+  border: solid rgb(255, 255, 255) 2px;
   border-radius: 30px;
 }
 
@@ -124,7 +124,7 @@
         width: 100vw;
         margin: 0;
         padding: 0;
-        background-color: #1c1c1c;
+        background: none;
         height: 0;
       }
       .planeActive{
@@ -132,7 +132,7 @@
         top: 15vw;
         left: 0;
         width: 100vw;
-        background-color: #1c1c1c;
+        background: none;
         height: 100%;
         opacity: 0.7;
         z-index: -1;

@@ -3,11 +3,11 @@
   display: flex;
     flex-direction: row;
     overflow-y:hidden; 
-    margin: 0 2vh;
+   
     
 }
 .gallerySlider > div{
-  margin: 1vh 1vh;
+  margin: 1vh 2vh;
 }
 .gallerySlider img {
   height: 75vh; 

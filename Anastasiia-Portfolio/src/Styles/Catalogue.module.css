@@ -1,13 +1,14 @@
-.catalogueSlider{
+    .catalogueSlider{
             display: flex;
             flex-direction: row; 
             overflow-x:auto;
-            margin: 0 1vh;
         }
         .catalogueSlider img {
             height: 75vh; 
-            margin: 1vh 0 0 2vh;
+            margin: 1vh 0 0 4vh;
+
         }
+        
         .catalogueTitle{
             display: flex;
             flex-direction: row;

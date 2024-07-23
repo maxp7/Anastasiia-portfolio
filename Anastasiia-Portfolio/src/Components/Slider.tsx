@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from '../Styles/Slider.module.css';
 
-
 interface SliderProps {
   images: { url: string; title?: string }[];
   onImageClick?: (index: number) => void;
@@ -11,10 +10,16 @@ interface SliderProps {
 
 const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, titleClassName }) => {
   const sliderRef = useRef<HTMLDivElement>(null);
+  const [currentTitle, setCurrentTitle] = useState<string>('');
   const [selectedImage, setSelectedImage] = useState<{ url: string; title?: string } | null>(null);
   const [infoPanelVisible, setInfoPanelVisible] = useState(false);
 
   useEffect(() => {
+    // Set the initial title from the first image
+    if (images.length > 0 && images[0].title) {
+      setCurrentTitle(images[0].title);
+    }
+
     const slider = sliderRef.current;
     if (!slider) return;
 
@@ -22,42 +27,44 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
     let scrollAmount = 0;
 
     const handleWheel = (e: WheelEvent) => {
-        if (Math.abs(e.deltaX) > 0 || Math.abs(e.deltaY) < Math.abs(e.deltaX)) {
-            return; 
-        }
+      if (Math.abs(e.deltaX) > 0 || Math.abs(e.deltaY) < Math.abs(e.deltaX)) {
+        return; 
+      }
 
-        e.preventDefault();
-        scrollAmount += e.deltaY;
+      e.preventDefault();
+      scrollAmount += e.deltaY;
 
-        if (!isScrolling) {
-            isScrolling = true;
-            requestAnimationFrame(scroll);
-        }
+      if (!isScrolling) {
+        isScrolling = true;
+        requestAnimationFrame(scroll);
+      }
     };
 
     const scroll = () => {
-        if (Math.abs(scrollAmount) > 1) {
-            slider.scrollLeft += scrollAmount * 0.1;
-            scrollAmount *= 0.9;
-            requestAnimationFrame(scroll);
-        } else {
-            isScrolling = false;
-            scrollAmount = 0;
-        }
+      if (Math.abs(scrollAmount) > 1) {
+        slider.scrollLeft += scrollAmount * 0.1;
+        scrollAmount *= 0.9;
+        requestAnimationFrame(scroll);
+      } else {
+        isScrolling = false;
+        scrollAmount = 0;
+      }
     };
 
     slider.addEventListener('wheel', handleWheel);
 
     return () => {
-        slider.removeEventListener('wheel', handleWheel);
+      slider.removeEventListener('wheel', handleWheel);
     };
-}, []);
+  }, [images]);
 
   const handleClick = (index: number) => {
     if (onImageClick) {
       onImageClick(index);
     }
-    setSelectedImage(images[index]);
+    const image = images[index];
+    setSelectedImage(image);
+    setCurrentTitle(image.title || '');
     setInfoPanelVisible(true);
   };
 
@@ -67,12 +74,14 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
       setSelectedImage(null);
     } else {
       setSelectedImage(image);
+      setCurrentTitle(image.title || '');
       setInfoPanelVisible(true);
     }
   };
 
+
   return (
-    <div ref={sliderRef} className={`${styles.slider} ${sliderClassName} ${infoPanelVisible ? styles.scrollDisable : styles.scrollEnable}`}>
+    <div ref={sliderRef} className={`${currentTitle? currentTitle  : "" } ${styles.slider} ${sliderClassName} ${infoPanelVisible ? styles.scrollDisable : styles.scrollEnable} `}>
       {images.map((image, index) => (
         <div key={index} className={styles.imageContainer}>
           <img
@@ -86,7 +95,7 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
             <div className={`${styles.title} ${titleClassName}`}>
               <div>{image.title}</div>
               <div className={styles.infoButton}>
-              <button>Watch the film</button>
+                <button>Watch the film</button>
                 <button onClick={() => handleInfoButtonClick(image)}>Info</button>         
               </div>
             </div>

@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route,  useLocation} from 'react-route
 import styles from './App.module.css';
 import Gallery from './Components/Gallery';
 import Catalogue from './Components/Catalogue';
-import Footer from './Components/Footer'; 
 import Navigation from './Components/Navigation';
 
 import recording from './assets/img/0.jpg';
@@ -56,11 +55,9 @@ const App: React.FC = () => {
 
 const Home: React.FC = () => {
   return (
-    
     <div className={styles.App}>   
       <Navigation />
       <FirstPage />
-      <Footer />
     </div>
   );
 };
