@@ -21,12 +21,11 @@ import ohrwurm5 from '../assets/img/1.5.jpg'
 import ohrwurm6 from '../assets/img/1.6.jpg'
 import ohrwurm7 from '../assets/img/1.7.jpg'
 
-import erwachen1 from '../assets/img/2.1.jpg'
-import erwachen2 from '../assets/img/2.2.jpg'
+import erwachen1 from '../assets/img/2.6.jpg'
+import erwachen2 from '../assets/img/2.5.jpg'
 import erwachen3 from '../assets/img/2.3.jpg'
-import erwachen4 from '../assets/img/2.4.png'
-import erwachen5 from '../assets/img/2.5.jpg'
-import erwachen6 from '../assets/img/2.6.jpg'
+import erwachen4 from '../assets/img/2.2.jpg'
+import erwachen5 from '../assets/img/2.4.png'
 
 import rueckenwind1 from '../assets/img/3.1.jpg'
 import rueckenwind2 from '../assets/img/3.2.jpg'
@@ -96,7 +95,6 @@ const imagesData: { [key: string]: { url: string, title?: string }[][] } = {
       { url: erwachen3 },
       { url: erwachen4 },
       { url: erwachen5 },
-      { url: erwachen6 },
     ],
     [
       { url: ohrwurm1, title: 'Ohrwurm' },

@@ -13,7 +13,7 @@
 }
 
 .logo {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: bold;
   margin: 0;
   padding: 0;
@@ -38,14 +38,14 @@
 }
 
 .linkDeactive{
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 400;
   color: rgb(255, 255, 255);
   text-decoration: none;
   opacity: 1;
   margin: 10px 10px 20px 10px;
   padding: 1% 0 1% 5%;
-  border: solid rgb(255, 255, 255) 2px;
+  border: solid rgb(255, 255, 255) 1.5px;
   border-radius: 30px;
 }
 

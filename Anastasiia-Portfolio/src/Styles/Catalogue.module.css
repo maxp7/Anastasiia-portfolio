@@ -7,9 +7,7 @@
             height: 75vh; 
             margin: 1vh 0 0 4vh;
             z-index: 3;
-
             transition: transform 300ms;
-
         }
         
         .catalogueTitle{

@@ -40,6 +40,7 @@ const App: React.FC = () => {
   const sliderImagesInstallation = [
     { url: installation, title: 'Tactile Music Interfaces' }
   ];
+ 
 
   const loadImages = (images: { url: string; title: string }[]): Promise<string[]> => {
     return Promise.all(
@@ -53,6 +54,7 @@ const App: React.FC = () => {
       })
     );
   };
+
   
   useEffect(() => {
     const loadData = async () => {

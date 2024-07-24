@@ -6,8 +6,9 @@ const FirstPage: React.FC = () => {
   
   return (
     <div className={styles.container}>
-      <h1>Turning fleeting <br /> moments into <br />timeless stories.</h1>
-      <h2> <b>Anatasia Vishnevska</b> - visual communication <br />through filmmaking, photography ans installation</h2>
+      <h1><span className={styles.noOpacity}> Turning</span> <span className={styles.opacity}>  fleeting <br /> </span> <span className={styles.noOpacity}> moments into <br /></span></h1>
+      <h1> <span className={styles.opacity}> timeless</span> <span className={styles.noOpacity}>stories</span>.</h1>
+      <h2> <span className={styles.bold} >Anatasia Vishnevska –</span> visual communication <br />through filmmaking, photography ans installation.</h2>
     </div>
   );
 };
