@@ -40,43 +40,17 @@ const App: React.FC = () => {
   const sliderImagesInstallation = [
     { url: installation, title: 'Tactile Music Interfaces' }
   ];
- 
 
-  const loadImages = (images: { url: string; title: string }[]): Promise<string[]> => {
-    return Promise.all(
-      images.map((image) => {
-        return new Promise<string>((resolve, reject) => {
-          const img = new Image();
-          img.src = image.url;
-          img.onload = () => resolve(image.url);
-          img.onerror = () => reject(new Error(`Failed to load image at ${image.url}`));
-        });
-      })
-    );
+  const handleExploreClick = () => {
+      setLoading(false);
   };
 
-  
-  useEffect(() => {
-    const loadData = async () => {
-      try {
-        await Promise.all([
-          loadImages(sliderImagesFilm),
-          loadImages(sliderImagesPhoto),
-          loadImages(sliderImagesInstallation),
-        ]);
-        setLoading(false);
-      } catch (error) {
-        console.error('Ошибка при загрузке ресурсов:', error);
-      }
-    };
-
-    loadData();
-  }, []);
-
   return (
+   
     <Router>
+      <Preloader onExploreClick={handleExploreClick} />
       <Routes>
-        <Route path="/" element={<Home loading={loading} />} />
+        <Route path="/" element={<Home/>} />
         <Route path="/films" element={<Gallery title="films" images={sliderImagesFilm} />} />
         <Route path="/photos" element={<Gallery title="photos" images={sliderImagesPhoto} />} />
         <Route path="/installation" element={<Gallery title="installation" images={sliderImagesInstallation} />} />
@@ -84,22 +58,17 @@ const App: React.FC = () => {
         <Route path="/:title/:id" element={<Catalogue />} />
       </Routes>
     </Router>
+    
   );
 };
 
 export default App;
-interface HomeProps {
-  loading: boolean;
-}
 
-const Home: React.FC<HomeProps> = ({ loading }) => {
+const Home: React.FC = () => {
   return (
     <div className={styles.App}>
-      {loading ? <Preloader /> : <>
         <Navigation />
         <FirstPage />
-      </>}
     </div>
   );
 };
-
