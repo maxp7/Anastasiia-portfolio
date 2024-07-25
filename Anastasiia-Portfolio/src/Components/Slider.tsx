@@ -2,20 +2,20 @@ import React, { useEffect, useRef, useState } from 'react';
 import styles from '../Styles/Slider.module.css';
 
 interface SliderProps {
-  images: { url: string; title?: string }[];
+  images: { url: string; title?: string; description?: string }[];
   onImageClick?: (index: number) => void;
   sliderClassName: string;
   titleClassName: string;
+  description?: string; 
 }
 
 const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, titleClassName }) => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [currentTitle, setCurrentTitle] = useState<string>('');
-  const [selectedImage, setSelectedImage] = useState<{ url: string; title?: string } | null>(null);
+  const [selectedImage, setSelectedImage] = useState<{ url: string; title?: string; description?: string } | null>(null);
   const [infoPanelVisible, setInfoPanelVisible] = useState(false);
 
   useEffect(() => {
-    // Set the initial title from the first image
     if (images.length > 0 && images[0].title) {
       setCurrentTitle(images[0].title);
     }
@@ -28,7 +28,7 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
 
     const handleWheel = (e: WheelEvent) => {
       if (Math.abs(e.deltaX) > 0 || Math.abs(e.deltaY) < Math.abs(e.deltaX)) {
-        return; 
+        return;
       }
 
       e.preventDefault();
@@ -68,7 +68,7 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
     setInfoPanelVisible(true);
   };
 
-  const handleInfoButtonClick = (image: { url: string; title?: string }) => {
+  const handleInfoButtonClick = (image: { url: string; title?: string; description?: string }) => {
     if (selectedImage && selectedImage.url === image.url) {
       setInfoPanelVisible(false);
       setSelectedImage(null);
@@ -79,9 +79,8 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
     }
   };
 
-
   return (
-    <div ref={sliderRef} className={`${currentTitle? currentTitle  : "" } ${styles.slider} ${sliderClassName} ${infoPanelVisible ? styles.scrollDisable : styles.scrollEnable} `}>
+    <div ref={sliderRef} className={`${currentTitle ? currentTitle : ""} ${styles.slider} ${sliderClassName} ${infoPanelVisible ? styles.scrollDisable : styles.scrollEnable}`}>
       {images.map((image, index) => (
         <div key={index} className={styles.imageContainer}>
           <img
@@ -90,7 +89,6 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
             onClick={() => handleClick(index)}
             className={styles.image}
           />
-          
           {image.title && (
             <div className={`${styles.title} ${titleClassName}`}>
               <div>{image.title}</div>
@@ -102,13 +100,10 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
           )}
         </div>
       ))}
-      
       {selectedImage && (
         <div className={infoPanelVisible ? styles.infoPanelEnable : styles.infoPanelDisable}>
           <h1>{selectedImage.title}</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis fugiat atque aliquid, rem tempore, ipsa cumque ut ex quaerat ea expedita quidem. Vitae quia numquam doloribus nulla rerum natus fuga error. Aspernatur cumque repellendus tempora! Molestias odio sunt ea, at fugiat ducimus ad cupiditate corporis similique debitis laboriosam asperiores alias?
-          </p>
+          <p>{selectedImage.description}</p>
         </div>
       )}
     </div>

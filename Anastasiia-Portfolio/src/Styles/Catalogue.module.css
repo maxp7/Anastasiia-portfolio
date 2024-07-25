@@ -43,8 +43,11 @@
         }
 
         .watchButtonDisable button:nth-child(1){
-             display: none;
+             display:none;
         }
+        .watchButtonEnable button:nth-child(1){
+            display:inline;
+       }
  
         @media (max-width: 900px) {
             .catalogueSlider{

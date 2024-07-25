@@ -1,7 +1,6 @@
 import React from 'react';
 import { useLocation, useParams, useNavigate } from 'react-router-dom';
 import Slider from './Slider';
-import Navigation from './Navigation';
 import styles from '../Styles/Catalogue.module.css';
 
 import recording1 from '../assets/img/0.1.jpg';
@@ -77,10 +76,10 @@ import installation4 from '../assets/img/installation4.jpg';
 import installation5 from '../assets/img/installation5.jpg';
 import installation6 from '../assets/img/installation6.jpg';
 
-const imagesData: { [key: string]: { url: string, title?: string }[][] } = {
+const imagesData: { [key: string]: { url: string, title?: string, description?: string}[][] } = {
   films: [
     [
-      { url: recording1, title: 'RECORDING 377' },
+      { url: recording1, title: 'RECORDING 377', description:'Das ist recording' },
       { url: recording2 },
       { url: recording3 },
       { url: recording4 },
@@ -167,6 +166,7 @@ const imagesData: { [key: string]: { url: string, title?: string }[][] } = {
   ]
 };
 
+
 const Catalogue: React.FC = () => {
   const { title, id } = useParams<{ title: string; id: string }>();
   
@@ -176,14 +176,14 @@ const Catalogue: React.FC = () => {
 
   const normalizedTitle = title.toLowerCase();
   const imageIndex = parseInt(id, 10);
-
+  
   if (isNaN(imageIndex) || !imagesData[normalizedTitle] || !imagesData[normalizedTitle][imageIndex]) {
     return <div>Images not found</div>;
   }
 
   const images = imagesData[normalizedTitle][imageIndex];
   const navigate = useNavigate();
-  const location = useLocation(); // Получаем текущий путь
+  const location = useLocation(); 
   const handleImageClick = () => {
       navigate(`/${title}`); 
   };
@@ -201,7 +201,8 @@ const Catalogue: React.FC = () => {
         images={images} 
         onImageClick={handleImageClick} 
         sliderClassName={styles.catalogueSlider} 
-        titleClassName={`${styles.catalogueTitle} ${resultPath !== "films" ? styles.watchButtonDisable : ''}`} 
+        titleClassName={`${styles.catalogueTitle} ${resultPath == "Films" ? styles.watchButtonEnable : styles.watchButtonDisable}`}
+        description={images[0].description || ''} 
       />
     </div>
   );
