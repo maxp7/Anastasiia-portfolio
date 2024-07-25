@@ -1,8 +1,8 @@
 
 .gallerySlider{
   display: flex;
-    flex-direction: row;
-    overflow-y:hidden; 
+  flex-direction: row;
+  overflow-y:hidden; 
 }
 .gallerySlider > div{
   margin: 1vh 2vh;

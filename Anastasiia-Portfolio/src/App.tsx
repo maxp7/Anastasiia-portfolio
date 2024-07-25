@@ -35,12 +35,12 @@ const App: React.FC = () => {
   ];
 
   const sliderImagesPhoto = [
-    { url: ichSehe, title: 'Ich sehe' },
-    { url: nature, title: 'Nature' }
+    { url: ichSehe, title: 'ICH BIN EINE BIENE 246' },
+    { url: nature, title: 'Selaed Time' }
   ];
 
   const sliderImagesInstallation = [
-    { url: installation, title: 'Tactile Music Interfaces' }
+    { url: installation, title: 'Tangible Music Interfaces' }
   ];
 
   const handleExploreClick = () => {
@@ -57,7 +57,7 @@ const App: React.FC = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/films" element={<Gallery title="Films" images={sliderImagesFilm} />} />
                 <Route path="/photos" element={<Gallery title="Photos" images={sliderImagesPhoto} />} />
-                <Route path="/installation" element={<Gallery title="Installation" images={sliderImagesInstallation} />} />
+                <Route path="/installation" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/:title/:id" element={<Catalogue />} />
               </Routes>      

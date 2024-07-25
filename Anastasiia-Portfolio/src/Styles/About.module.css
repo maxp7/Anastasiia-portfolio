@@ -1,9 +1,157 @@
 .container{
     position: relative;
-    height: 70dvh;
+    height: 100vh;
     z-index: 3;
 }
 h1{
     position: relative;
     z-index: 3;
 }
+.description{
+    font-size: 1.3svw;
+    margin: 5svw 10svw;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    z-index: 4;
+    height: 50px;
+  }
+  
+  .logo {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .logo .navLink {
+    opacity: 1;
+    border: none;
+    font-size: 28px;
+  }
+  
+  .navLinks {
+    bottom: 10svh;
+    display: grid;
+    grid-template-columns: 15% 30% 15%;
+    justify-content: center;
+    z-index: 5;
+    
+  }
+  
+  .linkDeactive{
+    text-align: center;
+    font-size: 1.1svw;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    opacity: 1;
+    margin: 1svw 1svw;
+    padding: 0.2svw;
+    border: solid rgb(255, 255, 255) 1.5px;
+    border-radius: 30px;
+  }
+  
+  .linkDeactive:hover,
+  .linkDeactive.active {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    font-weight: 400;
+  }
+  
+  .navLinks a {
+    display: block;
+    text-decoration: none;
+    color: white; 
+    width: 100%;
+  }
+  .linkInactive{
+    display: none;
+  }
+
+  @media (max-width: 900px) {
+    .nav{
+      padding: 2vh 1vh 10vh;
+    }
+    .navLinks{
+      display: flex;
+      flex-direction: column;
+    }
+    .navLink{
+      margin: 0.5vh;
+      font-size: 16px;
+      color: white;
+      text-decoration: none;
+      opacity: 1;
+      padding: 1% 0 1% 5%;
+      border: solid rgb(153, 150, 150) 1px;
+      border-radius: 30px;
+      animation: fade 1s;
+    }
+    @keyframes fade {
+      from{
+        opacity: 0;
+      }
+      to{
+        opacity: 1;
+      }
+      
+    }
+    .linkInactive{
+      display: flex;
+      background-color: white;
+    
+    }
+    .linkDeactive{
+      display: none;
+      
+    }
+    
+    .buttonPressed{
+      display: none;
+      }
+      .buttonReleased{
+        
+      margin: 0.5vh;
+      font-size: 16px;
+      color: #1c1c1c;
+      text-decoration: none;
+      opacity: 1;
+      padding: 1% 0 1% 5%;
+      border: solid rgb(153, 150, 150) 1px;
+      border-radius: 30px;
+        }
+        
+        .planeInactive{
+          position: absolute;
+          top: 15vw;
+          left: 0;
+          width: 100vw;
+          margin: 0;
+          padding: 0;
+          background: none;
+          height: 0;
+        }
+        .planeActive{
+          position: absolute;
+          top: 15vw;
+          left: 0;
+          width: 100vw;
+          background: none;
+          height: 100%;
+          opacity: 0.7;
+          z-index: -1;
+        }
+  }
+  
+  @media (max-width: 768px) {
+    
+  }
+  

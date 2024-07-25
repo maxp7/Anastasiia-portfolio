@@ -1,5 +1,4 @@
 :root {
-  height: 100svh;
   font-family: "Montserrat", serif;
   font-weight: 400;
   font-style: normal;
@@ -50,6 +49,6 @@ body, html {
 }
 
 .Erwachen img{
-  margin: 10vh 2vh;
+  margin: 10vh 4vh;
   height: 60vh; 
 }

@@ -58,7 +58,7 @@ const Navigation: React.FC = () => {
         </div>
         <div
           className={`${buttonPressed ? styles.navLink : styles.linkDeactive} ${location.pathname === '/installation' ? styles.active : ''}`}
-          onClick={() => handleClick('/installation')}
+          onClick={() => handleClick('/installation/0')}
         >
           Installation
         </div>
