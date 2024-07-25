@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+// App.tsx
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Preloader from './Components/Preloader';
-import styles from './App.module.css';
 import Gallery from './Components/Gallery';
 import Catalogue from './Components/Catalogue';
 import Navigation from './Components/Navigation';
-
+import { SoundProvider } from './Components/SoundContext';
+import { AnimatePresence } from 'framer-motion';
 import recording from './assets/img/0.jpg';
 import ohrwurm from './assets/img/1.jpg';
 import erwachen from './assets/img/2.jpg';
@@ -19,6 +20,7 @@ import installation from './assets/img/installation.png';
 
 import FirstPage from './Components/FirstPage';
 import About from './Components/About';
+import styles from './App.module.css';
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
@@ -42,23 +44,26 @@ const App: React.FC = () => {
   ];
 
   const handleExploreClick = () => {
-      setLoading(false);
+    setLoading(false);
   };
 
   return (
-   
     <Router>
-      <Preloader onExploreClick={handleExploreClick} />
-      <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/films" element={<Gallery title="films" images={sliderImagesFilm} />} />
-        <Route path="/photos" element={<Gallery title="photos" images={sliderImagesPhoto} />} />
-        <Route path="/installation" element={<Gallery title="installation" images={sliderImagesInstallation} />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/:title/:id" element={<Catalogue />} />
-      </Routes>
+      <SoundProvider>
+        <AnimatePresence>
+            <Preloader onExploreClick={handleExploreClick} />
+              <Navigation />
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/films" element={<Gallery title="Films" images={sliderImagesFilm} />} />
+                <Route path="/photos" element={<Gallery title="Photos" images={sliderImagesPhoto} />} />
+                <Route path="/installation" element={<Gallery title="Installation" images={sliderImagesInstallation} />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/:title/:id" element={<Catalogue />} />
+              </Routes>      
+        </AnimatePresence>
+      </SoundProvider>
     </Router>
-    
   );
 };
 
@@ -67,8 +72,7 @@ export default App;
 const Home: React.FC = () => {
   return (
     <div className={styles.App}>
-        <Navigation />
-        <FirstPage />
+      <FirstPage />
     </div>
   );
 };

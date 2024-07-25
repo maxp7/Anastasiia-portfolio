@@ -197,7 +197,6 @@ const Catalogue: React.FC = () => {
   }
   return (
     <div className={`${styles.catalogueContainer} ${imagesData.key ? false : true}`}>
-      <Navigation />
       <Slider 
         images={images} 
         onImageClick={handleImageClick} 

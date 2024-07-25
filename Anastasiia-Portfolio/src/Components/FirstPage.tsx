@@ -8,7 +8,7 @@ const FirstPage: React.FC = () => {
     <div className={styles.container}>
       <h1><span className={styles.noOpacity}> Turning</span> <span className={styles.opacity}>  fleeting <br /> </span> <span className={styles.noOpacity}> moments into <br /></span></h1>
       <h1> <span className={styles.opacity}> timeless</span> <span className={styles.noOpacity}>stories</span>.</h1>
-      <h2> <span className={styles.bold} >Anatasia Vishnevska –</span> visual communication <br />through filmmaking, photography ans installation.</h2>
+      <h2> <span className={styles.bold} >Anastasia Vishnevska –</span> visual communication <br />through filmmaking, photography ans installation.</h2>
     </div>
   );
 };

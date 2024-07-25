@@ -1,30 +1,37 @@
-import React , {useEffect, useState} from 'react';
+import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useSoundContext } from './SoundContext';
 import styles from '../Styles/Navigation.module.css';
-import useSound from 'use-sound'
-  import sound from '../backgroundSound.wav'
-  
+
+import muteIcon from '../assets/img/muteIcon.png'
+
 const Navigation: React.FC = () => {
-  const [play, { stop }] = useSound(sound);
+  const { stopSound } = useSoundContext();
   const location = useLocation();
   const navigate = useNavigate();
   const [buttonPressed, setButtonPressed] = useState(false);
-  
+
+  const muteAudio = () => {
+    stopSound();
+    console.log("Audio muted");
+  };
 
   const handleClick = (path: string) => {
+    if (location.pathname !== path) {
       navigate(path);
-      setButtonPressed(false);
-  };
-  const buttonPressedHandler = (isButtonPressed:boolean)=>{
-    if (isButtonPressed){
-      setButtonPressed(true);
+      setButtonPressed(false); // Изменение состояния только если путь изменяется
     }
-  }
+  };
+
+  const buttonPressedHandler = (isButtonPressed: boolean) => {
+    if (isButtonPressed !== buttonPressed) {
+      setButtonPressed(isButtonPressed);
+    }
+  };
 
   return (
-    <nav  className={styles.nav}>
-      <div className={styles.navLinks} /*onMouseEnter={() => play()}*/>
-        
+    <nav className={styles.nav}>
+      <div className={styles.navLinks}>
       <div 
           className={`${buttonPressed ? styles.linkActive : styles.linkInactive} ${buttonPressed ? styles.buttonPressed : styles.buttonReleased}`}
           onClick={() => buttonPressedHandler(true)} 
@@ -61,9 +68,13 @@ const Navigation: React.FC = () => {
         >
           About
         </div>
-        <div className= {`${buttonPressed ? styles.planeActive: styles.planeInactive}`}></div>
+        <div
+          className={`${buttonPressed ? styles.navLink : styles.linkDeactive} ${styles.muteButton}`}
+          onClick={muteAudio}
+        >
+          <img src={muteIcon} alt="" />
+        </div>
       </div>
-      
     </nav>
   );
 };

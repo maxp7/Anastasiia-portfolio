@@ -30,7 +30,7 @@
 
 .navLinks {
   display: grid;
-  grid-template-columns: repeat(5, 20% );
+  grid-template-columns: repeat(5, 19.5%) 4%;
   width: 100%;
   margin: 0;
   z-index: 5;
@@ -63,6 +63,24 @@
 }
 .linkInactive{
   display: none;
+}
+
+.muteButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 0 0;
+  border: none;
+  border-radius: 0;
+}
+.muteButton:hover{
+ background-color: transparent;
+}
+.muteButton img{
+  height: 30px;
+}
+.muteButton img:hover{
+  transform: scale(1.5);
 }
 @media (max-width: 900px) {
   .nav{

@@ -7,7 +7,6 @@ const About: React.FC = () => {
   return (
 
     <div className={styles.container}>
-          <Navigation />
       <h1>About</h1>
     </div>
   );

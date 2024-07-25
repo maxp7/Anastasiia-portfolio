@@ -2,7 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from '../Styles/Gallery.module.css';
 import Slider from './Slider';
-import Navigation from './Navigation';
 
 interface GalleryProps {
   title: string;
@@ -18,7 +17,6 @@ const Gallery: React.FC<GalleryProps> = ({ title, images }) => {
  
   return (
     <div className={styles.galleryContainer}>
-      <Navigation />
       <Slider images={images} onImageClick={handleImageClick} sliderClassName={styles.gallerySlider} titleClassName={styles.galleryTitle} />
     </div>
   );

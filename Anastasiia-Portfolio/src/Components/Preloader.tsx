@@ -1,7 +1,7 @@
+// Preloader.tsx
 import React, { useState, useEffect, useRef } from 'react';
+import { useSoundContext } from './SoundContext';
 import '../Styles/Preloader.css';
-import useSound from 'use-sound';
-import sound from '../backgroundSound.wav';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface PreloaderProps {
@@ -9,7 +9,7 @@ interface PreloaderProps {
 }
 
 const Preloader: React.FC<PreloaderProps> = ({ onExploreClick }) => {
-  const [play, { stop }] = useSound(sound, { loop: true });
+  const { playSound } = useSoundContext();
   const [isVisible, setIsVisible] = useState(true);
   const [shouldAnimate, setShouldAnimate] = useState(false);
   const [buttonVisible, setButtonVisible] = useState(true);
@@ -37,7 +37,7 @@ const Preloader: React.FC<PreloaderProps> = ({ onExploreClick }) => {
   }, [buttonVisible]);
 
   const handleClick = () => {
-    play();
+    playSound();
     onExploreClick();
     setButtonVisible(false);
     setShouldAnimate(true);
