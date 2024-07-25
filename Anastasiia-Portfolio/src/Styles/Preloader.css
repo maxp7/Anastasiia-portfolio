@@ -12,6 +12,7 @@
   background-image: url('../src/assets/img/background.gif');
   background-size: cover;
   z-index: 1000; /* Убедитесь, что прелоадер отображается поверх других элементов */
+  cursor: none;
 }
 
 .button{
