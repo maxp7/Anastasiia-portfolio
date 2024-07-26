@@ -67,7 +67,34 @@ import nature12 from '../assets/img/7.11.jpg'
 import nature13 from '../assets/img/7.12.jpg'
 import nature14 from '../assets/img/7.13.jpg'
 import nature15 from '../assets/img/7.14.jpg'
-import nature16 from '../assets/img/7.15.jpg'
+
+
+import marvels1 from '../assets/img/8.1.jpg'
+import marvels2 from '../assets/img/8.2.jpg'
+import marvels3 from '../assets/img/8.3.jpg'
+import marvels4 from '../assets/img/8.4.jpg'
+import marvels5 from '../assets/img/8.5.jpg'
+import marvels6 from '../assets/img/8.6.jpg'
+import marvels7 from '../assets/img/8.7.jpg'
+import marvels8 from '../assets/img/8.8.jpg'
+import marvels9 from '../assets/img/8.9.jpg'
+import marvels10 from '../assets/img/8.10.jpg'
+import marvels11 from '../assets/img/8.11.jpg'
+import marvels12 from '../assets/img/8.12.jpg'
+import marvels13 from '../assets/img/8.13.jpg'
+import marvels14 from '../assets/img/8.14.jpg'
+import marvels15 from '../assets/img/8.15.jpg'
+import marvels16 from '../assets/img/8.16.jpg'
+import marvels17 from '../assets/img/8.17.jpg'
+
+
+import queen1 from '../assets/img/9.1.jpg'
+import queen2 from '../assets/img/9.2.jpg'
+import queen3 from '../assets/img/9.3.jpg'
+import queen4 from '../assets/img/9.4.jpg'
+import queen5 from '../assets/img/9.5.jpg'
+import queen6 from '../assets/img/9.6.jpg'
+import queen7 from '../assets/img/9.7.jpg'
 
 import installation1 from '../assets/img/installation1.jpg';
 import installation2 from '../assets/img/installation2.jpg';
@@ -79,7 +106,7 @@ import installation6 from '../assets/img/installation6.jpg';
 const imagesData: { [key: string]: { url: string, title?: string, description?: string}[][] } = {
   films: [
     [
-      { url: recording1, title: 'RECORDING 377', description:'Das ist recording' },
+      { url: recording1, title: 'RECORDING 377' },
       { url: recording2 },
       { url: recording3 },
       { url: recording4 },
@@ -89,14 +116,14 @@ const imagesData: { [key: string]: { url: string, title?: string, description?: 
       { url: recording8 }
     ],
     [
-      { url: erwachen1, title: 'Erwachen' },
+      { url: erwachen1, title: 'ERWACHEN' },
       { url: erwachen2 },
       { url: erwachen3 },
       { url: erwachen4 },
       { url: erwachen5 },
     ],
     [
-      { url: ohrwurm1, title: 'Ohrwurm' },
+      { url: ohrwurm1, title: 'OHRWURM' },
       { url: ohrwurm2 },
       { url: ohrwurm3 },
       { url: ohrwurm4 },
@@ -105,14 +132,14 @@ const imagesData: { [key: string]: { url: string, title?: string, description?: 
       { url: ohrwurm7 }
     ],
     [
-      { url: rueckenwind1, title: 'Rückenwind' },
+      { url: rueckenwind1, title: 'RÜCKENWIND' },
       { url: rueckenwind2 },
       { url: rueckenwind3 },
       { url: rueckenwind4 },
       { url: rueckenwind5 }
     ],
     [
-      { url: kroshka1, title: 'Kroshka' },
+      { url: kroshka1, title: 'KROSHKA' },
       { url: kroshka2 },
       { url: kroshka3 },
       { url: kroshka4 },
@@ -121,13 +148,29 @@ const imagesData: { [key: string]: { url: string, title?: string, description?: 
       { url: kroshka7 }
     ],
     [
-      { url: derossi1, title: 'A.Derossi' },
+      { url: derossi1, title: 'A.DEROSSI' },
       { url: derossi2 },
       { url: derossi3 },
       { url: derossi4 }
     ]
   ],
-  photos: [
+  photos: [ [
+    { url: nature1, title: 'SEALED TIME' },
+    { url: nature2 },
+    { url: nature3 },
+    { url: nature4 },
+    { url: nature5 },
+    { url: nature6 },
+    { url: nature7 },
+    { url: nature8 },
+    { url: nature9 },
+    { url: nature10 },
+    { url: nature11 },
+    { url: nature12 },
+    { url: nature13 },
+    { url: nature14 },
+    { url: nature15 }
+  ],
     [
       { url: ichSehe1, title: 'ICH BIN EINE BIENE 246' },
       { url: ichSehe2 },
@@ -137,26 +180,37 @@ const imagesData: { [key: string]: { url: string, title?: string, description?: 
       { url: ichSehe6 }
     ],
     [
-      { url: nature1, title: 'Sealed Time' },
-      { url: nature2 },
-      { url: nature3 },
-      { url: nature4 },
-      { url: nature5 },
-      { url: nature6 },
-      { url: nature7 },
-      { url: nature8 },
-      { url: nature9 },
-      { url: nature10 },
-      { url: nature11 },
-      { url: nature12 },
-      { url: nature13 },
-      { url: nature14 },
-      { url: nature15 }
-    ]
+      { url: marvels1, title: 'EVERYDAY MARVELS' },
+      { url: marvels2 },
+      { url: marvels3 },
+      { url: marvels4 },
+      { url: marvels5 },
+      { url: marvels6 },
+      { url: marvels7 },
+      { url: marvels8 },
+      { url: marvels9 },
+      { url: marvels10 },
+      { url: marvels11 },
+      { url: marvels12 },
+      { url: marvels13 },
+      { url: marvels14 },
+      { url: marvels15 },
+      { url: marvels16 },
+      { url: marvels17 },
+    ],
+    [
+      { url: queen1, title: 'THE QUEEN OF THE NIGHT' },
+      { url: queen2 },
+      { url: queen3 },
+      { url: queen4 },
+      { url: queen5 },
+      { url: queen6 },
+      { url: queen7 }
+    ],
   ],
   installation: [
     [
-      { url: installation1, title: 'Tangible Music Interfaces' },
+      { url: installation1, title: 'TANGIBLE MUSIC INTERFACES' },
       { url: installation2 },
       { url: installation3 },
       { url: installation4 },
@@ -205,7 +259,7 @@ interface Description {
       soundDesign: "Esentialmiks",
       cast: ["Ben Hoffmann", "Annabel Bayer", "Sofia Kroshka", "Anna Mrachkovska", "Christina Völz", "Petro Rusanienko", "Mark Kroshka"]
     },
-     youtubeLink: "https://www.youtube.com"
+     youtubeLink: "https://youtu.be/eAsrqH0uvyA"
   },
   "erwachen": {
     general: `"Erwachen" is a split-screen short that submerges the viewer in a mystical world inspired by the Greek mythology of Persephone. Shot in the city of Odessa, the film uses rich colors and symbolic imagery to explore themes of love, dependency, and loss. With a non-linear narrative, "Erwachen" invites the audience to reflect on the mysterious depths of the human psyche.`,
@@ -216,7 +270,7 @@ interface Description {
       soundDesign: "Oleg Zadorozniuk",
       cast: ["Olga Belokon", "Artiom Litovchenko", "Yana Chernaga", "Miroslava Koshtura", "Yeva Sai", "Dayana Pomomarenko"]
     },
-     youtubeLink: "https://www.youtube.com"
+     youtubeLink: "https://youtu.be/7Ry0nIUZ-Y8"
   },
   "ohrwurm": {
     general: `"Ohrwurm" is a comedic short film that follows an alien's amusing misadventure on Earth after mistakenly entering the wrong coordinates. The film explores the alien's encounters with Earth's quirks and challenges, offering a light-hearted look at the experience of being an outsider in an unfamiliar world. Through its playful narrative, "Ohrwurm" subtly mirrors the director's own experiences of immigration, capturing the sense of wonder and bewilderment that comes with navigating a new environment.`,
@@ -230,7 +284,8 @@ interface Description {
       makeUp: "Maria Shylova, Diana Bobrus",
       costumeDesigner: "Isabela Rüth",
       cast: ["Anna Mrachkovska", "Sofia Kroshka", "Birk Vogel"]
-    }
+    },
+     youtubeLink: "https://www.youtube.com"
   },
   "rückenwind": {
     general: `"Rückenwind" is a sketch created in 3 days that explores the interplay between past and present. The film offers a reflective journey through vivid, emotionally charged memories. With a mix of dramatic and enchanting moments, it explores themes of self-discovery and introspection.`,
@@ -242,7 +297,8 @@ interface Description {
       colorist: "Anastasiia Sviderska",
       soundDesign: "Johaness Pich",
       cast: ["Alina Hündin"]
-    }
+    },
+     youtubeLink: "https://youtu.be/Z-VBXtd78ik"
   },
   "a.derossi": {
     general: `"a.derossi" is a short film created in just four days as part of the Bewegtes Bild project. Shot in a single continuous take, this etude captures a tense and enigmatic conversation between a call center worker and a mysterious lead. As the dialogue unfolds, the stranger evokes memories from the protagonist's past, leaving her unsettled and bewildered. The film explores themes of memory and mystery, immersing viewers in a suspenseful narrative.`,
@@ -252,7 +308,8 @@ interface Description {
       director: "Anastasiia Vishnevska, Tijana Mirjacic, Anastasiia Sviderska",
       soundDesign: "Maksim Pidluzhnzi",
       cast: ["Christina Völz", "Birk Vogel"]
-    }
+    },
+     youtubeLink: "https://youtu.be/6Nfvp0tEe9M"
   },
   "kroshka": {
     general: `"Kroshka" is a short film created in just four days as part of the Bewegtes Bild project. This sketch captures the essence of shame through the eyes of a protagonist who reflects on a failed date the morning after. Through a blend of dramatic and humorous elements, the film vividly portrays the discomfort and self-reflection that follows an awkward encounter. "Kroshka" offers a poignant and relatable exploration of personal embarrassment, showcasing the intricate dance between humor and vulnerability"`,
@@ -263,7 +320,8 @@ interface Description {
       directorOfPhotography: "Tijana Mirjacic",
       soundDesign: "Esentialmiks",
       cast: ["Sofia Kroshka, Valeriia Berezovska"]
-    }
+    },
+     youtubeLink: "https://www.youtube.com"
   },
   "sealed time":{
     general:"This series is an ode to the beauty of analog photography, where each frame requires careful thought and attention. It intertwines scenes of nature, architecture, and everyday life, revealing the intricate details and textures of unique moments. This is a journey through the lens, offering a different perspective on the world, encouraging the appreciation of moments, and the enjoyment of the beauty around us."
@@ -286,8 +344,8 @@ This series is an expression of compassion and belief in the strength of those a
       designAndConception:"Anastasiia Vishnevska and Tijana Mirjacic",
       programming:"Maksym Pidluzhnyi",
       supervision:" Prof. Alexander Müller-Rakow"
-
-    }
+    },
+     youtubeLink: "https://youtu.be/WSm04RAHjWk"
   }
 };
 

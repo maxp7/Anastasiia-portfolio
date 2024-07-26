@@ -116,10 +116,18 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
     const key = title.trim().toLowerCase();
     return descriptions[key];
   };
-
+  const getDynamicClass = () => {
+    switch (currentTitle) {
+      case 'Erwachen':
+        return styles.Erwachen;
+      default:
+        return '';
+    }
+  };
+  const path = location.pathname;
 
   return (
-    <div ref={sliderRef} className={`${currentTitle ? currentTitle : ""} ${styles.slider} ${sliderClassName} ${infoPanelVisible ? styles.scrollDisable : styles.scrollEnable}`}>
+    <div ref={sliderRef} className={`${getDynamicClass()} ${styles.slider} ${sliderClassName} ${infoPanelVisible ? styles.scrollDisable : styles.scrollEnable}`}>
       {images.map((image, index) => (
         <div key={index} className={styles.imageContainer}>
           <img
@@ -134,7 +142,7 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
               <div className={styles.infoButton}>
                 {currentDescription?.youtubeLink && (
                   <a className={styles.watchButton} href={currentDescription.youtubeLink} target="_blank" rel="noopener noreferrer">
-                    <button>Watch the film</button>
+                    <button>{path === "/installation/0" ? 'Watch the Teaser' : "Watch the Film"}</button>
                   </a>
                 )}
                 <button onClick={() => handleInfoButtonClick(image)}>Info</button>

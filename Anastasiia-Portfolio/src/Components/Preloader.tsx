@@ -2,6 +2,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useSoundContext } from './SoundContext';
 import '../Styles/Preloader.css';
+import backgroundGif from '../assets/img/background.gif'; // Импортируйте изображение
+
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface PreloaderProps {
@@ -55,6 +57,10 @@ const Preloader: React.FC<PreloaderProps> = ({ onExploreClick }) => {
           animate={shouldAnimate ? { opacity: 0 } : { opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 2 }}
+          style={{
+            backgroundImage: `url(${backgroundGif})`,
+            backgroundSize: 'cover', // Используйте camelCase для CSS-свойств
+          }}
         >
           {buttonVisible && (
             <button

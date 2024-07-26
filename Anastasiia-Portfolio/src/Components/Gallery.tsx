@@ -9,7 +9,6 @@ interface Description {
   general?: string;
 }
 
-// Пример описаний
 const descriptions: Record<string, Description> = {
 
 };

@@ -15,6 +15,8 @@ import kroshka from './assets/img/4.jpg'
 import derossi from './assets/img/5.jpg'
 import ichSehe from './assets/img/6.jpg'
 import nature from './assets/img/7.jpg'
+import marvels from './assets/img/8.1.jpg'
+import queen from './assets/img/9.6.jpg'
 
 import installation from './assets/img/installation.png';
 
@@ -26,21 +28,24 @@ const App: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
 
   const sliderImagesFilm = [
-    { url: recording, title: 'Recording 377' },
-    { url: erwachen, title: 'Erwachen' },
-    { url: ohrwurm, title: 'Ohrwurm' },
-    { url: rueckenwind, title: 'Rückenwind' },
-    { url: kroshka, title: 'Kroshka' },
-    { url: derossi, title: 'A.Derossi' }
+    { url: recording, title: 'RECORDING 377' },
+    { url: erwachen, title: 'ERWACHEN' },
+    { url: ohrwurm, title: 'OHRWURM' },
+    { url: rueckenwind, title: 'RÜCKENWIND' },
+    { url: kroshka, title: 'KROSHKA' },
+    { url: derossi, title: 'A.DEROSSI' }
   ];
 
   const sliderImagesPhoto = [
+    { url: nature, title: 'SEALED TIME' },
     { url: ichSehe, title: 'ICH BIN EINE BIENE 246' },
-    { url: nature, title: 'Sealed Time' }
+    { url: marvels, title: 'EVERYDAY MARVELS' },
+    { url: queen, title: 'THE QUEEN OF THE NIGHT' },
+    
   ];
 
   const sliderImagesInstallation = [
-    { url: installation, title: 'Tangible Music Interfaces' }
+    { url: installation, title: 'TANGIBLE MUSIC INTERFACES' }
   ];
 
   const handleExploreClick = () => {

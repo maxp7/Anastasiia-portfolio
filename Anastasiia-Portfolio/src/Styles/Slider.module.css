@@ -34,7 +34,9 @@ margin-bottom: 13.3svh;
   margin: 0 !important;
   padding: 0.5svh;
   opacity: 0.7;
-  
+}
+.currentTitle{
+  display: none;
 }
 .infoPanelEnable p{
   margin: 2%;
@@ -60,6 +62,7 @@ margin-bottom: 13.3svh;
 .watchButton{
   text-decoration: none;
 }
+
 @keyframes slide-left {
   from {
     right: -45vh;
