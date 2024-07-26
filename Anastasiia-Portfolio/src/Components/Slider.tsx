@@ -42,10 +42,12 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
   const [currentTitle, setCurrentTitle] = useState<string>('');
   const [selectedImage, setSelectedImage] = useState<{ url: string; title?: string; description?: string } | null>(null);
   const [infoPanelVisible, setInfoPanelVisible] = useState(false);
+  const [currentDescription, setCurrentDescription] = useState<Description | undefined>(undefined);
 
   useEffect(() => {
     if (images.length > 0 && images[0].title) {
       setCurrentTitle(images[0].title);
+      setCurrentDescription(getDescription(images[0].title));
     }
 
     const slider = sliderRef.current;
@@ -93,6 +95,7 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
     const image = images[index];
     setSelectedImage(image);
     setCurrentTitle(image.title || '');
+    setCurrentDescription(getDescription(image.title));
     setInfoPanelVisible(true);
   };
   
@@ -103,18 +106,17 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
     } else {
       setSelectedImage(image);
       setCurrentTitle(image.title || '');
+      setCurrentDescription(getDescription(image.title));
       setInfoPanelVisible(true);
     }
   };
 
-  // Update the description based on the selected image
   const getDescription = (title?: string): Description | undefined => {
     if (!title) return undefined;
     const key = title.trim().toLowerCase();
     return descriptions[key];
   };
 
-  const currentDescription = getDescription(selectedImage?.title);
 
   return (
     <div ref={sliderRef} className={`${currentTitle ? currentTitle : ""} ${styles.slider} ${sliderClassName} ${infoPanelVisible ? styles.scrollDisable : styles.scrollEnable}`}>

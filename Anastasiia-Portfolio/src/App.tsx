@@ -36,7 +36,7 @@ const App: React.FC = () => {
 
   const sliderImagesPhoto = [
     { url: ichSehe, title: 'ICH BIN EINE BIENE 246' },
-    { url: nature, title: 'Selaed Time' }
+    { url: nature, title: 'Sealed Time' }
   ];
 
   const sliderImagesInstallation = [
