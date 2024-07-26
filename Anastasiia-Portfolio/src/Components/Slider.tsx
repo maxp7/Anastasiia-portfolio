@@ -116,18 +116,11 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
     const key = title.trim().toLowerCase();
     return descriptions[key];
   };
-  const getDynamicClass = () => {
-    switch (currentTitle) {
-      case 'Erwachen':
-        return styles.Erwachen;
-      default:
-        return '';
-    }
-  };
+  
   const path = location.pathname;
 
   return (
-    <div ref={sliderRef} className={`${getDynamicClass()} ${styles.slider} ${sliderClassName} ${infoPanelVisible ? styles.scrollDisable : styles.scrollEnable}`}>
+    <div ref={sliderRef} className={`${styles.slider} ${sliderClassName} ${infoPanelVisible ? styles.scrollDisable : styles.scrollEnable}`}>
       {images.map((image, index) => (
         <div key={index} className={styles.imageContainer}>
           <img

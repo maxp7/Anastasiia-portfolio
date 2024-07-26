@@ -13,7 +13,6 @@ const Navigation: React.FC = () => {
 
   const muteAudio = () => {
     stopSound();
-    console.log("Audio muted");
   };
 
   const handleClick = (path: string) => {

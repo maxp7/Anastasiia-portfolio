@@ -44,21 +44,6 @@ margin-bottom: 13.3svh;
   font-size: 1svw;
 }
 
-.infoPanelDisable{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: absolute;
-    margin: 0 !important;
-    right: 0;
-    top: 0;
-    height: 92vh;
-    width: 38vh;
-    background: none;
-    z-index: 1;
-}
 .watchButton{
   text-decoration: none;
 }
@@ -73,7 +58,6 @@ margin-bottom: 13.3svh;
     opacity: 1;
   }
 }
-
 
 
   @media (max-width: 900px) {

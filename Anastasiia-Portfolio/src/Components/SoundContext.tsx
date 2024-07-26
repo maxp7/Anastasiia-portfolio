@@ -1,14 +1,12 @@
 // SoundContext.tsx
 import React, { createContext, useContext, useRef } from 'react';
 import sound from '../backgroundSound.wav';
-// Интерфейс контекста звука
 interface SoundContextProps {
   playSound: () => void;
   stopSound: () => void;
   isPlaying: boolean;
 }
 
-// Создание контекста
 const SoundContext = createContext<SoundContextProps | undefined>(undefined);
 
 export const SoundProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
