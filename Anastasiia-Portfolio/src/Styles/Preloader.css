@@ -35,3 +35,11 @@
 button {
   margin-top: 20px;
 }
+
+@media (max-width: 768px) {
+    .button{
+      position: absolute;
+      top: 100px;
+      left: 1px;
+    }
+}

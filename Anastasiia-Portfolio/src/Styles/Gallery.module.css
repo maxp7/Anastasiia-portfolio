@@ -5,7 +5,7 @@
   overflow-y:hidden; 
 }
 .gallerySlider > div{
-  margin: 1vh 2vh;
+  margin: 1vh 2vw;
 }
 .gallerySlider img {
   height: 75vh; 
@@ -28,7 +28,7 @@
 }
 .galleryTitle{
   position: relative;
-  padding: 2vh 1.5vh 0 0;
+  padding: 5vh 1vw 0 0;
   font-weight: 500;
   font-size: 24px;
 }

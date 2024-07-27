@@ -22,7 +22,9 @@ const Preloader: React.FC<PreloaderProps> = ({ onExploreClick }) => {
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
-      setCursorPosition({ x: event.clientX, y: event.clientY });
+      if (window.innerWidth > 768) {
+        setCursorPosition({ x: event.clientX, y: event.clientY });
+      }
     };
 
     window.addEventListener('mousemove', handleMouseMove);
@@ -48,6 +50,13 @@ const Preloader: React.FC<PreloaderProps> = ({ onExploreClick }) => {
     }, 1);
   };
 
+  // Определяем позицию кнопки в зависимости от ширины экрана
+  const buttonStyle = {
+    position: 'absolute' as 'absolute',
+    left: window.innerWidth > 768 ? cursorPosition.x - buttonSize.width / 2 : `calc(50% - ${buttonSize.width / 2}px)`,
+    top: window.innerWidth > 768 ? cursorPosition.y - buttonSize.height / 2 : `calc(50% - ${buttonSize.height / 2}px)`,
+  };
+
   return (
     <AnimatePresence>
       {isVisible && (
@@ -59,7 +68,7 @@ const Preloader: React.FC<PreloaderProps> = ({ onExploreClick }) => {
           transition={{ duration: 2 }}
           style={{
             backgroundImage: `url(${backgroundGif})`,
-            backgroundSize: 'cover', // Используйте camelCase для CSS-свойств
+            backgroundSize: 'cover',
           }}
         >
           {buttonVisible && (
@@ -67,11 +76,7 @@ const Preloader: React.FC<PreloaderProps> = ({ onExploreClick }) => {
               ref={buttonRef}
               className="button"
               onClick={handleClick}
-              style={{
-                position: 'absolute',
-                left: cursorPosition.x - buttonSize.width / 2,
-                top: cursorPosition.y - buttonSize.height / 2,
-              }}
+              style={buttonStyle}
             >
               Explore
             </button>

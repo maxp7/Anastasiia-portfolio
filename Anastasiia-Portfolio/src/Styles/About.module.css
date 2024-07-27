@@ -5,12 +5,19 @@
 }
 .header{
   width: 60%;
-    font-size: 2.5svw;
+    font-size: 3.1svw;
     font-weight: 600;
-    margin: 5svw 2.5svw 5svw;
+    margin: 1svw 2.5svw 1svw;
     line-height: 1.2;
 }
+.subHeader{
+  width: 66%;
+  font-size: 2.2svw;
+  font-weight: 600;
+  margin: 0 2.5svw 4svw;
+  line-height: 1.2;
 
+}
 .description{
   width: 60%;
     font-size: 1.3svw;
