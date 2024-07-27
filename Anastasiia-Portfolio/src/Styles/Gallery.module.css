@@ -44,6 +44,7 @@
     .galleryContainer{
       display: flex;
       flex-direction: column;
+      margin-top: 8svh;
     }
     .gallerySlider img {
       max-width: 100%;

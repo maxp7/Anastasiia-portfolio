@@ -40,7 +40,7 @@ body, html {
   content: "";
   background-image: url('../src/assets/img/background.gif');
   background-size: cover;
-  position: absolute;
+  position: fixed;
   top: 0px;
   right: 0px;
   bottom: 0px;

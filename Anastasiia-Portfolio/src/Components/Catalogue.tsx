@@ -365,10 +365,11 @@ const Catalogue: React.FC = () => {
   }
 
   const images = imagesData[normalizedTitle][imageIndex];
-  const navigate = useNavigate();
   const location = useLocation(); 
+  const navigate = useNavigate();
+  
   const handleImageClick = () => {
-      navigate(`/${title}`); 
+    navigate(`/${title}`); 
   };
 
   const path = location.pathname;

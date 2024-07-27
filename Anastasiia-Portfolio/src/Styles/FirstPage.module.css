@@ -54,6 +54,7 @@
     }
     .container{
       padding: 0;
+      margin-top: 10svh;
     }
 } 
 @media (max-width: 376px) {

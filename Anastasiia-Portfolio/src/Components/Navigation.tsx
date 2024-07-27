@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useSoundContext } from './SoundContext';
 import styles from '../Styles/Navigation.module.css';
-
+import crossIcon from '../assets/img/cross.png'
 import muteIcon from '../assets/img/muteIcon.png'
 
 const Navigation: React.FC = () => {
@@ -18,8 +18,9 @@ const Navigation: React.FC = () => {
   const handleClick = (path: string) => {
     if (location.pathname !== path) {
       navigate(path);
-      setButtonPressed(false); // Изменение состояния только если путь изменяется
+      setButtonPressed(false); 
     }
+    setButtonPressed(false); 
   };
 
   const buttonPressedHandler = (isButtonPressed: boolean) => {
@@ -29,13 +30,15 @@ const Navigation: React.FC = () => {
   };
 
   return (
+    
     <nav className={styles.nav}>
-      <div className={styles.navLinks}>
+      <div className={`${buttonPressed ? styles.backgroundActive : styles.backgroundDeactive}`} onClick={() => buttonPressedHandler(false)} ></div>
+      <div className={`${buttonPressed ? styles.navLinksDeactive : styles.navLinks}`}>
       <div 
           className={`${buttonPressed ? styles.linkActive : styles.linkInactive} ${buttonPressed ? styles.buttonPressed : styles.buttonReleased}`}
           onClick={() => buttonPressedHandler(true)} 
         >
-          {`${location.pathname === '/' ? "Home" : location.pathname.replace(/^.(.)/, (_, secondChar) => secondChar.toUpperCase())}`}
+          {(location.pathname === '/' ? "Home" : (location.pathname.split('/')[1] || location.pathname).charAt(0).toUpperCase() + (location.pathname.split('/')[1] || location.pathname).slice(1))} <div className={styles.crossIcon}><img style={{ width:'18px'}} src={crossIcon} alt="cross icon" /></div>
         </div>
         <div
           className={`${buttonPressed ? styles.navLink : styles.linkDeactive} ${location.pathname === '/' ? styles.active : ''}`}

@@ -18,9 +18,9 @@ interface GalleryProps {
   images: { url: string; title: string }[];
 }
 
+
 const Gallery: React.FC<GalleryProps> = ({ title, images }) => {
   const navigate = useNavigate();
-  
   const handleImageClick = (index: number) => { 
     navigate(`/${title}/${index}`); 
   };

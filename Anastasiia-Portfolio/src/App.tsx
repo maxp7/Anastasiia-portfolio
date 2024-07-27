@@ -54,21 +54,21 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <SoundProvider>
+    <SoundProvider>
         <AnimatePresence>
-            <Preloader onExploreClick={handleExploreClick} />
-              <Navigation />
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/films" element={<Gallery title="Films" images={sliderImagesFilm} />} />
-                <Route path="/photos" element={<Gallery title="Photos" images={sliderImagesPhoto} />} />
-                <Route path="/installation" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/:title/:id" element={<Catalogue />} />
-              </Routes>      
+          <Preloader onExploreClick={handleExploreClick} />
+          <Navigation />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/films" element={<Gallery title="Films" images={sliderImagesFilm} />} />
+            <Route path="/photos" element={<Gallery title="Photos" images={sliderImagesPhoto} />} />
+            <Route path="/installation" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/:title/:id" element={<Catalogue />} />
+          </Routes>      
         </AnimatePresence>
-      </SoundProvider>
-    </Router>
+    </SoundProvider>
+  </Router>
   );
 };
 
