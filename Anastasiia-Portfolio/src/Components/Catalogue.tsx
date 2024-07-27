@@ -250,10 +250,10 @@ interface Description {
     general: `"Recording 377" is a dystopian short film set in the post-nuclear war era. The narrative revolves around a youthful filmmaker who finds herself irresistibly drawn into a mesmerizing cinematic journey. Together with her artificial intelligence companion, she endeavours to reconstruct an image of life on Earth in the run-up to the atomic explosion. She dives into deep-seated themes of life, death, love, and humanity. The movie blurs the boundaries between reality and fiction, submerging the viewer in a captivating audio-visual exploration.`,
     year: "2023",
     language: "English",
-    festivals: "Duemila30 2024, Milan, Italy; Heart Of Europe 2023 (Best Sci-fi short film award Winner), Kosice, Slovakia; Ars Electronica 2023, Linz, Austria",
+    festivals: "Duemila30 2024, Milan, Italy; Heart Of Europe 2023, Kosice, Slovakia; Ars Electronica 2023, Linz, Austria",
     crew: {
-      director: ", writer, editor: Anastasiia Vishnevska",
-      writer: ", colorist, assistant: Anastasiia Sviderska",
+      director: "Anastasiia Vishnevska",
+      writer: "Anastasiia Sviderska",
       directorOfPhotography: "Tijana Mirjacic",
       producer: "Larissa Krüger",
       soundDesign: "Esentialmiks",

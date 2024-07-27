@@ -28,11 +28,12 @@ margin-bottom: 13.3svh;
   margin: 12svh 0 5svh !important;
 }
 .descriptionSection{
+  display: flex;
   width: 100%;
   border-bottom: 1px solid white;
   border-top: 1px solid white;
   margin: 0 !important;
-  padding: 0.5svh;
+  padding: 0 0.2svw !important;
   opacity: 0.7;
 }
 .currentTitle{
@@ -41,13 +42,25 @@ margin-bottom: 13.3svh;
 .infoPanelEnable p{
   margin: 2%;
   padding: 0 3svh;
-  font-size: 1svw;
+  font-size: 0.9svw;
 }
 
 .watchButton{
   text-decoration: none;
 }
-
+.leftColumn{
+  width: 80%;
+height: fit-content;
+text-align: left;
+}
+.rightColumn{
+  margin: 0 !important;
+  text-align: right;
+}
+.rightColumn div{
+  margin: 0 !important;
+  text-align: right;
+}
 @keyframes slide-left {
   from {
     right: -45vh;
