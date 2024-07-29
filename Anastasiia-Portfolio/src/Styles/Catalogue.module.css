@@ -5,7 +5,7 @@
         }
         .catalogueSlider img {
             height: 75vh; 
-            margin: 1vh 0.5vw 0 2vw;
+            margin: 1vh 0.5vw 0 0.5vw;
             z-index: 3;
             transition: transform 300ms;
         }
@@ -48,6 +48,7 @@
             .catalogueSlider{
                 display: flex;
                 flex-direction: column;
+                padding-top: 12vh;
             }
             .catalogueSlider img{
                 max-width: 100%;
@@ -58,13 +59,13 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: baseline;
-                position: relative;
+                position: fixed;
                 width: 100%;
                 top: 0;
                 left: 0;
                 margin: 5vh 1vh 1vh;
                 padding: 0;
-                z-index: 1;
+                z-index: 2;
             }
             .catalogueTitle button {
                 font-size: 12px;

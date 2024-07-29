@@ -5,7 +5,7 @@
   overflow-y:hidden; 
 }
 .gallerySlider > div{
-  margin: 1vh 2vw;
+  margin: 1vh 0.5vw;
 }
 .gallerySlider img {
   height: 75vh; 

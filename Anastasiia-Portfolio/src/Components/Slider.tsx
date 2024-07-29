@@ -102,9 +102,11 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
     setCurrentTitle(image.title || '');
     setCurrentDescription(getDescription(image.title));
     setInfoPanelVisible(true);
-
   };
   
+  const closeInfoPanel = () =>{
+    setInfoPanelVisible(false);
+  }
   const handleInfoButtonClick = (image: { url: string; title?: string; description?: string }) => {
     if (selectedImage && selectedImage.url === image.url) {
       setInfoPanelVisible(false);
@@ -123,8 +125,9 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
     return descriptions[key];
   };
 
+
   return (
-    <div ref={sliderRef} className={`${styles.slider} ${sliderClassName} ${infoPanelVisible ? styles.scrollDisable : styles.scrollEnable}`}>
+    <div ref={sliderRef} className={`${styles.slider} ${sliderClassName} ${infoPanelVisible ? styles.scrollDisable : styles.scrollEnable}`} >
       {images.map((image, index) => (
         <div key={index} className={styles.imageContainer}>
           <img
@@ -150,9 +153,9 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
       ))}
 
       {selectedImage && selectedImage.title && currentDescription && (
-        <div className={infoPanelVisible ? styles.infoPanelEnable : styles.infoPanelDisable}>
+        <div className={infoPanelVisible ? styles.infoPanelEnable : styles.infoPanelDisable} onClick={() => closeInfoPanel()}>
           <div>
-            <p className={styles.descriptionGeneral}>
+            <p className={styles.descriptionGeneral} onClick={() => closeInfoPanel()}>
               {currentDescription.general || 'No description available'}
             </p>
           </div>

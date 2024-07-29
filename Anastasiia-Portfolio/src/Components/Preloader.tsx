@@ -50,7 +50,6 @@ const Preloader: React.FC<PreloaderProps> = ({ onExploreClick }) => {
     }, 1);
   };
 
-  // Определяем позицию кнопки в зависимости от ширины экрана
   const buttonStyle = {
     position: 'absolute' as 'absolute',
     left: window.innerWidth > 768 ? cursorPosition.x - buttonSize.width / 2 : `calc(50% - ${buttonSize.width / 2}px)`,
@@ -78,7 +77,7 @@ const Preloader: React.FC<PreloaderProps> = ({ onExploreClick }) => {
               onClick={handleClick}
               style={buttonStyle}
             >
-              Explore
+              explore
             </button>
           )}
         </motion.div>

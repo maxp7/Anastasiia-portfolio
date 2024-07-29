@@ -17,7 +17,6 @@
     background-color: #1c1c1c;
     z-index: 3;
     animation:slide-left 1s ;
-    
 }
 .infoPanelEnable div:last-child{
 width: 100%;
@@ -25,15 +24,15 @@ margin-bottom: 13.3svh;
 }
 
 .descriptionGeneral{
-  margin: 12svh 0 5svh !important;
+  margin: 18svh 0 5svh !important;
 }
 .descriptionSection{
   display: flex;
   width: 100%;
-  border-bottom: 1px solid white;
-  border-top: 1px solid white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
   margin: 0 !important;
-  padding: 0 0.2svw !important;
+  padding: 0 0.6svw !important;
   opacity: 0.7;
 }
 .currentTitle{
@@ -42,12 +41,20 @@ margin-bottom: 13.3svh;
 .infoPanelEnable p{
   margin: 2%;
   padding: 0 3svh;
-  font-size: 0.9svw;
+  font-size: 18px;
 }
-
 .watchButton{
   text-decoration: none;
 }
+.watchButton button{
+background-color: white;
+color:black !important;
+}
+.watchButton button:hover{
+  border: none;
+  background-color: rgb(255, 0, 0) !important;
+  color: white !important;
+  }
 .leftColumn{
   width: 80%;
 height: fit-content;
@@ -94,28 +101,47 @@ text-align: left;
     .infoPanelEnable{
       display: flex;
       flex-direction: column !important;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       align-items: flex-start;
       justify-content: flex-start;
       position: absolute;
-      margin: 6vh 0 0 0 !important;
-      top: 0;
-      height: 100vh;
+      margin: 0 0 0 0 !important;
       width: 100vw;
+      height: 100vh;
       background: none;
       overflow-x: hidden;
       overflow-y: hidden;
+      color:white;
+      background-color: #1c1c1c;
+      opacity: 0.9;
       animation: slide-top 1s;
-      opacity: 1;
+      overflow-x: scroll;
   }
+
+  .infoPanelDisable{
+    display: none !important;
+  }
+.infoPanelEnable p {
+  font-size: 14px;
+}
+.infoPanelEnable p {
+  font-size: 14px;
+}
+.descriptionGeneral{
+  margin: 12vh 0 !important;
+}
+.descriptionSection{
+  padding: 0 1vh !important;
+}
+
+
+
   @keyframes slide-top{
     from {
       top: 100vh;
-      opacity: 0;
     }
     to {
       top: 0;
-      opacity: 1;
     }
   }
 }
