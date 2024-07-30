@@ -10,7 +10,7 @@
 .gallerySlider img {
   height: 75vh; 
   z-index: 3;
-  cursor: pointer;
+  cursor: url('../assets/img/plus.svg'), auto;
   border-radius: 15px;
   transition: transform 300ms;
 }
@@ -28,9 +28,12 @@
 }
 .galleryTitle{
   position: relative;
-  padding: 5vh 1vw 0 0;
-  font-weight: 500;
+  padding: 5vh 0 0 1vh;
+ 
   font-size: 24px;
+}
+.galleryTitle div{
+  font-weight: 600;
 }
 
 .galleryTitle button{

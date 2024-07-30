@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useSoundContext } from './SoundContext';
 import '../Styles/Preloader.css';
 import backgroundGif from '../assets/img/background.gif'; // Импортируйте изображение
-
+import cursorImage from '../assets/img/cursor.svg';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface PreloaderProps {
@@ -78,6 +78,7 @@ const Preloader: React.FC<PreloaderProps> = ({ onExploreClick }) => {
               style={buttonStyle}
             >
               explore
+              <img src={cursorImage} alt="" />
             </button>
           )}
         </motion.div>

@@ -2,6 +2,7 @@
     position: relative;
     height: 100vh;
     z-index: 3;
+    cursor: url('../assets/img/cursor.svg'), auto;
 }
 .header{
   width: 60%;
@@ -43,7 +44,7 @@
     font-weight: bold;
     margin: 0;
     padding: 0;
-    cursor: pointer;
+    cursor: url('../assets/img/cursor.svg'), auto;
     text-decoration: none;
     color: white;
   }
@@ -77,7 +78,7 @@
   
   .linkDeactive:hover,
   .linkDeactive.active {
-    cursor: pointer;
+    cursor: url('../assets/img/cursor.svg'), auto;
     background-color: white;
     color: black;
     font-weight: 400;

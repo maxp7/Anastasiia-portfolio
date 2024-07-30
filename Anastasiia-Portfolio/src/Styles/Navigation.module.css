@@ -8,7 +8,7 @@
   width: 100%;
   z-index: 4;
   height: 50px;
-
+  cursor: url('../assets/img/cursor.svg'), auto;
 
   ;
 }
@@ -18,7 +18,7 @@
   font-weight: bold;
   margin: 0;
   padding: 0;
-  cursor: pointer;
+  cursor: url('../assets/img/cursor.svg'), auto;
   text-decoration: none;
   color: white;
 }
@@ -52,7 +52,7 @@
 
 .linkDeactive:hover,
 .linkDeactive.active {
-  cursor: pointer;
+  cursor: url('../assets/img/cursor.svg'), auto;
   background-color: white;
   color: black;
   font-weight: 400;
@@ -67,21 +67,23 @@
 }
 
 .muteButton{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 0 0 0;
+
+  padding: 0 0 0 0;  
   border: none;
   border-radius: 0;
 }
 .muteButton:hover{
  background-color: transparent;
 }
-.muteButton img{
-  height: 30px;
-}
+
 .muteButton img:hover{
   transform: scale(1.5);
+}
+.audioDisable{
+  content: url('../assets/img/muteIcon.png');
+}
+.audioEnable{
+  content: url('../assets/img/muteIcon.png');
 }
 @media (max-width: 900px) {
   .backgroundActive{

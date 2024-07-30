@@ -2,7 +2,9 @@
   ::-webkit-scrollbar {
     width: 0px;
   }
-
+.slider{
+  cursor: url('../assets/img/cursor.svg'), auto;
+}
   .infoPanelEnable{
     display: flex;
     flex-direction: column;
@@ -16,7 +18,8 @@
     width: 34vw;
     background-color: #1c1c1c;
     z-index: 3;
-    animation:slide-left 1s ;
+    
+    
 }
 .infoPanelEnable div:last-child{
 width: 100%;
@@ -47,13 +50,16 @@ margin-bottom: 13.3svh;
   text-decoration: none;
 }
 .watchButton button{
-background-color: white;
-color:black !important;
+background-color: transparent !important;
+color:white !important;
+cursor: url('../assets/img/cursor.svg'), auto;
+border: 2px solid white !important;
+font-weight: 400;
 }
 .watchButton button:hover{
   border: none;
-  background-color: rgb(255, 0, 0) !important;
-  color: white !important;
+  background-color: #ffffff !important;
+  color: rgb(0, 0, 0) !important;
   }
 .leftColumn{
   width: 80%;
@@ -67,6 +73,41 @@ text-align: left;
 .rightColumn div{
   margin: 0 !important;
   text-align: right;
+}
+.leftNav,
+.rightNav {
+  position: absolute;
+  top: 5;
+  width: 15%;
+  height: 75%;
+  background: rgba(0, 0, 0, 0);
+  z-index: 10;
+  
+}
+
+.leftNav {
+  left: 0;
+  cursor: url('../assets/img/left.svg'), auto;
+}
+
+.rightNav {
+  right: 0;
+  cursor: url('../assets/img/right.svg'), auto;
+}
+
+
+.InfoButtonEnabled{
+  content: url('../assets/img/infoCross.svg');
+  margin:0 4.5vh 0.25vh 1.5vh !important;
+  height: 40px;
+}
+
+.infoEnabled{
+  display:none !important;
+ 
+}
+.infoDisabled{
+ display: none;
 }
 @keyframes slide-left {
   from {

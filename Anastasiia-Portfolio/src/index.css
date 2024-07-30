@@ -23,6 +23,7 @@
   font-style: nor,al;
   font-optical-sizing: auto;
   background: none;
+  
 }
 
 body, html {
@@ -46,5 +47,7 @@ body, html {
   bottom: 0px;
   left: 0px;
   opacity: 0.6;
+  z-index: -2;
+  cursor: url('../assets/img/cursor.svg'), auto;
 }
 
