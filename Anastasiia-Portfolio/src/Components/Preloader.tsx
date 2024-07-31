@@ -11,7 +11,7 @@ interface PreloaderProps {
 }
 
 const Preloader: React.FC<PreloaderProps> = ({ onExploreClick }) => {
-  const { playSound } = useSoundContext();
+  const {playSound} = useSoundContext();
   const [isVisible, setIsVisible] = useState(true);
   const [shouldAnimate, setShouldAnimate] = useState(false);
   const [buttonVisible, setButtonVisible] = useState(true);

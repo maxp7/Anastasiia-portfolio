@@ -4,6 +4,7 @@
   }
 .slider{
   cursor: url('../assets/img/cursor.svg'), auto;
+  overflow-x: auto
 }
   .infoPanelEnable{
     display: flex;
@@ -15,10 +16,10 @@
     right: 0;
     top: 0;
     height: 100svh;
-    width: 34vw;
+    width: calc(33% + 5vw);;
     background-color: #1c1c1c;
     z-index: 3;
-    
+    overflow-y: scroll;
     
 }
 .infoPanelEnable div:last-child{
@@ -27,7 +28,8 @@ margin-bottom: 13.3svh;
 }
 
 .descriptionGeneral{
-  margin: 18svh 0 5svh !important;
+  margin: 14svh 0 5svh !important;
+  font-size: 2svh;
 }
 .descriptionSection{
   display: flex;
@@ -37,6 +39,7 @@ margin-bottom: 13.3svh;
   margin: 0 !important;
   padding: 0 0.6svw !important;
   opacity: 0.7;
+  font-size: 1.8svh;
 }
 .currentTitle{
   display: none;
@@ -44,7 +47,6 @@ margin-bottom: 13.3svh;
 .infoPanelEnable p{
   margin: 2%;
   padding: 0 3svh;
-  font-size: 18px;
 }
 .watchButton{
   text-decoration: none;
@@ -78,7 +80,7 @@ text-align: left;
 .rightNav {
   position: absolute;
   top: 5;
-  width: 15%;
+  width: 5%;
   height: 75%;
   background: rgba(0, 0, 0, 0);
   z-index: 10;
@@ -119,7 +121,11 @@ text-align: left;
     opacity: 1;
   }
 }
-
+@media (max-width: 1920px) {
+  .infoPanelEnable{
+    width: 500px;
+  }
+}
 
   @media (max-width: 900px) {
     .slider{

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom'; 
+import { useSoundContext } from './SoundContext';
 import styles from '../Styles/Slider.module.css';
 
 interface Crew {
@@ -39,6 +40,7 @@ interface SliderProps {
 }
 
 const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, titleClassName, descriptions }) => {
+  const { audioEnabled, setAudioEnabled, stopSound } = useSoundContext();
   const sliderRef = useRef<HTMLDivElement>(null);
   const [currentTitle, setCurrentTitle] = useState<string>('');
   const [selectedImage, setSelectedImage] = useState<{ url: string; title?: string; description?: string } | null>(null);
@@ -46,7 +48,10 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
   const [currentDescription, setCurrentDescription] = useState<Description | undefined>(undefined);
 
   const location = useLocation();
-
+  const muteAudio = () => {
+    stopSound();
+    setAudioEnabled(false);
+  };
   useEffect(() => {
     if (images.length > 0 && images[0].title) {
       setCurrentTitle(images[0].title);
@@ -148,7 +153,7 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
                 <div>{image.title}</div>
                 <div className={``}>
                   {currentDescription?.youtubeLink && (
-                    <a className={styles.watchButton} href={currentDescription.youtubeLink} target="_blank" rel="noopener noreferrer">
+                    <a className={styles.watchButton} href={currentDescription.youtubeLink} onClick={() => muteAudio()} target="_blank" rel="noopener noreferrer">
                       <button>{location.pathname === "/installation/0" ? 'Watch the Teaser' : "Watch the Film"}</button>
                     </a>
                   )}

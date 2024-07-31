@@ -6,19 +6,18 @@ import crossIcon from '../assets/img/cross.png'
 import muteIcon from '../assets/img/muteIcon.png'
 
 const Navigation: React.FC = () => {
-  const { stopSound,playSound } = useSoundContext();
   const location = useLocation();
   const navigate = useNavigate();
   const [buttonPressed, setButtonPressed] = useState(false);
-  const [audio, setAudio] = useState(false)
+  const { audioEnabled, setAudioEnabled, playSound, stopSound } = useSoundContext();
 
   const muteAudio = () => {
     stopSound();
-    setAudio(false);
+    setAudioEnabled(false);
   };
   const activateAudio =() =>{
     playSound();
-    setAudio(true);
+    setAudioEnabled(true);
   }
 
   const handleClick = (path: string) => {
@@ -77,8 +76,8 @@ const Navigation: React.FC = () => {
           About
         </div>
         <div
-          className={`${audio? styles.audioEnable: styles.audioDisable } ${styles.muteButton} ${styles.navLinksDeactive}`}
-          onClick={audio ? muteAudio : activateAudio}
+          className={`${audioEnabled? styles.audioEnable: styles.audioDisable } ${styles.muteButton}  ${buttonPressed? styles.navLink: styles.linkDeactive}`}
+          onClick={audioEnabled ? muteAudio : activateAudio}
         >
           <img src={muteIcon} alt="Mute icon" />
         </div>

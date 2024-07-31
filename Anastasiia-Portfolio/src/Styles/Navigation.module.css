@@ -45,7 +45,10 @@
   text-decoration: none;
   opacity: 1;
   margin: 10px 10px 20px 10px;
-  padding: 1% 0 1% 5%;
+  display: flex;
+
+  align-items: center;
+  padding-left: 1vw;
   border: solid rgb(255, 255, 255) 1.5px;
   border-radius: 30px;
 }
@@ -66,8 +69,8 @@
   display: none;
 }
 
-.muteButton{
-
+.muteButton{  
+  height: 40px;
   padding: 0 0 0 0;  
   border: none;
   border-radius: 0;
@@ -80,10 +83,10 @@
   transform: scale(1.5);
 }
 .audioDisable{
-  content: url('../assets/img/muteIcon.png');
+  content: url('../assets/img/muteOn.png');
 }
 .audioEnable{
-  content: url('../assets/img/muteIcon.png');
+  content: url('../assets/img/muteOff.png');
 }
 @media (max-width: 900px) {
   .backgroundActive{
@@ -144,6 +147,7 @@
   .linkDeactive{
     display: none;
     
+    
   }
   
   .buttonPressed{
@@ -167,7 +171,12 @@
   justify-content: start;
   align-items: start;
 }
-
+.muteButton{
+  padding: 0;
+  border: none;
+  width: 50px;
+  margin: 0  auto;
+}
 }
 
 @media (max-width: 768px) {
