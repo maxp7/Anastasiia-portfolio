@@ -16,7 +16,7 @@
     right: 0;
     top: 0;
     height: 100svh;
-    width: calc(33% + 5vw);;
+    width: 34vw;
     background-color: #1c1c1c;
     z-index: 3;
     overflow-y: scroll;
@@ -101,11 +101,12 @@ text-align: left;
 .InfoButtonEnabled{
   content: url('../assets/img/infoCross.svg');
   margin:0 4.5vh 0.25vh 1.5vh !important;
-  height: 40px;
+  width: 35px;
 }
 
 .infoEnabled{
   display:none !important;
+ 
  
 }
 .infoDisabled{
@@ -123,7 +124,13 @@ text-align: left;
 }
 @media (max-width: 1920px) {
   .infoPanelEnable{
-    width: 500px;
+    width: 600px;
+  }
+ 
+  .InfoButtonEnabled{
+    content: url('../assets/img/infoCross.svg');
+    margin:0 4.5vh 0.25vh 1.5vh !important;
+    width: 30px;
   }
 }
 

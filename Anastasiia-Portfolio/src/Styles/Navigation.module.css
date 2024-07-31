@@ -2,15 +2,13 @@
 
 .nav {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  width: 100%;
+  padding: 2vh 2vh 5vh 2vh;
   align-items: center;
-  padding: 10px 4vh 10vh;
   width: 100%;
   z-index: 4;
-  height: 50px;
   cursor: url('../assets/img/cursor.svg'), auto;
-
-  ;
 }
 
 .logo {
@@ -31,10 +29,10 @@
 
 .navLinks {
   display: grid;
-  grid-template-columns: repeat(5, 19.5%) 4%;
-  width: 100%;
-  margin: 0;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  width: 100vw;
   z-index: 5;
+  justify-content: center;
   
 }
 
@@ -44,11 +42,10 @@
   color: rgb(255, 255, 255);
   text-decoration: none;
   opacity: 1;
-  margin: 10px 10px 20px 10px;
+  margin: 0 0.5vh;
   display: flex;
-
   align-items: center;
-  padding-left: 1vw;
+  padding: 0.15vw 1vw;
   border: solid rgb(255, 255, 255) 1.5px;
   border-radius: 30px;
 }
@@ -70,7 +67,8 @@
 }
 
 .muteButton{  
-  height: 40px;
+  height: 3vh;
+  min-height: 35px;
   padding: 0 0 0 0;  
   border: none;
   border-radius: 0;
@@ -83,10 +81,23 @@
   transform: scale(1.5);
 }
 .audioDisable{
-  content: url('../assets/img/muteOn.png');
+  content: url('../assets/img/muteRoundEnable.svg');
 }
 .audioEnable{
-  content: url('../assets/img/muteOff.png');
+  content: url('../assets/img/muteRoundDisable.svg');
+}
+.crossButtonEnable{
+
+  display: none;
+}
+.crossButtonDisable{
+  display: none;
+}
+.titleEnable{
+  display: none;
+}
+.titleDisable{
+  display: none;
 }
 @media (max-width: 900px) {
   .backgroundActive{
@@ -103,6 +114,41 @@
     padding: 2vh 1vh 10vh;
     padding: 0;
     position: fixed;
+    display: flex;
+    flex-direction: column-reverse;
+    background-image: url('../assets//img//background.gif');
+    background-size: cover;
+
+  }
+  .buttonContainer{
+    width: 100%;
+    background-color: #1c1c1c;
+    display: grid;
+    grid-template-columns: 6fr 1fr 1fr;
+  }
+  .audioDisable{
+    margin: 1vh 0.5vh !important;
+  }
+  .audioEnable{
+    margin: 1vh 0.5vh !important;
+  }
+  .crossButtonEnable{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+  .crossButtonDisable{
+    display: none;
+  }
+  .titleEnable{
+    margin-left: 2vh;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  .titleDisable{
+    display: none;
   }
   .navLinks{
     display: flex;
@@ -118,6 +164,9 @@
     padding:1svh 0;
     background-color: #1c1c1c;
     opacity: 1;
+  }
+  .muteButton{
+    width: 30px !important;
   }
   .navLink{
     margin: 0.5vh;

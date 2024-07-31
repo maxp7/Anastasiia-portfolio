@@ -1,5 +1,5 @@
 .container{
-  padding-top: 10svh;
+  padding-top: 12svh;
   height: 100%;
   width: 100%;
   display: flex;
@@ -29,8 +29,8 @@
   }
   h2{
   
-      font-size: 2svh;
-      margin:15svh 0 0 73svw;
+      font-size: 16px;
+      margin:15svh 2vh 0 72svw;
       position: relative;
       z-index: 3;
       cursor: url('../assets/img/cursor.svg'), auto;
