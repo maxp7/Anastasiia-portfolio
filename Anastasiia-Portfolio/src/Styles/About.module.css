@@ -103,6 +103,10 @@
   }
 
   @media (max-width: 900px) {
+    .nav{
+      margin-bottom: 5%;   
+    }
+
     .container{
       display: flex;
       flex-direction: column;
@@ -133,15 +137,19 @@
 
     .navLinks{
       display: grid;
-      grid-template-columns: 1fr; 
-      margin: 3vh 0 0 0;
+      margin: 3vh 1vw;
+      grid-template-columns:  33% 33% 33%; /* Три равные колонки */
+      grid-template-rows: auto; /* Автоматическая высота строк */
+      align-items: center;
+      justify-content: center;
     }
-    .linkDeactive{
-      margin: 0;
 
+    .navLinks > :nth-child(1) {
+      text-align: center;
+      width: 90%;
+      grid-column: 1 / -1; 
     }
     .navLink{
-
       font-size: 16px;
       color: white;
       text-decoration: none;
@@ -150,7 +158,6 @@
       border: solid rgb(153, 150, 150) 1px;
       border-radius: 30px;
       animation: fade 1s;
-      
     }
     @keyframes fade {
       from{
@@ -170,9 +177,10 @@
       margin:0 1vh;
       font-size: 16px;
       text-align:left;
-      padding: 0.5vh 1.5vh;
+      padding: 0.5vh 2vh;
       width:max-content;
       border: 1px solid white;
+      margin: 0 2vh 2vh;
     }
     .linkDeactive a{
       width: 100%;

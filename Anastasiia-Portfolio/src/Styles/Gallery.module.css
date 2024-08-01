@@ -28,7 +28,8 @@
 }
 .galleryTitle{
   position: relative;
-  padding: 4vh 0 0 1vh;
+  padding: 4vh 0 0 0.5vw;
+  padding-top: calc(50px-1vh);
  
   font-size: 24px;
 }

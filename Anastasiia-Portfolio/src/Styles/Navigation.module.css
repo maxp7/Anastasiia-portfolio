@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  padding: 2vh 2vh 5vh 2vh;
+  padding: 2vh 0.7vw 5vh;
   align-items: center;
   width: 100%;
   z-index: 4;
@@ -81,10 +81,10 @@
   transform: scale(1.5);
 }
 .audioDisable{
-  content: url('../assets/img/muteRoundEnable.svg');
+  content: url('../assets/img/muteOn.svg');
 }
 .audioEnable{
-  content: url('../assets/img/muteRoundDisable.svg');
+  content: url('../assets/img/muteOff.svg');
 }
 .crossButtonEnable{
 
@@ -128,10 +128,13 @@
   }
   .audioDisable{
     margin: 1vh 0.5vh !important;
+    content: url('../assets/img/muteRoundDisable.svg');
   }
   .audioEnable{
     margin: 1vh 0.5vh !important;
+    content: url('../assets/img/muteRoundEnable.svg');
   }
+
   .crossButtonEnable{
     display: flex;
     justify-content: center;

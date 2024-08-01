@@ -95,6 +95,23 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
     };
   }, [images]);
 
+  useEffect(() => {
+    const infoPanel = document.querySelector(`.${styles.infoPanelEnable}`);
+    if (infoPanel) {
+      const handleTouchMove = (e: TouchEvent) => {
+        e.preventDefault();
+      };
+  
+      // Приведение типа к HTMLElement для TypeScript
+      (infoPanel as HTMLElement).addEventListener('touchmove', handleTouchMove, { passive: false });
+  
+      return () => {
+        (infoPanel as HTMLElement).removeEventListener('touchmove', handleTouchMove);
+      };
+    }
+  }, [infoPanelVisible]);
+  
+
   const handleClick = (index: number) => {
     if (onImageClick) {
       onImageClick(index);
@@ -106,22 +123,24 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
     setInfoPanelVisible(true);
   };
   
-  const closeInfoPanel = () => {
-    setInfoPanelVisible(false);
-  };
-
   const handleInfoButtonClick = (image: { url: string; title?: string; description?: string }) => {
-    if (selectedImage && selectedImage.url === image.url) {
-      setInfoPanelVisible(false);
-      setSelectedImage(null);
+    if (selectedImage && selectedImage.url === image.url && infoPanelVisible) {
+        // Если текущее изображение уже выбрано и панель видима, просто скрываем панель
+        setInfoPanelVisible(false);
+        setSelectedImage(null);
     } else {
-      setSelectedImage(image);
-      setCurrentTitle(image.title || '');
-      setCurrentDescription(getDescription(image.title));
-      setInfoPanelVisible(true);
+        // В противном случае, показываем панель и обновляем изображение
+        setSelectedImage(image);
+        setCurrentTitle(image.title || '');
+        setCurrentDescription(getDescription(image.title));
+        setInfoPanelVisible(true);
     }
-  };
+};
 
+const closeInfoPanel = () => {
+    setInfoPanelVisible(false);
+    setSelectedImage(null);
+};
   const getDescription = (title?: string): Description | undefined => {
     if (!title) return undefined;
     const key = title.trim().toLowerCase();
@@ -151,7 +170,7 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
             {image.title && (
               <div className={`${styles.title} ${titleClassName}`}>
                 <div>{image.title}</div>
-                <div className={``}>
+                <div className={styles.controlButtons}>
                   {currentDescription?.youtubeLink && (
                     <a className={styles.watchButton} href={currentDescription.youtubeLink} onClick={() => muteAudio()} target="_blank" rel="noopener noreferrer">
                       <button>{location.pathname === "/installation/0" ? 'Watch the Teaser' : "Watch the Film"}</button>

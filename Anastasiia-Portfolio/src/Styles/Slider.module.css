@@ -13,6 +13,7 @@
     justify-content:space-between;
     position: absolute;
     margin: 0 !important;
+    padding: 0 0 !important;
     right: 0;
     top: 0;
     height: 100svh;
@@ -37,7 +38,7 @@ margin-bottom: 13.3svh;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   margin: 0 !important;
-  padding: 0 0.6svw !important;
+  padding: 0 1svw !important;
   opacity: 0.7;
   font-size: 1.8svh;
 }
@@ -46,10 +47,11 @@ margin-bottom: 13.3svh;
 }
 .infoPanelEnable p{
   margin: 2%;
-  padding: 0 3svh;
+  padding: 0 0.7svw 0 1svw;
 }
 .watchButton{
   text-decoration: none;
+  margin-right: 1vw;
 }
 .watchButton button{
 background-color: transparent !important;
@@ -100,17 +102,20 @@ text-align: left;
 
 .InfoButtonEnabled{
   content: url('../assets/img/infoCross.svg');
-  margin:0 4.5vh 0.25vh 1.5vh !important;
   width: 35px;
 }
 
 .infoEnabled{
   display:none !important;
- 
- 
 }
 .infoDisabled{
  display: none;
+}
+
+.controlButtons{
+  display: flex;
+  align-items: flex-end;
+  margin-right: 2vw;
 }
 @keyframes slide-left {
   from {
@@ -123,14 +128,14 @@ text-align: left;
   }
 }
 @media (max-width: 1920px) {
+
   .infoPanelEnable{
     width: 600px;
   }
  
   .InfoButtonEnabled{
     content: url('../assets/img/infoCross.svg');
-    margin:0 4.5vh 0.25vh 1.5vh !important;
-    width: 30px;
+    width: 38px;
   }
 }
 
@@ -157,38 +162,49 @@ text-align: left;
       flex-direction: column !important;
       flex-wrap: nowrap;
       align-items: flex-start;
-      justify-content: flex-start;
+      justify-content: space-between;
       position: absolute;
       margin: 0 0 0 0 !important;
       width: 100vw;
       height: 100vh;
       background: none;
-      overflow-x: hidden;
-      overflow-y: hidden;
       color:white;
       background-color: #1c1c1c;
       opacity: 0.9;
       animation: slide-top 1s;
-      overflow-x: scroll;
   }
+  .infoPanelEnable div:last-child{
+    margin: 0 0 1vh;
+    }
 
   .infoPanelDisable{
     display: none !important;
   }
 .infoPanelEnable p {
-  font-size: 14px;
+  font-size: 13px;
 }
-.infoPanelEnable p {
-  font-size: 14px;
-}
+
 .descriptionGeneral{
-  margin: 12vh 0 !important;
+  margin: 15vh 0 !important;
 }
 .descriptionSection{
   padding: 0 1vh !important;
 }
-
-
+.InfoButtonEnabled{
+  display: none;
+}
+.watchButton{
+  width: 39vw;
+  margin: 0;
+}
+.controlButtons{
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+.infoDisabled{
+  display: flex;
+ }
 
   @keyframes slide-top{
     from {
