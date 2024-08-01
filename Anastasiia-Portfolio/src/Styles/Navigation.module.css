@@ -1,12 +1,12 @@
 /* src/Styles/Navigation.module.css */
 
 .nav {
+  height: fit-content;
   display: flex;
   flex-direction: row;
   width: 100%;
-  padding: 2vh 0.7vw 5vh;
+  padding: 2svh 0.7vw 5svh;
   align-items: center;
-  width: 100%;
   z-index: 4;
   cursor: url('../assets/img/cursor.svg'), auto;
 }
@@ -42,7 +42,7 @@
   color: rgb(255, 255, 255);
   text-decoration: none;
   opacity: 1;
-  margin: 0 0.5vh;
+  margin: 0 0.5svh;
   display: flex;
   align-items: center;
   padding: 0.15vw 1vw;
@@ -67,7 +67,7 @@
 }
 
 .muteButton{  
-  height: 3vh;
+  height: 3svh;
   min-height: 35px;
   padding: 0 0 0 0;  
   border: none;
@@ -100,24 +100,31 @@
   display: none;
 }
 @media (max-width: 900px) {
+  .background{
+    
+
+            background-color: #1d1d22;
+
+  }
   .backgroundActive{
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100svh;
     background-color: black;
     opacity: 0.5;
     z-index: 4;
   }
   .nav{
-    padding: 2vh 1vh 10vh;
+    padding: 2svh 1svh 10svh;
     padding: 0;
     position: fixed;
     display: flex;
     flex-direction: column-reverse;
     background-image: url('../assets//img//background.gif');
     background-size: cover;
+    z-index: 10;
 
   }
   .buttonContainer{
@@ -127,11 +134,11 @@
     grid-template-columns: 6fr 1fr 1fr;
   }
   .audioDisable{
-    margin: 1vh 0.5vh !important;
+    margin: 1svh 0.5svh !important;
     content: url('../assets/img/muteRoundDisable.svg');
   }
   .audioEnable{
-    margin: 1vh 0.5vh !important;
+    margin: 1svh 0.5svh !important;
     content: url('../assets/img/muteRoundEnable.svg');
   }
 
@@ -145,7 +152,7 @@
     display: none;
   }
   .titleEnable{
-    margin-left: 2vh;
+    margin-left: 2svh;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -156,7 +163,7 @@
   .navLinks{
     display: flex;
     flex-direction: column;
-    padding:1svh 0;
+    padding:0;
   }
   .navLinksDeactive{
     width: 100%;
@@ -172,7 +179,7 @@
     width: 30px !important;
   }
   .navLink{
-    margin: 0.5vh;
+    margin: 0.5svh;
     font-size: 16px;
     color: white;
     text-decoration: none;
@@ -209,7 +216,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0.5vh;
+  margin: 1svh 0 0 0 ;
   font-size: 16px;
   color: #1c1c1c;
   text-decoration: none;

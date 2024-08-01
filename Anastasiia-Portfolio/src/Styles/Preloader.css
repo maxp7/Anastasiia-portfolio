@@ -31,30 +31,34 @@
   aspect-ratio: 1 / 1; 
 }
 .button img{
-  margin-top: 1vh;
+  margin-top: 1svh;
 }
 
 button {
   margin-top: 20px;
 }
 .mobileButton{
-  position: absolute;
-  bottom: 0;
-  width: 98%;
-  border: 1px solid white;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: 400;
-  opacity: 1;
-  font-family: "Montserrat", serif;
-  text-align: left;
-  padding: 0.5vh 0 0.5vh 4vw;
-  margin-bottom: 1vh;
-  background-color: white;
-  color: black;
+  display: none;
 }
 @media (max-width: 768px) {
     .button{
       display: none;
+    }
+    .mobileButton{
+      display: block;
+      position: absolute;
+      bottom: 0;
+      width: 98%;
+      border: 1px solid white;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: 400;
+      opacity: 1;
+      font-family: "Montserrat", serif;
+      text-align: left;
+      padding: 0.5svh 0 0.5svh 4vw;
+      margin-bottom: 1svh;
+      background-color: white;
+      color: black;
     }
 }

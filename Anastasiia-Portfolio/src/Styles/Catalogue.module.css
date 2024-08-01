@@ -4,9 +4,22 @@
             overflow-x:auto;
             z-index: 999;
         }
+        .catalogueSlider::before{
+            content: "";
+            background-color: #1d1d22;
+            width: 100svw;
+            height: 100svh;
+            position: fixed;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            z-index: -1;
+            opacity: 0.7;
+        }
         .catalogueSlider img {
-            height: 75vh; 
-            margin: 1vh 0.5vw 0 0.5vw;
+            height: 75svh; 
+            margin: 1svh 0.5vw 0 0.5vw;
             z-index: 0;
             transition: transform 300ms;
             cursor: url('../assets/img/cross.svg'), auto;
@@ -17,7 +30,7 @@
             flex-direction: row;
             align-items: center;
             position: fixed;
-            bottom: 5vh;
+            bottom: 5svh;
             left: 1vw;
             width: 100vw;
             justify-content: space-between;
@@ -35,7 +48,7 @@
             background-color: white;
             text-decoration: none;
             opacity: 1;
-            padding: 0.5vh 2vh;
+            padding: 0.5svh 2svh;
             border: solid rgb(153, 150, 150) 1px;
             border-radius: 30px;
             z-index: 5;
@@ -49,10 +62,13 @@
         }
  
         @media (max-width: 900px) {
+            .catalogueSlider::before{
+                display: none;
+            }
             .catalogueSlider{
                 display: flex;
                 flex-direction: column;
-                padding-top: 15vh;
+                padding-top: 15svh;
                 z-index: -5;
                 
             }
@@ -60,9 +76,7 @@
                 max-width: 100%;
                 max-height: auto;
                 z-index: 2;
-         
             }
-            
             .catalogueTitle{
                 font-size: 16px;
                 display: flex;
@@ -70,11 +84,11 @@
                 align-items: baseline;
                 position: fixed;
                 width: 100%;
-                height: 10vh;
-                top: 6.5vh;
+                height: 10svh;
+                top: 5svh;
                 left: 0;
                 margin:0;
-                padding: 0 1vh;
+                padding: 1svh 1svh 0 1svh;
                 z-index: 3;
                 background-image: url('../assets/img/background.gif');
             }
@@ -84,8 +98,8 @@
                 font-weight: 500;
                 color: rgb(0, 0, 0);
                 text-decoration: none;
-                padding:1vh 2vh;
-                margin-right: 1vh;
+                padding:1svh 2svh;
+                margin-right: 1svh;
                 border: solid rgb(255, 255, 255) 1px;
                 border-radius: 30px;
                 z-index: 5;
@@ -93,7 +107,7 @@
         }
         @media (max-width: 450px) {
             .catalogueSlider img{
-                margin: 0 1.2vh;
+                margin: 0 1.2svh;
                 height: auto;
             }
         }

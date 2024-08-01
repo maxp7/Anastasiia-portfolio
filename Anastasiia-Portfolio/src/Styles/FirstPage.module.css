@@ -30,7 +30,7 @@
   h2{
   
       font-size: 16px;
-      margin:15svh 2vh 0 72svw;
+      margin:15svh 2svh 0 72svw;
       position: relative;
       z-index: 3;
       cursor: url('../assets/img/cursor.svg'), auto;
@@ -58,7 +58,7 @@
       margin-top: 10svh;
     }
 } 
-@media (max-width: 376px) {
+@media (max-width: 450px) {
   h1{
     font-size: 7svh;
   }

@@ -119,7 +119,7 @@ text-align: left;
 }
 @keyframes slide-left {
   from {
-    right: -45vh;
+    right: -45svh;
     opacity: 0;
   }
   to {
@@ -148,7 +148,7 @@ text-align: left;
     }
     section:nth-child(4) img{
       margin: 0 auto;
-      height: 50dvh;
+      height: 50dsvh;
     }
     .scrollEnable{
       overflow-y: auto;
@@ -166,7 +166,7 @@ text-align: left;
       position: absolute;
       margin: 0 0 0 0 !important;
       width: 100vw;
-      height: 100vh;
+      height: 100svh;
       background: none;
       color:white;
       background-color: #1c1c1c;
@@ -174,7 +174,7 @@ text-align: left;
       animation: slide-top 1s;
   }
   .infoPanelEnable div:last-child{
-    margin: 0 0 1vh;
+    margin: 0 0 1svh;
     }
 
   .infoPanelDisable{
@@ -185,10 +185,10 @@ text-align: left;
 }
 
 .descriptionGeneral{
-  margin: 15vh 0 !important;
+  margin: 15svh 0 !important;
 }
 .descriptionSection{
-  padding: 0 1vh !important;
+  padding: 0 1svh !important;
 }
 .InfoButtonEnabled{
   display: none;
@@ -208,7 +208,7 @@ text-align: left;
 
   @keyframes slide-top{
     from {
-      top: 100vh;
+      top: 100svh;
     }
     to {
       top: 0;

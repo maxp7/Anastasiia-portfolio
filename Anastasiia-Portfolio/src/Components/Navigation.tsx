@@ -71,7 +71,7 @@ const Navigation: React.FC = () => {
           Installation
         </div>
         <div
-          className={`${buttonPressed ? styles.navLink : styles.linkDeactive} ${location.pathname === '/about' ? styles.active : ''}`}
+          className={`${buttonPressed ? styles.navLink : styles.linkDeactive} ${location.pathname === '/about' ? styles.active : ''} `}
           onClick={() => handleClick('/about')}
         >
           About
