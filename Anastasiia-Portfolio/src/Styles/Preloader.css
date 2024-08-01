@@ -37,11 +37,24 @@
 button {
   margin-top: 20px;
 }
-
+.mobileButton{
+  position: absolute;
+  bottom: 0;
+  width: 98%;
+  border: 1px solid white;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 1;
+  font-family: "Montserrat", serif;
+  text-align: left;
+  padding: 0.5vh 0 0.5vh 4vw;
+  margin-bottom: 1vh;
+  background-color: white;
+  color: black;
+}
 @media (max-width: 768px) {
     .button{
-      position: absolute;
-      top: 100px;
-      left: 1px;
+      display: none;
     }
 }

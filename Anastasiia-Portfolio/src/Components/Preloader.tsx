@@ -64,22 +64,35 @@ const Preloader: React.FC<PreloaderProps> = ({ onExploreClick }) => {
           initial={{ opacity: 1 }}
           animate={shouldAnimate ? { opacity: 0 } : { opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 2 }}
+          transition={{ duration: 0.1, delay: 1.1  }}
           style={{
             backgroundImage: `url(${backgroundGif})`,
             backgroundSize: 'cover',
           }}
         >
+          
+          <motion.div
+        initial={{ bottom: '1vh' }} // Начальная позиция ниже видимой области
+        animate={shouldAnimate ? { bottom: '93vh' } : { bottom: '1vh' }} // Конечная позиция
+        transition={{ duration: 1 }} // Продолжительность анимации
+        style={{position: "absolute", bottom: "0", width: "100vw", marginBottom: "1vh", marginLeft: "1vh"}}
+        
+    >
+        <button className='mobileButton' onClick={handleClick}>Explore</button>
+    </motion.div>
+          
+          
           {buttonVisible && (
             <button
               ref={buttonRef}
               className="button"
-              onClick={handleClick}
+              
               style={buttonStyle}
             >
               explore
               <img src={cursorImage} alt="" />
             </button>
+            
           )}
         </motion.div>
       )}
