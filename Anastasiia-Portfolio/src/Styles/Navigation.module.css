@@ -77,9 +77,6 @@
  background-color: transparent;
 }
 
-.muteButton img:hover{
-  transform: scale(1.5);
-}
 .audioDisable{
   content: url('../assets/img/muteOn.svg');
 }

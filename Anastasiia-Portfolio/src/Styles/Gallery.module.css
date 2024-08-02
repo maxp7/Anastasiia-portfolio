@@ -28,7 +28,7 @@
   transition: transform 300ms;
 }
 .gallerySlider img:hover{
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 .gallerySlider img::after {
   display: flex;

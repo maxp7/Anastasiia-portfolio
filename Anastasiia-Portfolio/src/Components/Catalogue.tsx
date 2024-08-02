@@ -103,17 +103,20 @@ import installation4 from '../assets/img/installation4.jpg';
 import installation5 from '../assets/img/installation5.jpg';
 import installation6 from '../assets/img/installation6.jpg';
 
-const imagesData: { [key: string]: { url: string, title?: string, description?: string}[][] } = {
+import recordingBlurred1 from '../assets/img/0.1b.webp'
+import recordingBlurred2 from '../assets/img/0.2b.webp'
+
+const imagesData: { [key: string]: { url: string, placeholder?: string, title?: string, description?: string}[][] } = {
   films: [
     [
-      { url: recording1, title: 'RECORDING 377' },
-      { url: recording2 },
-      { url: recording3 },
-      { url: recording4 },
-      { url: recording5 },
-      { url: recording6 },
-      { url: recording7 },
-      { url: recording8 }
+      { url: recording1, placeholder: recordingBlurred1, title: 'RECORDING 377' },
+      { url: recording2, placeholder: recordingBlurred2},
+      { url: recording3, },
+      { url: recording4,  },
+      { url: recording5,  },
+      { url: recording6, },
+      { url: recording7,  },
+      { url: recording8,  }
     ],
     [
       { url: erwachen1, title: 'ERWACHEN' },
@@ -341,7 +344,7 @@ This series is an expression of compassion and belief in the strength of those a
   "tangible music interfaces":{
     general:"This interactive station was created to provide an accessible and engaging musical experience for all visitors to the Musical Instrument Museum (MIM). The station allows visitors to independently create music based on the sounds of three MIM exhibits using three digital interfaces controlled by sensors and microchips. These interfaces are similar to MIDI controllers and are inspired by the sounds, appearance, and mechanics of the three MIM exhibits, which were sampled by the museum and provided to us for further work on the installation. The project was presented in a comprehensive exhibition at the MIM and was nominated for the German Multimedia Award. The interactive station also participated in the ARS Electronica Festival in September 2023.",
     crew:{
-      designAndConception:"Anastasiia Vishnevska and Tijana Mirjacic",
+      designAndConception:"Anastasiia Vishnevska Tijana Mirjacic",
       programming:"Maksym Pidluzhnyi",
       supervision:" Prof. Alexander Müller-Rakow"
     },

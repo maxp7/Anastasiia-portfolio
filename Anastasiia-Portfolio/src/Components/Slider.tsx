@@ -154,6 +154,14 @@ const closeInfoPanel = () => {
     }
   };
 
+  function createLineBreaks(text: string) {
+    return text.split('<br>').map((item, index) => (
+      <React.Fragment key={index}>
+        {item}
+        <br />
+      </React.Fragment>
+    ));
+  }
   return (
     <div className={styles.sliderWrapper}>
       <div className={`${styles.slider} ${sliderClassName}`} ref={sliderRef}>
@@ -164,6 +172,7 @@ const closeInfoPanel = () => {
             <img
               src={image.url}
               alt={`Image ${index + 1}`}
+              
               onClick={() => handleClick(index)}
               className={styles.image}
             />
@@ -285,7 +294,7 @@ const closeInfoPanel = () => {
                   {currentDescription.crew.designAndConception && (
                     <p className={styles.descriptionSection}>
                       <strong className={styles.leftColumn}>DESIGN AND CONCEPTION</strong>
-                      <div className={styles.rightColumn}> {currentDescription.crew.designAndConception}</div>
+                      <strong className={styles.rightColumn}>{createLineBreaks(currentDescription.crew.designAndConception)}</strong>
                     </p>
                   )}
                   {currentDescription.crew.programming && (

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import cv from "../assets/img/Anastasiia_Vishnevska_CV.pdf"
 import styles from '../Styles/About.module.css';
 
 const About: React.FC = () => {
@@ -41,7 +42,7 @@ const About: React.FC = () => {
         <div
           className={`${buttonPressed ? styles.navLink : styles.linkDeactive}`}
         >
-         <a href="https://t.me/viishnii" target='blank'>Get CV</a> 
+         <a href={cv} download>Get CV</a> 
         </div>
         
       </div>
