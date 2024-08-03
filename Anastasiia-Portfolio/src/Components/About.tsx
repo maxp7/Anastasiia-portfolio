@@ -18,7 +18,7 @@ const About: React.FC = () => {
     <div className={styles.container}>
       <p className={styles.header}>Anastasia Vishnevska </p>
       <p className={styles.subHeader}>visual artist, based in Berlin.</p>
-      <p className={styles.description}>With a background in fine arts, I'm focusing on film, photography and media art, often exploring social, moral and psychological issues. I enjoy delving into philosophical issues, aiming to make complex ideas more accessible and relatable. By developing my project coordination skills, I've learned how to smoothly bring creative ideas to life and believe that collaboration is the key to great resales.  <br /> <br />
+      <p className={styles.description}>With a background in fine arts, I'm focusing on film, photography and media art, often exploring social, moral and psychological issues. I enjoy delving into philosophical issues, aiming to make complex ideas more accessible and relatable. By developing my project coordination skills, I've learned how to smoothly bring creative ideas to life and believe that collaboration is the key to great outcomes.  <br /> <br />
 
       If you're looking for an artist to bring ideas to life, I'd love to work with you <br /> to create meaningful and high-quality results.</p>
 <nav className={styles.nav}>

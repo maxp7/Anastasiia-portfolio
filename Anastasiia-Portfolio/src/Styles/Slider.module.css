@@ -185,7 +185,7 @@ text-align: left;
 }
 
 .descriptionGeneral{
-  margin: 15svh 0 !important;
+  margin: 20svh 0 0 0  !important;
 }
 .descriptionSection{
   padding: 0 1svh !important;
@@ -208,7 +208,7 @@ text-align: left;
 
   @keyframes slide-top{
     from {
-      top: 100svh;
+      top: 80svh;
     }
     to {
       top: 0;

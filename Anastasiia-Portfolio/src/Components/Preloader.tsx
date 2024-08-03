@@ -47,7 +47,7 @@ const Preloader: React.FC<PreloaderProps> = ({ onExploreClick }) => {
     setShouldAnimate(true);
     setTimeout(() => {
       setIsVisible(false);
-    }, 1);
+    }, 500);
   };
 
   const buttonStyle = {
@@ -60,26 +60,19 @@ const Preloader: React.FC<PreloaderProps> = ({ onExploreClick }) => {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="preloader"
-          initial={{ opacity: 1 }}
-          animate={shouldAnimate ? { opacity: 0 } : { opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.1, delay: 0.2  }}
+        className="preloader"
+        initial={{ top: '0' }} 
+        animate={shouldAnimate ? { top: '-100svh' } : { top: '0svh' }} 
+        transition={{ duration: 0.5 }} 
           style={{
             backgroundImage: `url(${backgroundGif})`,
             backgroundSize: 'cover',
           }}
+          
         >
           
-          <motion.div
-        initial={{ bottom: '1svh' }} 
-        animate={shouldAnimate ? { bottom: '93svh' } : { bottom: '1svh' }} 
-        transition={{ duration: 0.3 }} 
-        style={{position: "absolute", bottom: "0", width: "100vw", marginBottom: "1vh", marginLeft: "1vh", marginTop:'1svh'}}
-        
-    >
-        <button className='mobileButton' onClick={handleClick}>Explore</button>
-    </motion.div>
+        <button ref={buttonRef} className='mobileButton' onClick={handleClick}>Explore</button>
+    
           
           
           {buttonVisible && (

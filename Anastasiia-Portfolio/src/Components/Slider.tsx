@@ -5,6 +5,7 @@ import styles from '../Styles/Slider.module.css';
 
 interface Crew {
   director?: string;
+  filmBy?: string;
   cinematographer?: string;
   writer?: string;
   assistant?: string;
@@ -231,6 +232,12 @@ const closeInfoPanel = () => {
                       <div className={styles.rightColumn}>{currentDescription.crew.director}</div>
                     </p>
                   )}
+                  {currentDescription.crew.filmBy && (
+                    <p className={styles.descriptionSection}>
+                      <strong className={styles.leftColumn}>FILM BY</strong>
+                      <div className={styles.rightColumn}> {currentDescription.crew.filmBy}</div>
+                    </p>
+                  )}
                   {currentDescription.crew.writer && (
                     <p className={styles.descriptionSection}>
                       <strong className={styles.leftColumn}>{`${currentDescription.youtubeLink ==="https://youtu.be/eAsrqH0uvyA"? "WRITER, COLORIST, ASSISTANT":"WRITER"}`}</strong>
@@ -315,6 +322,7 @@ const closeInfoPanel = () => {
                       <div className={styles.rightColumn}> {currentDescription.crew.cast.join(', ')}</div>
                     </p>
                   )}
+                  
                 </>
               )}
             </div>

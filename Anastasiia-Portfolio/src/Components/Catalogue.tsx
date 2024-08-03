@@ -24,7 +24,7 @@ import erwachen1 from '../assets/img/2.6.jpg'
 import erwachen2 from '../assets/img/2.5.jpg'
 import erwachen3 from '../assets/img/2.3.jpg'
 import erwachen4 from '../assets/img/2.2.jpg'
-import erwachen5 from '../assets/img/2.4.png'
+import erwachen5 from '../assets/img/2.4.webp'
 
 import rueckenwind1 from '../assets/img/3.1.jpg'
 import rueckenwind2 from '../assets/img/3.2.jpg'
@@ -52,11 +52,11 @@ import ichSehe4 from '../assets/img/6.3.jpg'
 import ichSehe5 from '../assets/img/6.4.jpg'
 import ichSehe6 from '../assets/img/6.5.jpg'
 
-import nature1 from '../assets/img/7.jpg'
-import nature2 from '../assets/img/7.1.jpg'
+import nature1 from '../assets/img/7.webp'
+import nature2 from '../assets/img/7.1.webp'
 import nature3 from '../assets/img/7.2.jpg'
 import nature4 from '../assets/img/7.3.jpg'
-import nature5 from '../assets/img/7.4.jpg'
+import nature5 from '../assets/img/7.4.webp'
 import nature6 from '../assets/img/7.5.jpg'
 import nature7 from '../assets/img/7.6.jpg'
 import nature8 from '../assets/img/7.7.jpg'
@@ -69,19 +69,19 @@ import nature14 from '../assets/img/7.13.jpg'
 import nature15 from '../assets/img/7.14.jpg'
 
 
-import marvels1 from '../assets/img/8.1.jpg'
-import marvels2 from '../assets/img/8.2.jpg'
+import marvels1 from '../assets/img/8.1.webp'
+import marvels2 from '../assets/img/8.2.webp'
 import marvels3 from '../assets/img/8.3.jpg'
-import marvels4 from '../assets/img/8.4.jpg'
+import marvels4 from '../assets/img/8.4.webp'
 import marvels5 from '../assets/img/8.5.jpg'
 import marvels6 from '../assets/img/8.6.jpg'
-import marvels7 from '../assets/img/8.7.jpg'
+import marvels7 from '../assets/img/8.7.webp'
 import marvels8 from '../assets/img/8.8.jpg'
 import marvels9 from '../assets/img/8.9.jpg'
 import marvels10 from '../assets/img/8.10.jpg'
 import marvels11 from '../assets/img/8.11.jpg'
 import marvels12 from '../assets/img/8.12.jpg'
-import marvels13 from '../assets/img/8.13.jpg'
+import marvels13 from '../assets/img/8.13.webp'
 import marvels14 from '../assets/img/8.14.jpg'
 import marvels15 from '../assets/img/8.15.jpg'
 import marvels16 from '../assets/img/8.16.jpg'
@@ -224,6 +224,7 @@ const imagesData: { [key: string]: { url: string, placeholder?: string, title?: 
 };
 interface Crew {
   director?: string;
+  filmBy?: string;
   cinematographer?:string;
   writer?: string;
   assistant?: string;
@@ -308,8 +309,8 @@ interface Description {
     year: "2023",
     language: "German",
     crew: {
-      director: "Anastasiia Vishnevska, Tijana Mirjacic, Anastasiia Sviderska",
-      soundDesign: "Maksim Pidluzhnzi",
+      filmBy: "Anastasiia Vishnevska, Tijana Mirjacic, Anastasiia Sviderska",
+      soundDesign: "Maksym Pidluzhnyi",
       cast: ["Christina Völz", "Birk Vogel"]
     },
      youtubeLink: "https://youtu.be/6Nfvp0tEe9M"
