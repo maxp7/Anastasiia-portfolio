@@ -30,7 +30,7 @@ margin-bottom: 13.3svh;
 
 .descriptionGeneral{
   margin: 14svh 0 5svh !important;
-  font-size: 2svh;
+  font-size: 1.8svh;
 }
 .descriptionSection{
   display: flex;
@@ -166,7 +166,7 @@ text-align: left;
       position: absolute;
       margin: 0 0 0 0 !important;
       width: 100vw;
-      height: 100svh;
+      height: 100dvh;
       background: none;
       color:white;
       background-color: #1c1c1c;
@@ -185,7 +185,7 @@ text-align: left;
 }
 
 .descriptionGeneral{
-  margin: 20svh 0 0 0  !important;
+  margin: 20svh 1svh 0 1svh  !important;
 }
 .descriptionSection{
   padding: 0 1svh !important;

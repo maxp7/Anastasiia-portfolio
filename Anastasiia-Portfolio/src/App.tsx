@@ -1,5 +1,5 @@
 // App.tsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Preloader from './Components/Preloader';
 import Gallery from './Components/Gallery';
@@ -26,7 +26,6 @@ import styles from './App.module.css';
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
-
   const sliderImagesFilm = [
     { url: recording, title: 'RECORDING 377' },
     { url: erwachen, title: 'ERWACHEN' },
@@ -53,6 +52,7 @@ const App: React.FC = () => {
   };
 
   return (
+    
     <Router>
     <SoundProvider>
         <AnimatePresence>

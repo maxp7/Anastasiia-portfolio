@@ -1,4 +1,3 @@
-// Preloader.tsx
 import React, { useState, useEffect, useRef } from 'react';
 import { useSoundContext } from './SoundContext';
 import '../Styles/Preloader.css';
@@ -11,7 +10,7 @@ interface PreloaderProps {
 }
 
 const Preloader: React.FC<PreloaderProps> = ({ onExploreClick }) => {
-  const {playSound} = useSoundContext();
+  const { playSound } = useSoundContext();
   const [isVisible, setIsVisible] = useState(true);
   const [shouldAnimate, setShouldAnimate] = useState(false);
   const [buttonVisible, setButtonVisible] = useState(true);
@@ -60,21 +59,28 @@ const Preloader: React.FC<PreloaderProps> = ({ onExploreClick }) => {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-        className="preloader"
-        initial={{ top: '0' }} 
-        animate={shouldAnimate ? { top: '-100svh' } : { top: '0svh' }} 
-        transition={{ duration: 0.5 }} 
+          className="preloaderMobile"
+          initial={{ top: '0' }}
+          animate={shouldAnimate ? { top: '-100vh' } : { top: '0vh' }}
+          transition={{ duration: 0.5 }}
           style={{
             backgroundImage: `url(${backgroundGif})`,
             backgroundSize: 'cover',
           }}
-          
         >
-          
-        <button ref={buttonRef} className='mobileButton' onClick={handleClick}>Explore</button>
-    
-          
-          
+          <motion.div
+            className="preloader"
+            initial={{ opacity: 1 }}
+            animate={shouldAnimate ? { opacity: 0 } : { opacity: 1 }}
+            transition={{ duration: 1 }}
+            style={{
+              backgroundImage: `url(${backgroundGif})`,
+              backgroundSize: 'cover',
+            }}
+          />
+
+          <button ref={buttonRef} className='mobileButton' onClick={handleClick}>Explore</button>
+
           {buttonVisible && (
             <button
               ref={buttonRef}
@@ -85,7 +91,6 @@ const Preloader: React.FC<PreloaderProps> = ({ onExploreClick }) => {
               explore
               <img src={cursorImage} alt="" />
             </button>
-            
           )}
         </motion.div>
       )}

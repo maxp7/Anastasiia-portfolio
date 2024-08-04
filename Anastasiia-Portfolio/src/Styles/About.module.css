@@ -1,14 +1,15 @@
 .container{
     position: relative;
     height: 100svh;
+    width: 100svw;
     z-index: 3;
     cursor: url('../assets/img/cursor.svg'), auto;
 }
 .container::before{
   content: "";
   background-color: #212125;
-  width: 100svw;
-  height: 100svh;
+  width: 100dvw;
+  height: 110dvh;
   position: fixed;
   top: 0px;
   right: 0px;
@@ -48,7 +49,7 @@
 .nav {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 100svw;
     z-index: 4;
     height: 50px;
     
@@ -157,37 +158,38 @@
     }
   }
   @media (max-width: 900px) {
-    .container::before{
-      display: none;
-    }
+   
     .nav{
-      margin-bottom: 5%;   
+      margin-bottom: 5%;
+         
     }
 
     .container{
       display: flex;
       flex-direction: column;
+      padding-left: 1vw;
+      width: 100dvw;
     }
     
     .header{
       padding: 0;
       width: 100%;
-      font-size: 4.2svh;
-      margin: 10svh 0 0 1svh;
+      font-size: 4svh;
+      margin: 10svh 0 0 2svh;
       font-style: normal;
       font-weight: 900;
     }
     .subHeader{
       width: 99%;
-      margin: 2svh 0 5svh 1svh;
+      margin: 2svh 0 5svh 2svh;
       padding:0;
-      font-size: 3.2svh;
+      font-size: 3svh;
       font-weight: 600;
     }
     .description{
-      margin: 0 1svh;
+      margin: 0 2.5svh;
       padding:0;
-      font-size: 2.5svh;
+      font-size: 2.3svh;
       width: 86%;
       min-width: 15ch;
       font-weight: 400;

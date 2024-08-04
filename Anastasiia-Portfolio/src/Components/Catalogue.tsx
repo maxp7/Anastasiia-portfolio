@@ -289,7 +289,7 @@ interface Description {
       costumeDesigner: "Isabela Rüth",
       cast: ["Anna Mrachkovska", "Sofia Kroshka", "Birk Vogel"]
     },
-     youtubeLink: "https://www.youtube.com"
+     youtubeLink: "https://youtu.be/qfIYbGrX8gs"
   },
   "rückenwind": {
     general: `"Rückenwind" is a sketch created in 3 days that explores the interplay between past and present. The film offers a reflective journey through vivid, emotionally charged memories. With a mix of dramatic and enchanting moments, it explores themes of self-discovery and introspection.`,
@@ -325,7 +325,7 @@ interface Description {
       soundDesign: "Esentialmiks",
       cast: ["Sofia Kroshka, Valeriia Berezovska"]
     },
-     youtubeLink: "https://www.youtube.com"
+     youtubeLink: "https://youtu.be/gzBWOtIhAtQ"
   },
   "sealed time":{
     general:"This series is an ode to the beauty of analog photography, where each frame requires careful thought and attention. It intertwines scenes of nature, architecture, and everyday life, revealing the intricate details and textures of unique moments. This is a journey through the lens, offering a different perspective on the world, encouraging the appreciation of moments, and the enjoyment of the beauty around us."

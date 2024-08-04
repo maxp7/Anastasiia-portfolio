@@ -12,6 +12,8 @@ lerna-debug.log*
 *.gif
 *.svg
 *.webp
+*.pdf
+*.wav
 node_modules
 dist
 dist-ssr
