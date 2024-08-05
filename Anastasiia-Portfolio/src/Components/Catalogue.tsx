@@ -96,12 +96,12 @@ import queen5 from '../assets/img/9.5.jpg'
 import queen6 from '../assets/img/9.6.jpg'
 import queen7 from '../assets/img/9.7.jpg'
 
-import installation1 from '../assets/img/installation1.jpg';
+import installation1 from '../assets/img/installation6.jpg';
 import installation2 from '../assets/img/installation2.jpg';
 import installation3 from '../assets/img/installation3.jpg';
 import installation4 from '../assets/img/installation4.jpg';
 import installation5 from '../assets/img/installation5.jpg';
-import installation6 from '../assets/img/installation6.jpg';
+import installation6 from '../assets/img/installation1.jpg';
 
 import recordingBlurred1 from '../assets/img/0.1b.webp'
 import recordingBlurred2 from '../assets/img/0.2b.webp'

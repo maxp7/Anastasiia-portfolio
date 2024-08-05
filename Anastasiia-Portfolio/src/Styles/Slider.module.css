@@ -2,6 +2,7 @@
   ::-webkit-scrollbar {
     width: 0px;
   }
+ 
 .slider{
   cursor: url('../assets/img/cursor.svg'), auto;
   overflow-x: auto
@@ -16,7 +17,8 @@
     padding: 0 0 !important;
     right: 0;
     top: 0;
-    height: 100svh;
+
+    min-height: -webkit-fill-available;
     width: 34vw;
     background-color: #1c1c1c;
     z-index: 3;
@@ -176,7 +178,8 @@ text-align: left;
       position: absolute;
       margin: 0 0 0 0 !important;
       width: 100vw;
-      height: 100dvh;
+      min-height: 110dvh !important;
+      min-height: --webkit-fill-available;
       background: none;
       color:white;
       background-color: #1c1c1c;
@@ -184,7 +187,7 @@ text-align: left;
       animation: slide-top 1s;
   }
   .infoPanelEnable div:last-child{
-    margin: 0 0 1svh;
+    margin: 0 0 10svh;
     }
   .infoPanelDisable{
     display: none !important;

@@ -156,13 +156,7 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
     }
   };
 
-  const handleImageLoad = (index: number) => {
-    setLoadedImages(prevState => {
-      const newState = [...prevState];
-      newState[index] = true;
-      return newState;
-    });
-  };
+  
   function createLineBreaks(text: string) {
     return text.split('<br>').map((item, index) => (
       <React.Fragment key={index}>
@@ -205,6 +199,18 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
       fetchImages();
     }
   }, [images]);
+
+ const convertStyle = () => {
+  const height = window.innerHeight;
+  Array.from(document.getElementsByClassName("InfoPanelEnabled")).forEach((element) => {
+    const htmlElement = element as HTMLElement;
+    htmlElement.style.height = `${height}px`;
+  });
+};
+
+window.addEventListener("resize", convertStyle);
+window.addEventListener("DOMContentLoaded", convertStyle);
+
   return (
     <AnimatePresence>
     <div className={styles.sliderWrapper}>
