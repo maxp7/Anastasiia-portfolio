@@ -117,6 +117,16 @@ text-align: left;
   align-items: flex-end;
   margin-right: 2vw;
 }
+
+.hidden{
+  display: none !important;
+}
+.placeholder{
+  width: 100%;
+  height: 100%;
+  background-color: #1c1c1c;
+  opacity: 0.7;
+}
 @keyframes slide-left {
   from {
     right: -45svh;
@@ -176,7 +186,6 @@ text-align: left;
   .infoPanelEnable div:last-child{
     margin: 0 0 1svh;
     }
-
   .infoPanelDisable{
     display: none !important;
   }

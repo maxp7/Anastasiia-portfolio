@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom'; 
 import { useSoundContext } from './SoundContext';
 import styles from '../Styles/Slider.module.css';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface Crew {
   director?: string;
@@ -47,12 +48,14 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
   const [selectedImage, setSelectedImage] = useState<{ url: string; title?: string; description?: string } | null>(null);
   const [infoPanelVisible, setInfoPanelVisible] = useState(false);
   const [currentDescription, setCurrentDescription] = useState<Description | undefined>(undefined);
+  const [loadedImages, setLoadedImages] = useState<boolean[]>(new Array(images.length).fill(false));
 
   const location = useLocation();
   const muteAudio = () => {
     stopSound();
     setAudioEnabled(false);
   };
+
   useEffect(() => {
     if (images.length > 0 && images[0].title) {
       setCurrentTitle(images[0].title);
@@ -103,7 +106,6 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
         e.preventDefault();
       };
   
-      // Приведение типа к HTMLElement для TypeScript
       (infoPanel as HTMLElement).addEventListener('touchmove', handleTouchMove, { passive: false });
   
       return () => {
@@ -111,7 +113,6 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
       };
     }
   }, [infoPanelVisible]);
-  
 
   const handleClick = (index: number) => {
     if (onImageClick) {
@@ -126,24 +127,22 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
   
   const handleInfoButtonClick = (image: { url: string; title?: string; description?: string }) => {
     if (selectedImage && selectedImage.url === image.url && infoPanelVisible) {
-        // Если текущее изображение уже выбрано и панель видима, просто скрываем панель
-        setInfoPanelVisible(false);
-        setSelectedImage(null);
-        
+      setInfoPanelVisible(false);
+      setSelectedImage(null);
     } else {
-        // В противном случае, показываем панель и обновляем изображение
-        setSelectedImage(image);
-        setCurrentTitle(image.title || '');
-        setCurrentDescription(getDescription(image.title));
-        setInfoPanelVisible(true);
-        window.scrollTo(0, 0);
+      window.scrollTo(0, 0);
+      setSelectedImage(image);
+      setCurrentTitle(image.title || '');
+      setCurrentDescription(getDescription(image.title));
+      setInfoPanelVisible(true);
     }
-};
+  };
 
-const closeInfoPanel = () => {
+  const closeInfoPanel = () => {
     setInfoPanelVisible(false);
     setSelectedImage(null);
-};
+  };
+
   const getDescription = (title?: string): Description | undefined => {
     if (!title) return undefined;
     const key = title.trim().toLowerCase();
@@ -157,6 +156,13 @@ const closeInfoPanel = () => {
     }
   };
 
+  const handleImageLoad = (index: number) => {
+    setLoadedImages(prevState => {
+      const newState = [...prevState];
+      newState[index] = true;
+      return newState;
+    });
+  };
   function createLineBreaks(text: string) {
     return text.split('<br>').map((item, index) => (
       <React.Fragment key={index}>
@@ -165,37 +171,73 @@ const closeInfoPanel = () => {
       </React.Fragment>
     ));
   }
+  const loadImage = (src:string) => {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => resolve(src);
+      img.onerror = (err) => reject(err);
+    });
+  };
+  
+  const loadImagesInSequence = async (imageUrls:string[]) => {
+    const loadedImages = [];
+    for (const url of imageUrls) {
+      try {
+        await loadImage(url);
+        loadedImages.push(url);
+      } catch (err) {
+        console.error(`Failed to load image ${url}`, err);
+      }
+    }
+    return loadedImages;
+  };
+  useEffect(() => {
+    const imageUrls = images.map(image => image.url);
+    
+    const fetchImages = async () => {
+      const loaded = await loadImagesInSequence(imageUrls);
+      const loadedImageStates = images.map(image => loaded.includes(image.url));
+      setLoadedImages(loadedImageStates);
+    };
+  
+    if (images.length > 0) {
+      fetchImages();
+    }
+  }, [images]);
   return (
+    <AnimatePresence>
     <div className={styles.sliderWrapper}>
       <div className={`${styles.slider} ${sliderClassName}`} ref={sliderRef}>
-      <div className={styles.leftNav} onClick={() => scrollSlider('left')}></div>
-      <div className={styles.rightNav} onClick={() => scrollSlider('right')}></div>
+        <div className={styles.leftNav} onClick={() => scrollSlider('left')}></div>
+        <div className={styles.rightNav} onClick={() => scrollSlider('right')}></div>
         {images.map((image, index) => (
-          <div key={index} className={styles.imageContainer}>
-            <img
-              src={image.url}
-              alt={`Image ${index + 1}`}
-              
-              onClick={() => handleClick(index)}
-              className={styles.image}
-            />
-            {image.title && (
-              <div className={`${styles.title} ${titleClassName}`}>
-                <div>{image.title}</div>
-                <div className={styles.controlButtons}>
-                  {currentDescription?.youtubeLink && (
-                    <a className={styles.watchButton} href={currentDescription.youtubeLink} onClick={() => muteAudio()} target="_blank" rel="noopener noreferrer">
-                      <button>{location.pathname === "/installation/0" ? 'Watch the Teaser' : "Watch the Film"}</button>
-                    </a>
-                  )}
-                  <button  className={infoPanelVisible? styles.infoDisabled :styles.InfoEnabled} onClick={() => handleInfoButtonClick(image)}>Info</button>
-                  <div className={infoPanelVisible? styles.InfoButtonEnabled: styles.infoButtonDisabled} onClick={() => closeInfoPanel()}></div>
-                </div>
-              </div>
-            )}
-          </div>
-        ))}
-
+  <div key={index} className={styles.imageContainer}>
+    <motion.img
+      src={image.url}
+      alt={`Image ${index + 1}`}
+      onClick={() => handleClick(index)}
+      className={styles.image}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: loadedImages[index] ? 1 : 0 }}
+      transition={{ duration: 2 }}
+    />
+    {image.title && (
+      <div className={`${styles.title} ${titleClassName}`}>
+        <div>{image.title}</div>
+        <div className={styles.controlButtons}>
+          {currentDescription?.youtubeLink && (
+            <a className={styles.watchButton} href={currentDescription.youtubeLink} onClick={() => muteAudio()} target="_blank" rel="noopener noreferrer">
+              <button>{location.pathname === "/installation/0" ? 'Watch the Teaser' : "Watch the Film"}</button>
+            </a>
+          )}
+          <button className={infoPanelVisible ? styles.infoDisabled : styles.InfoEnabled} onClick={() => handleInfoButtonClick(image)}>Info</button>
+          <div className={infoPanelVisible ? styles.InfoButtonEnabled : styles.infoButtonDisabled} onClick={() => closeInfoPanel()}></div>
+        </div>
+      </div>
+    )}
+  </div>
+))}
         {selectedImage && selectedImage.title && currentDescription && (
           <div className={infoPanelVisible ? styles.infoPanelEnable : styles.infoPanelDisable} onClick={() => closeInfoPanel()}>
             <div>
@@ -230,7 +272,7 @@ const closeInfoPanel = () => {
                 <>
                   {currentDescription.crew.director && (
                     <p className={styles.descriptionSection}>
-                      <strong className={styles.leftColumn}>{`${currentDescription.youtubeLink ==="https://youtu.be/eAsrqH0uvyA"? "DIRECTOR, WRITER, EDITOR":"DIRECTOR"}`}</strong>
+                      <strong className={styles.leftColumn}>{`${currentDescription.youtubeLink === "https://youtu.be/eAsrqH0uvyA" ? "DIRECTOR, WRITER, EDITOR" : "DIRECTOR"}`}</strong>
                       <div className={styles.rightColumn}>{currentDescription.crew.director}</div>
                     </p>
                   )}
@@ -242,7 +284,7 @@ const closeInfoPanel = () => {
                   )}
                   {currentDescription.crew.writer && (
                     <p className={styles.descriptionSection}>
-                      <strong className={styles.leftColumn}>{`${currentDescription.youtubeLink ==="https://youtu.be/eAsrqH0uvyA"? "WRITER, COLORIST, ASSISTANT":"WRITER"}`}</strong>
+                      <strong className={styles.leftColumn}>{`${currentDescription.youtubeLink === "https://youtu.be/eAsrqH0uvyA" ? "WRITER, COLORIST, ASSISTANT" : "WRITER"}`}</strong>
                       <div className={styles.rightColumn}>{currentDescription.crew.writer}</div>
                     </p>
                   )}
@@ -324,15 +366,14 @@ const closeInfoPanel = () => {
                       <div className={styles.rightColumn}> {currentDescription.crew.cast.join(', ')}</div>
                     </p>
                   )}
-                  
                 </>
               )}
             </div>
           </div>
         )}
       </div>
-      
     </div>
+    </AnimatePresence>
   );
 };
 
