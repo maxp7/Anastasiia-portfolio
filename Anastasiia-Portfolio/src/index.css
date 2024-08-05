@@ -61,7 +61,4 @@ body, html {
     height: 100svh;
     width: 100dvw;
   }
-  #root::before{
-    display: none !important;
-  }
 }

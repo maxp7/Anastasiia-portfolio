@@ -129,12 +129,14 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
         // Если текущее изображение уже выбрано и панель видима, просто скрываем панель
         setInfoPanelVisible(false);
         setSelectedImage(null);
+        
     } else {
         // В противном случае, показываем панель и обновляем изображение
         setSelectedImage(image);
         setCurrentTitle(image.title || '');
         setCurrentDescription(getDescription(image.title));
         setInfoPanelVisible(true);
+        window.scrollTo(0, 0);
     }
 };
 
