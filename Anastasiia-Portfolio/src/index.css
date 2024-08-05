@@ -34,6 +34,7 @@ body, html {
 
 #root {
   height: 100%;
+  width: 100dvw;
   display: flex;
   flex-direction: column;
 
@@ -58,5 +59,9 @@ body, html {
   }
   #root{
     height: 100svh;
+    width: 100dvw;
+  }
+  #root::before{
+    display: none !important;
   }
 }

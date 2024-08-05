@@ -7,7 +7,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100dvw;
   height: 100svh;
   z-index: 1000; 
   cursor: none;
@@ -51,7 +51,7 @@ button {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100dvw;
     height: 100svh;
     z-index: 1000; 
     cursor: none;

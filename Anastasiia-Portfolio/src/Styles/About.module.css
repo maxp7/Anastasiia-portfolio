@@ -1,7 +1,7 @@
 .container{
     position: relative;
     height: 100svh;
-    width: 100svw;
+    width: 100dvw;
     z-index: 3;
     cursor: url('../assets/img/cursor.svg'), auto;
 }
@@ -167,22 +167,22 @@
     .container{
       display: flex;
       flex-direction: column;
-      padding-left: 1vw;
       width: 100dvw;
     }
     
     .header{
       padding: 0;
-      width: 100%;
+      width: 100dvw;
       font-size: 4svh;
-      margin: 10svh 0 0 2svh;
+      margin: 10svh 0 0 0;
+      padding: 0 4dvw;
       font-style: normal;
       font-weight: 900;
     }
     .subHeader{
       width: 99%;
-      margin: 2svh 0 5svh 2svh;
-      padding:0;
+      margin: 2svh 2vw 5svh 0;
+      padding:0 4dvw;
       font-size: 3svh;
       font-weight: 600;
     }

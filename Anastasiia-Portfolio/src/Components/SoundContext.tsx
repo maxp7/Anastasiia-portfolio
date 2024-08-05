@@ -1,5 +1,4 @@
-// SoundContext.tsx
-import React, { createContext, useContext, useState, ReactNode, useRef } from 'react';
+import React, { createContext, useContext, useState, ReactNode, useRef, useEffect } from 'react';
 import sound from '../backgroundSound.wav';
 
 interface SoundContextProps {
@@ -36,6 +35,22 @@ export const SoundProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     audioRef.current.currentTime = 0;
     setAudioEnabled(false);
   };
+
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        stopSound();
+      } else if (audioEnabled) {
+        playSound();
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, [audioEnabled]);
 
   return (
     <SoundContext.Provider value={{ audioEnabled, setAudioEnabled, playSound, stopSound }}>

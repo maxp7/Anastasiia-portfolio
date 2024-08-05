@@ -122,6 +122,7 @@
     background-image: url('../assets//img//background.gif');
     background-size: cover;
     z-index: 10;
+    width: 100dvw;
 
   }
   .buttonContainer{
@@ -163,7 +164,7 @@
     padding:0;
   }
   .navLinksDeactive{
-    width: 100%;
+    width: 100dvw;
     margin: 0;
     z-index: 10;
     display: flex;
