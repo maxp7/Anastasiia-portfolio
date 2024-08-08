@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, ReactNode, useRef, useEffect } from 'react';
-import sound from '../backgroundSound.wav';
+import sound from '../backgroundSound.mp3';
 
 interface SoundContextProps {
   audioEnabled: boolean;

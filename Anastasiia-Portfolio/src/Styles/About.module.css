@@ -25,7 +25,7 @@
     font-weight: 600;
     font-family: "Playfair Display";
     font-style: italic;
-    margin: 5svw 2.5svw 1svw;
+    margin: 4svw 2.5svw 1svw;
     line-height: 1.2;
 }
 .subHeader{
@@ -120,7 +120,7 @@
     .header{
       width: 70%;
       font-size: 78px;
-      margin-top: 14vh;
+      margin-top: 10vh;
     }
     .subHeader{
       font-size: 38px;

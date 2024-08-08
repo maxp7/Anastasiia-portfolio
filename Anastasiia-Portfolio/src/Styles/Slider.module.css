@@ -106,7 +106,9 @@ text-align: left;
   content: url('../assets/img/infoCross.svg');
   width: 35px;
 }
-
+.InfoButtonEnabled:hover{
+  content: url('../assets/img/infoCrossHover.svg');
+}
 .infoEnabled{
   display:none !important;
 }
