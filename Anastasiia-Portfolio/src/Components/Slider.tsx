@@ -229,7 +229,9 @@ window.addEventListener("DOMContentLoaded", convertStyle);
       transition={{ duration: 2 }}
     />
     {image.title && (
-      <div className={`${styles.title} ${titleClassName}`}>
+      <motion.div className={`${styles.title} ${titleClassName}`}initial={{ opacity: 0 }}
+      animate={{ opacity: loadedImages[index] ? 1 : 0 }}
+      transition={{ duration: 2 }}>
         <div>{image.title}</div>
         <div className={styles.controlButtons}>
           {currentDescription?.youtubeLink && (
@@ -240,7 +242,7 @@ window.addEventListener("DOMContentLoaded", convertStyle);
           <button className={infoPanelVisible ? styles.infoDisabled : styles.InfoEnabled} onClick={() => handleInfoButtonClick(image)}>Info</button>
           <div className={infoPanelVisible ? styles.InfoButtonEnabled : styles.infoButtonDisabled} onClick={() => closeInfoPanel()}></div>
         </div>
-      </div>
+      </motion.div>
     )}
   </div>
 ))}
