@@ -25,6 +25,7 @@ const Navigation: React.FC = () => {
     if (location.pathname !== path) {
       navigate(path);
       setButtonPressed(false); 
+      window.scrollTo(0, 0);
     }
     setButtonPressed(false); 
   };

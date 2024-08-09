@@ -117,6 +117,7 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
   const handleClick = (index: number) => {
     if (onImageClick) {
       onImageClick(index);
+      window.scrollTo(0, 0);
     }
     const image = images[index];
     setSelectedImage(image);
@@ -127,6 +128,7 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
   
   const handleInfoButtonClick = (image: { url: string; title?: string; description?: string }) => {
     if (selectedImage && selectedImage.url === image.url && infoPanelVisible) {
+      window.scrollTo(0, 0);
       setInfoPanelVisible(false);
       setSelectedImage(null);
     } else {
