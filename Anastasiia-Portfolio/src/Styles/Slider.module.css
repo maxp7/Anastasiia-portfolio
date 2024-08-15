@@ -218,6 +218,12 @@ text-align: left;
 }
 .infoDisabled{
   display: flex;
+  background-color: black !important;
+  color: white !important;
+  border: none !important;
+ }
+ .infoEnabled{
+  background-color: white !important;
  }
 
   @keyframes slide-top{

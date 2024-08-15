@@ -133,11 +133,11 @@
   }
   .audioDisable{
     margin: 1svh 0.5svh !important;
-    content: url('../assets/img/muteRoundDisable.svg');
+    content: url('../assets/img/muteRoundEnable.svg');
   }
   .audioEnable{
     margin: 1svh 0.5svh !important;
-    content: url('../assets/img/muteRoundEnable.svg');
+    content: url('../assets/img/muteRoundDisable.svg');
   }
 
   .crossButtonEnable{

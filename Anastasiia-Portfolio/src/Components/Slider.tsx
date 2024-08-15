@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useLocation } from 'react-router-dom'; 
+import { useLocation } from 'react-router-dom';
 import { useSoundContext } from './SoundContext';
 import styles from '../Styles/Slider.module.css';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -114,6 +114,10 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
     }
   }, [infoPanelVisible]);
 
+  useEffect(() => {
+    closeInfoPanel();
+  }, [location.pathname]);
+
   const handleClick = (index: number) => {
     if (onImageClick) {
       onImageClick(index);
@@ -158,7 +162,6 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
     }
   };
 
-  
   function createLineBreaks(text: string) {
     return text.split('<br>').map((item, index) => (
       <React.Fragment key={index}>
@@ -167,7 +170,8 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
       </React.Fragment>
     ));
   }
-  const loadImage = (src:string) => {
+
+  const loadImage = (src: string) => {
     return new Promise((resolve, reject) => {
       const img = new Image();
       img.src = src;
@@ -175,8 +179,8 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
       img.onerror = (err) => reject(err);
     });
   };
-  
-  const loadImagesInSequence = async (imageUrls:string[]) => {
+
+  const loadImagesInSequence = async (imageUrls: string[]) => {
     const loadedImages = [];
     for (const url of imageUrls) {
       try {
@@ -188,6 +192,7 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
     }
     return loadedImages;
   };
+
   useEffect(() => {
     const imageUrls = images.map(image => image.url);
     
@@ -202,16 +207,16 @@ const Slider: React.FC<SliderProps> = ({ images, onImageClick, sliderClassName, 
     }
   }, [images]);
 
- const convertStyle = () => {
-  const height = window.innerHeight;
-  Array.from(document.getElementsByClassName("InfoPanelEnabled")).forEach((element) => {
-    const htmlElement = element as HTMLElement;
-    htmlElement.style.height = `${height}px`;
-  });
-};
+  const convertStyle = () => {
+    const height = window.innerHeight;
+    Array.from(document.getElementsByClassName("InfoPanelEnabled")).forEach((element) => {
+      const htmlElement = element as HTMLElement;
+      htmlElement.style.height = `${height}px`;
+    });
+  };
 
-window.addEventListener("resize", convertStyle);
-window.addEventListener("DOMContentLoaded", convertStyle);
+  window.addEventListener("resize", convertStyle);
+  window.addEventListener("DOMContentLoaded", convertStyle);
 
   return (
     <AnimatePresence>

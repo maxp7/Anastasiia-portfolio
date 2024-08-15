@@ -68,7 +68,7 @@
             .catalogueSlider{
                 display: flex;
                 flex-direction: column;
-                padding-top: 15svh;
+                padding-top: 17svh;
                 z-index: -5;
                 
             }
@@ -104,6 +104,12 @@
                 margin-right: 1svh;
                 border: solid rgb(255, 255, 255) 1px;
                 border-radius: 30px;
+            }
+            .catalogueTitle button:hover{
+  
+                background-color: white;
+                color: black;
+                border: none;
             }
         }
         @media (max-width: 450px) {
